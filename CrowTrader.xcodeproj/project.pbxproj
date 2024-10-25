@@ -22,6 +22,9 @@
 		71A6BD9E2CCBFDA9008BB9C2 /* CrowTrader_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BD9D2CCBFDA9008BB9C2 /* CrowTrader_Watch_AppTests.swift */; };
 		71A6BDA82CCBFDA9008BB9C2 /* CrowTrader_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDA72CCBFDA9008BB9C2 /* CrowTrader_Watch_AppUITests.swift */; };
 		71A6BDAA2CCBFDA9008BB9C2 /* CrowTrader_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDA92CCBFDA9008BB9C2 /* CrowTrader_Watch_AppUITestsLaunchTests.swift */; };
+		71A6BDC22CCBFE3A008BB9C2 /* CrowTraderCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDC12CCBFE3A008BB9C2 /* CrowTraderCoordinator.swift */; };
+		71A6BDC42CCBFEB2008BB9C2 /* WatchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDC32CCBFEB2008BB9C2 /* WatchConnector.swift */; };
+		71A6BDC62CCBFF43008BB9C2 /* PhoneConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDC52CCBFF43008BB9C2 /* PhoneConnector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +100,9 @@
 		71A6BDA32CCBFDA9008BB9C2 /* CrowTrader Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CrowTrader Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A6BDA72CCBFDA9008BB9C2 /* CrowTrader_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowTrader_Watch_AppUITests.swift; sourceTree = "<group>"; };
 		71A6BDA92CCBFDA9008BB9C2 /* CrowTrader_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowTrader_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		71A6BDC12CCBFE3A008BB9C2 /* CrowTraderCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowTraderCoordinator.swift; sourceTree = "<group>"; };
+		71A6BDC32CCBFEB2008BB9C2 /* WatchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnector.swift; sourceTree = "<group>"; };
+		71A6BDC52CCBFF43008BB9C2 /* PhoneConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConnector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +180,8 @@
 		71A6BD632CCBFDA7008BB9C2 /* CrowTrader */ = {
 			isa = PBXGroup;
 			children = (
+				71A6BDC32CCBFEB2008BB9C2 /* WatchConnector.swift */,
+				71A6BDC02CCBFE22008BB9C2 /* Coordinator */,
 				71A6BD642CCBFDA7008BB9C2 /* CrowTraderApp.swift */,
 				71A6BD662CCBFDA7008BB9C2 /* ContentView.swift */,
 				71A6BD682CCBFDA8008BB9C2 /* Assets.xcassets */,
@@ -214,6 +222,7 @@
 				71A6BD8E2CCBFDA8008BB9C2 /* ContentView.swift */,
 				71A6BD902CCBFDA9008BB9C2 /* Assets.xcassets */,
 				71A6BD922CCBFDA9008BB9C2 /* Preview Content */,
+				71A6BDC52CCBFF43008BB9C2 /* PhoneConnector.swift */,
 			);
 			path = "CrowTrader Watch App";
 			sourceTree = "<group>";
@@ -241,6 +250,14 @@
 				71A6BDA92CCBFDA9008BB9C2 /* CrowTrader_Watch_AppUITestsLaunchTests.swift */,
 			);
 			path = "CrowTrader Watch AppUITests";
+			sourceTree = "<group>";
+		};
+		71A6BDC02CCBFE22008BB9C2 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				71A6BDC12CCBFE3A008BB9C2 /* CrowTraderCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,7 +483,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				71A6BD672CCBFDA7008BB9C2 /* ContentView.swift in Sources */,
+				71A6BDC42CCBFEB2008BB9C2 /* WatchConnector.swift in Sources */,
 				71A6BD652CCBFDA7008BB9C2 /* CrowTraderApp.swift in Sources */,
+				71A6BDC22CCBFE3A008BB9C2 /* CrowTraderCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +512,7 @@
 			files = (
 				71A6BD8F2CCBFDA8008BB9C2 /* ContentView.swift in Sources */,
 				71A6BD8D2CCBFDA8008BB9C2 /* CrowTraderApp.swift in Sources */,
+				71A6BDC62CCBFF43008BB9C2 /* PhoneConnector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

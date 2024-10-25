@@ -8,17 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var connector = WatchConnector()
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            TextField("Message text", text: $connector.messageText)
+            DatePicker("Date", selection: $connector.messageDate)
+            Button("Send"){
+                connector.sendToWatch()
+            }
         }
         .padding()
+        .ignoresSafeArea()
     }
 }
+
 
 #Preview {
     ContentView()
 }
+
