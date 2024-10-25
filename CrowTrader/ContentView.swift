@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var connector = WatchConnector()
+    @StateObject var connector : WatchConnector
     var body: some View {
         VStack {
             TextField("Message text", text: $connector.messageText)
@@ -22,8 +22,8 @@ struct ContentView: View {
     }
 }
 
-
+/*
 #Preview {
     ContentView()
 }
-
+*/
