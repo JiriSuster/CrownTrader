@@ -17,6 +17,8 @@ final class CrowTraderCoordinator{
     var childCoordinators: [Coordinator] = []
     let navigationController: UINavigationController
     
+    
+    
     init(navigationController: UINavigationController, container: DIContainer) {
         self.container = container
         self.navigationController = navigationController
@@ -36,8 +38,9 @@ extension CrowTraderCoordinator: Coordinator {
 
 private extension CrowTraderCoordinator {
     func makeHomeScreenView() -> UIViewController {
+        let viewModel = MainScreenViewModel(apiManager: container.apiManager)
         let view = ContentView(
-            connector: self.connector
+            connector: self.connector, viewModel: viewModel
         )
         return UIHostingController(rootView: view)
     }

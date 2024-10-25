@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var connector : WatchConnector
+    @ObservedObject var viewModel: MainScreenViewModel
     var body: some View {
         VStack {
             TextField("Message text", text: $connector.messageText)
@@ -16,6 +17,10 @@ struct ContentView: View {
             Button("Send"){
                 connector.sendToWatch()
             }
+            Button("Random time from api"){
+                viewModel.fetchWeatherData()
+            }
+            Text(viewModel.temperature)
         }
         .padding()
         .ignoresSafeArea()

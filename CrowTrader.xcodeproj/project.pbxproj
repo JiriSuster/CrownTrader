@@ -10,6 +10,12 @@
 		7127521E2CCC15DB003784DD /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDCE2CCC03B4008BB9C2 /* CoreDataController.swift */; };
 		712752212CCC1601003784DD /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712752202CCC1601003784DD /* DIContainer.swift */; };
 		712752252CCC172F003784DD /* CrowTrader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDCA2CCC038E008BB9C2 /* CrowTrader.xcdatamodeld */; };
+		712752282CCC1921003784DD /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712752272CCC1921003784DD /* APIError.swift */; };
+		7127522A2CCC1938003784DD /* APIManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712752292CCC1938003784DD /* APIManaging.swift */; };
+		7127522C2CCC1951003784DD /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7127522B2CCC1951003784DD /* Endpoint.swift */; };
+		7127522E2CCC1981003784DD /* StockDataRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7127522D2CCC1981003784DD /* StockDataRouter.swift */; };
+		712752312CCC1A64003784DD /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712752302CCC1A64003784DD /* MainScreenViewModel.swift */; };
+		712752332CCC1E5C003784DD /* StockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712752322CCC1E5C003784DD /* StockData.swift */; };
 		71A6BD672CCBFDA7008BB9C2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BD662CCBFDA7008BB9C2 /* ContentView.swift */; };
 		71A6BD692CCBFDA8008BB9C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71A6BD682CCBFDA8008BB9C2 /* Assets.xcassets */; };
 		71A6BD6C2CCBFDA8008BB9C2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71A6BD6B2CCBFDA8008BB9C2 /* Preview Assets.xcassets */; };
@@ -90,6 +96,12 @@
 
 /* Begin PBXFileReference section */
 		712752202CCC1601003784DD /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		712752272CCC1921003784DD /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		712752292CCC1938003784DD /* APIManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManaging.swift; sourceTree = "<group>"; };
+		7127522B2CCC1951003784DD /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		7127522D2CCC1981003784DD /* StockDataRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDataRouter.swift; sourceTree = "<group>"; };
+		712752302CCC1A64003784DD /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
+		712752322CCC1E5C003784DD /* StockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockData.swift; sourceTree = "<group>"; };
 		71A6BD612CCBFDA7008BB9C2 /* CrowTrader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrowTrader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A6BD662CCBFDA7008BB9C2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		71A6BD682CCBFDA8008BB9C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -184,6 +196,25 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		712752262CCC1913003784DD /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				712752272CCC1921003784DD /* APIError.swift */,
+				712752292CCC1938003784DD /* APIManaging.swift */,
+				7127522B2CCC1951003784DD /* Endpoint.swift */,
+				7127522D2CCC1981003784DD /* StockDataRouter.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		7127522F2CCC1A56003784DD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				712752302CCC1A64003784DD /* MainScreenViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		71A6BD582CCBFDA7008BB9C2 = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +244,8 @@
 		71A6BD632CCBFDA7008BB9C2 /* CrowTrader */ = {
 			isa = PBXGroup;
 			children = (
+				7127522F2CCC1A56003784DD /* ViewModels */,
+				712752262CCC1913003784DD /* Networking */,
 				71A6BDDB2CCC1112008BB9C2 /* Info.plist */,
 				71A6BD6A2CCBFDA8008BB9C2 /* Preview Content */,
 				71A6BDD62CCC0949008BB9C2 /* Services */,
@@ -311,6 +344,7 @@
 			children = (
 				71A6BDCA2CCC038E008BB9C2 /* CrowTrader.xcdatamodeld */,
 				71A6BDCE2CCC03B4008BB9C2 /* CoreDataController.swift */,
+				712752322CCC1E5C003784DD /* StockData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -566,13 +600,19 @@
 				71A6BDD22CCC04DA008BB9C2 /* Coordinator.swift in Sources */,
 				71A6BDCC2CCC038E008BB9C2 /* CrowTrader.xcdatamodeld in Sources */,
 				71A6BD672CCBFDA7008BB9C2 /* ContentView.swift in Sources */,
+				7127522C2CCC1951003784DD /* Endpoint.swift in Sources */,
 				71A6BDD82CCC09AA008BB9C2 /* AppDelegate.swift in Sources */,
 				71A6BDC42CCBFEB2008BB9C2 /* WatchConnector.swift in Sources */,
 				71A6BDDA2CCC09B5008BB9C2 /* SceneDelegate.swift in Sources */,
 				71A6BDCF2CCC03B4008BB9C2 /* CoreDataController.swift in Sources */,
+				712752332CCC1E5C003784DD /* StockData.swift in Sources */,
 				71A6BDC92CCC02F8008BB9C2 /* DIContainer.swift in Sources */,
+				7127522A2CCC1938003784DD /* APIManaging.swift in Sources */,
 				71A6BDD42CCC05F0008BB9C2 /* AppCoordinator.swift in Sources */,
+				712752312CCC1A64003784DD /* MainScreenViewModel.swift in Sources */,
+				7127522E2CCC1981003784DD /* StockDataRouter.swift in Sources */,
 				71A6BDC22CCBFE3A008BB9C2 /* CrowTraderCoordinator.swift in Sources */,
+				712752282CCC1921003784DD /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
