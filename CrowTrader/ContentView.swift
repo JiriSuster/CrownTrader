@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  vi2_project
+//  CrowTrader
 //
 //  Created by Jiří Daniel Šuster on 25.10.2024.
 //

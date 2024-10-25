@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  vi2_project Watch App
+//  CrowTrader Watch App
 //
 //  Created by Jiří Daniel Šuster on 25.10.2024.
 //

@@ -1,0 +1,1014 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		71A6BD652CCBFDA7008BB9C2 /* CrowTraderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BD642CCBFDA7008BB9C2 /* CrowTraderApp.swift */; };
+		71A6BD672CCBFDA7008BB9C2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BD662CCBFDA7008BB9C2 /* ContentView.swift */; };
+		71A6BD692CCBFDA8008BB9C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71A6BD682CCBFDA8008BB9C2 /* Assets.xcassets */; };
+		71A6BD6C2CCBFDA8008BB9C2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71A6BD6B2CCBFDA8008BB9C2 /* Preview Assets.xcassets */; };
+		71A6BD762CCBFDA8008BB9C2 /* CrowTraderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BD752CCBFDA8008BB9C2 /* CrowTraderTests.swift */; };
+		71A6BD802CCBFDA8008BB9C2 /* CrowTraderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BD7F2CCBFDA8008BB9C2 /* CrowTraderUITests.swift */; };
+		71A6BD822CCBFDA8008BB9C2 /* CrowTraderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BD812CCBFDA8008BB9C2 /* CrowTraderUITestsLaunchTests.swift */; };
+		71A6BD882CCBFDA8008BB9C2 /* CrowTrader Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 71A6BD872CCBFDA8008BB9C2 /* CrowTrader Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		71A6BD8D2CCBFDA8008BB9C2 /* CrowTraderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BD8C2CCBFDA8008BB9C2 /* CrowTraderApp.swift */; };
+		71A6BD8F2CCBFDA8008BB9C2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BD8E2CCBFDA8008BB9C2 /* ContentView.swift */; };
+		71A6BD912CCBFDA9008BB9C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71A6BD902CCBFDA9008BB9C2 /* Assets.xcassets */; };
+		71A6BD942CCBFDA9008BB9C2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71A6BD932CCBFDA9008BB9C2 /* Preview Assets.xcassets */; };
+		71A6BD9E2CCBFDA9008BB9C2 /* CrowTrader_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BD9D2CCBFDA9008BB9C2 /* CrowTrader_Watch_AppTests.swift */; };
+		71A6BDA82CCBFDA9008BB9C2 /* CrowTrader_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDA72CCBFDA9008BB9C2 /* CrowTrader_Watch_AppUITests.swift */; };
+		71A6BDAA2CCBFDA9008BB9C2 /* CrowTrader_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDA92CCBFDA9008BB9C2 /* CrowTrader_Watch_AppUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		71A6BD722CCBFDA8008BB9C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71A6BD592CCBFDA7008BB9C2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71A6BD602CCBFDA7008BB9C2;
+			remoteInfo = CrowTrader;
+		};
+		71A6BD7C2CCBFDA8008BB9C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71A6BD592CCBFDA7008BB9C2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71A6BD602CCBFDA7008BB9C2;
+			remoteInfo = CrowTrader;
+		};
+		71A6BD892CCBFDA8008BB9C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71A6BD592CCBFDA7008BB9C2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71A6BD862CCBFDA8008BB9C2;
+			remoteInfo = "CrowTrader Watch App";
+		};
+		71A6BD9A2CCBFDA9008BB9C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71A6BD592CCBFDA7008BB9C2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71A6BD862CCBFDA8008BB9C2;
+			remoteInfo = "CrowTrader Watch App";
+		};
+		71A6BDA42CCBFDA9008BB9C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71A6BD592CCBFDA7008BB9C2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71A6BD862CCBFDA8008BB9C2;
+			remoteInfo = "CrowTrader Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		71A6BDB02CCBFDA9008BB9C2 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				71A6BD882CCBFDA8008BB9C2 /* CrowTrader Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		71A6BD612CCBFDA7008BB9C2 /* CrowTrader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrowTrader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		71A6BD642CCBFDA7008BB9C2 /* CrowTraderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowTraderApp.swift; sourceTree = "<group>"; };
+		71A6BD662CCBFDA7008BB9C2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		71A6BD682CCBFDA8008BB9C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		71A6BD6B2CCBFDA8008BB9C2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		71A6BD712CCBFDA8008BB9C2 /* CrowTraderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrowTraderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		71A6BD752CCBFDA8008BB9C2 /* CrowTraderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowTraderTests.swift; sourceTree = "<group>"; };
+		71A6BD7B2CCBFDA8008BB9C2 /* CrowTraderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrowTraderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		71A6BD7F2CCBFDA8008BB9C2 /* CrowTraderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowTraderUITests.swift; sourceTree = "<group>"; };
+		71A6BD812CCBFDA8008BB9C2 /* CrowTraderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowTraderUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		71A6BD872CCBFDA8008BB9C2 /* CrowTrader Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CrowTrader Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		71A6BD8C2CCBFDA8008BB9C2 /* CrowTraderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowTraderApp.swift; sourceTree = "<group>"; };
+		71A6BD8E2CCBFDA8008BB9C2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		71A6BD902CCBFDA9008BB9C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		71A6BD932CCBFDA9008BB9C2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		71A6BD992CCBFDA9008BB9C2 /* CrowTrader Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CrowTrader Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		71A6BD9D2CCBFDA9008BB9C2 /* CrowTrader_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowTrader_Watch_AppTests.swift; sourceTree = "<group>"; };
+		71A6BDA32CCBFDA9008BB9C2 /* CrowTrader Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CrowTrader Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		71A6BDA72CCBFDA9008BB9C2 /* CrowTrader_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowTrader_Watch_AppUITests.swift; sourceTree = "<group>"; };
+		71A6BDA92CCBFDA9008BB9C2 /* CrowTrader_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowTrader_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		71A6BD5E2CCBFDA7008BB9C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71A6BD6E2CCBFDA8008BB9C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71A6BD782CCBFDA8008BB9C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71A6BD842CCBFDA8008BB9C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71A6BD962CCBFDA9008BB9C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71A6BDA02CCBFDA9008BB9C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		71A6BD582CCBFDA7008BB9C2 = {
+			isa = PBXGroup;
+			children = (
+				71A6BD632CCBFDA7008BB9C2 /* CrowTrader */,
+				71A6BD742CCBFDA8008BB9C2 /* CrowTraderTests */,
+				71A6BD7E2CCBFDA8008BB9C2 /* CrowTraderUITests */,
+				71A6BD8B2CCBFDA8008BB9C2 /* CrowTrader Watch App */,
+				71A6BD9C2CCBFDA9008BB9C2 /* CrowTrader Watch AppTests */,
+				71A6BDA62CCBFDA9008BB9C2 /* CrowTrader Watch AppUITests */,
+				71A6BD622CCBFDA7008BB9C2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		71A6BD622CCBFDA7008BB9C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				71A6BD612CCBFDA7008BB9C2 /* CrowTrader.app */,
+				71A6BD712CCBFDA8008BB9C2 /* CrowTraderTests.xctest */,
+				71A6BD7B2CCBFDA8008BB9C2 /* CrowTraderUITests.xctest */,
+				71A6BD872CCBFDA8008BB9C2 /* CrowTrader Watch App.app */,
+				71A6BD992CCBFDA9008BB9C2 /* CrowTrader Watch AppTests.xctest */,
+				71A6BDA32CCBFDA9008BB9C2 /* CrowTrader Watch AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		71A6BD632CCBFDA7008BB9C2 /* CrowTrader */ = {
+			isa = PBXGroup;
+			children = (
+				71A6BD642CCBFDA7008BB9C2 /* CrowTraderApp.swift */,
+				71A6BD662CCBFDA7008BB9C2 /* ContentView.swift */,
+				71A6BD682CCBFDA8008BB9C2 /* Assets.xcassets */,
+				71A6BD6A2CCBFDA8008BB9C2 /* Preview Content */,
+			);
+			path = CrowTrader;
+			sourceTree = "<group>";
+		};
+		71A6BD6A2CCBFDA8008BB9C2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				71A6BD6B2CCBFDA8008BB9C2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		71A6BD742CCBFDA8008BB9C2 /* CrowTraderTests */ = {
+			isa = PBXGroup;
+			children = (
+				71A6BD752CCBFDA8008BB9C2 /* CrowTraderTests.swift */,
+			);
+			path = CrowTraderTests;
+			sourceTree = "<group>";
+		};
+		71A6BD7E2CCBFDA8008BB9C2 /* CrowTraderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				71A6BD7F2CCBFDA8008BB9C2 /* CrowTraderUITests.swift */,
+				71A6BD812CCBFDA8008BB9C2 /* CrowTraderUITestsLaunchTests.swift */,
+			);
+			path = CrowTraderUITests;
+			sourceTree = "<group>";
+		};
+		71A6BD8B2CCBFDA8008BB9C2 /* CrowTrader Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				71A6BD8C2CCBFDA8008BB9C2 /* CrowTraderApp.swift */,
+				71A6BD8E2CCBFDA8008BB9C2 /* ContentView.swift */,
+				71A6BD902CCBFDA9008BB9C2 /* Assets.xcassets */,
+				71A6BD922CCBFDA9008BB9C2 /* Preview Content */,
+			);
+			path = "CrowTrader Watch App";
+			sourceTree = "<group>";
+		};
+		71A6BD922CCBFDA9008BB9C2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				71A6BD932CCBFDA9008BB9C2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		71A6BD9C2CCBFDA9008BB9C2 /* CrowTrader Watch AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				71A6BD9D2CCBFDA9008BB9C2 /* CrowTrader_Watch_AppTests.swift */,
+			);
+			path = "CrowTrader Watch AppTests";
+			sourceTree = "<group>";
+		};
+		71A6BDA62CCBFDA9008BB9C2 /* CrowTrader Watch AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				71A6BDA72CCBFDA9008BB9C2 /* CrowTrader_Watch_AppUITests.swift */,
+				71A6BDA92CCBFDA9008BB9C2 /* CrowTrader_Watch_AppUITestsLaunchTests.swift */,
+			);
+			path = "CrowTrader Watch AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		71A6BD602CCBFDA7008BB9C2 /* CrowTrader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71A6BDB12CCBFDA9008BB9C2 /* Build configuration list for PBXNativeTarget "CrowTrader" */;
+			buildPhases = (
+				71A6BD5D2CCBFDA7008BB9C2 /* Sources */,
+				71A6BD5E2CCBFDA7008BB9C2 /* Frameworks */,
+				71A6BD5F2CCBFDA7008BB9C2 /* Resources */,
+				71A6BDB02CCBFDA9008BB9C2 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71A6BD8A2CCBFDA8008BB9C2 /* PBXTargetDependency */,
+			);
+			name = CrowTrader;
+			productName = CrowTrader;
+			productReference = 71A6BD612CCBFDA7008BB9C2 /* CrowTrader.app */;
+			productType = "com.apple.product-type.application";
+		};
+		71A6BD702CCBFDA8008BB9C2 /* CrowTraderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71A6BDB42CCBFDA9008BB9C2 /* Build configuration list for PBXNativeTarget "CrowTraderTests" */;
+			buildPhases = (
+				71A6BD6D2CCBFDA8008BB9C2 /* Sources */,
+				71A6BD6E2CCBFDA8008BB9C2 /* Frameworks */,
+				71A6BD6F2CCBFDA8008BB9C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71A6BD732CCBFDA8008BB9C2 /* PBXTargetDependency */,
+			);
+			name = CrowTraderTests;
+			productName = CrowTraderTests;
+			productReference = 71A6BD712CCBFDA8008BB9C2 /* CrowTraderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		71A6BD7A2CCBFDA8008BB9C2 /* CrowTraderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71A6BDB72CCBFDA9008BB9C2 /* Build configuration list for PBXNativeTarget "CrowTraderUITests" */;
+			buildPhases = (
+				71A6BD772CCBFDA8008BB9C2 /* Sources */,
+				71A6BD782CCBFDA8008BB9C2 /* Frameworks */,
+				71A6BD792CCBFDA8008BB9C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71A6BD7D2CCBFDA8008BB9C2 /* PBXTargetDependency */,
+			);
+			name = CrowTraderUITests;
+			productName = CrowTraderUITests;
+			productReference = 71A6BD7B2CCBFDA8008BB9C2 /* CrowTraderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		71A6BD862CCBFDA8008BB9C2 /* CrowTrader Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71A6BDAD2CCBFDA9008BB9C2 /* Build configuration list for PBXNativeTarget "CrowTrader Watch App" */;
+			buildPhases = (
+				71A6BD832CCBFDA8008BB9C2 /* Sources */,
+				71A6BD842CCBFDA8008BB9C2 /* Frameworks */,
+				71A6BD852CCBFDA8008BB9C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CrowTrader Watch App";
+			productName = "CrowTrader Watch App";
+			productReference = 71A6BD872CCBFDA8008BB9C2 /* CrowTrader Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		71A6BD982CCBFDA9008BB9C2 /* CrowTrader Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71A6BDBA2CCBFDA9008BB9C2 /* Build configuration list for PBXNativeTarget "CrowTrader Watch AppTests" */;
+			buildPhases = (
+				71A6BD952CCBFDA9008BB9C2 /* Sources */,
+				71A6BD962CCBFDA9008BB9C2 /* Frameworks */,
+				71A6BD972CCBFDA9008BB9C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71A6BD9B2CCBFDA9008BB9C2 /* PBXTargetDependency */,
+			);
+			name = "CrowTrader Watch AppTests";
+			productName = "CrowTrader Watch AppTests";
+			productReference = 71A6BD992CCBFDA9008BB9C2 /* CrowTrader Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		71A6BDA22CCBFDA9008BB9C2 /* CrowTrader Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71A6BDBD2CCBFDA9008BB9C2 /* Build configuration list for PBXNativeTarget "CrowTrader Watch AppUITests" */;
+			buildPhases = (
+				71A6BD9F2CCBFDA9008BB9C2 /* Sources */,
+				71A6BDA02CCBFDA9008BB9C2 /* Frameworks */,
+				71A6BDA12CCBFDA9008BB9C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71A6BDA52CCBFDA9008BB9C2 /* PBXTargetDependency */,
+			);
+			name = "CrowTrader Watch AppUITests";
+			productName = "CrowTrader Watch AppUITests";
+			productReference = 71A6BDA32CCBFDA9008BB9C2 /* CrowTrader Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		71A6BD592CCBFDA7008BB9C2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					71A6BD602CCBFDA7008BB9C2 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					71A6BD702CCBFDA8008BB9C2 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 71A6BD602CCBFDA7008BB9C2;
+					};
+					71A6BD7A2CCBFDA8008BB9C2 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 71A6BD602CCBFDA7008BB9C2;
+					};
+					71A6BD862CCBFDA8008BB9C2 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					71A6BD982CCBFDA9008BB9C2 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 71A6BD862CCBFDA8008BB9C2;
+					};
+					71A6BDA22CCBFDA9008BB9C2 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 71A6BD862CCBFDA8008BB9C2;
+					};
+				};
+			};
+			buildConfigurationList = 71A6BD5C2CCBFDA7008BB9C2 /* Build configuration list for PBXProject "CrowTrader" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 71A6BD582CCBFDA7008BB9C2;
+			productRefGroup = 71A6BD622CCBFDA7008BB9C2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				71A6BD602CCBFDA7008BB9C2 /* CrowTrader */,
+				71A6BD702CCBFDA8008BB9C2 /* CrowTraderTests */,
+				71A6BD7A2CCBFDA8008BB9C2 /* CrowTraderUITests */,
+				71A6BD862CCBFDA8008BB9C2 /* CrowTrader Watch App */,
+				71A6BD982CCBFDA9008BB9C2 /* CrowTrader Watch AppTests */,
+				71A6BDA22CCBFDA9008BB9C2 /* CrowTrader Watch AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		71A6BD5F2CCBFDA7008BB9C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71A6BD6C2CCBFDA8008BB9C2 /* Preview Assets.xcassets in Resources */,
+				71A6BD692CCBFDA8008BB9C2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71A6BD6F2CCBFDA8008BB9C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71A6BD792CCBFDA8008BB9C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71A6BD852CCBFDA8008BB9C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71A6BD942CCBFDA9008BB9C2 /* Preview Assets.xcassets in Resources */,
+				71A6BD912CCBFDA9008BB9C2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71A6BD972CCBFDA9008BB9C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71A6BDA12CCBFDA9008BB9C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		71A6BD5D2CCBFDA7008BB9C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71A6BD672CCBFDA7008BB9C2 /* ContentView.swift in Sources */,
+				71A6BD652CCBFDA7008BB9C2 /* CrowTraderApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71A6BD6D2CCBFDA8008BB9C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71A6BD762CCBFDA8008BB9C2 /* CrowTraderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71A6BD772CCBFDA8008BB9C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71A6BD802CCBFDA8008BB9C2 /* CrowTraderUITests.swift in Sources */,
+				71A6BD822CCBFDA8008BB9C2 /* CrowTraderUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71A6BD832CCBFDA8008BB9C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71A6BD8F2CCBFDA8008BB9C2 /* ContentView.swift in Sources */,
+				71A6BD8D2CCBFDA8008BB9C2 /* CrowTraderApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71A6BD952CCBFDA9008BB9C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71A6BD9E2CCBFDA9008BB9C2 /* CrowTrader_Watch_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71A6BD9F2CCBFDA9008BB9C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71A6BDA82CCBFDA9008BB9C2 /* CrowTrader_Watch_AppUITests.swift in Sources */,
+				71A6BDAA2CCBFDA9008BB9C2 /* CrowTrader_Watch_AppUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		71A6BD732CCBFDA8008BB9C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 71A6BD602CCBFDA7008BB9C2 /* CrowTrader */;
+			targetProxy = 71A6BD722CCBFDA8008BB9C2 /* PBXContainerItemProxy */;
+		};
+		71A6BD7D2CCBFDA8008BB9C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 71A6BD602CCBFDA7008BB9C2 /* CrowTrader */;
+			targetProxy = 71A6BD7C2CCBFDA8008BB9C2 /* PBXContainerItemProxy */;
+		};
+		71A6BD8A2CCBFDA8008BB9C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 71A6BD862CCBFDA8008BB9C2 /* CrowTrader Watch App */;
+			targetProxy = 71A6BD892CCBFDA8008BB9C2 /* PBXContainerItemProxy */;
+		};
+		71A6BD9B2CCBFDA9008BB9C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 71A6BD862CCBFDA8008BB9C2 /* CrowTrader Watch App */;
+			targetProxy = 71A6BD9A2CCBFDA9008BB9C2 /* PBXContainerItemProxy */;
+		};
+		71A6BDA52CCBFDA9008BB9C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 71A6BD862CCBFDA8008BB9C2 /* CrowTrader Watch App */;
+			targetProxy = 71A6BDA42CCBFDA9008BB9C2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		71A6BDAB2CCBFDA9008BB9C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		71A6BDAC2CCBFDA9008BB9C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		71A6BDAE2CCBFDA9008BB9C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CrowTrader Watch App/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = CrowTrader;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = cz.mendelu.CrowTrader;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.mendelu.CrowTrader.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Debug;
+		};
+		71A6BDAF2CCBFDA9008BB9C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CrowTrader Watch App/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = CrowTrader;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = cz.mendelu.CrowTrader;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.mendelu.CrowTrader.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Release;
+		};
+		71A6BDB22CCBFDA9008BB9C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CrowTrader/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = CrowTrader;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.mendelu.CrowTrader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		71A6BDB32CCBFDA9008BB9C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CrowTrader/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = CrowTrader;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.mendelu.CrowTrader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		71A6BDB52CCBFDA9008BB9C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.mendelu.CrowTraderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CrowTrader.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CrowTrader";
+			};
+			name = Debug;
+		};
+		71A6BDB62CCBFDA9008BB9C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.mendelu.CrowTraderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CrowTrader.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CrowTrader";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		71A6BDB82CCBFDA9008BB9C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.mendelu.CrowTraderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CrowTrader;
+			};
+			name = Debug;
+		};
+		71A6BDB92CCBFDA9008BB9C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.mendelu.CrowTraderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CrowTrader;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		71A6BDBB2CCBFDA9008BB9C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cz.mendelu.CrowTrader-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CrowTrader Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CrowTrader Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Debug;
+		};
+		71A6BDBC2CCBFDA9008BB9C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cz.mendelu.CrowTrader-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CrowTrader Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CrowTrader Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Release;
+		};
+		71A6BDBE2CCBFDA9008BB9C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cz.mendelu.CrowTrader-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "CrowTrader Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Debug;
+		};
+		71A6BDBF2CCBFDA9008BB9C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cz.mendelu.CrowTrader-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "CrowTrader Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		71A6BD5C2CCBFDA7008BB9C2 /* Build configuration list for PBXProject "CrowTrader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71A6BDAB2CCBFDA9008BB9C2 /* Debug */,
+				71A6BDAC2CCBFDA9008BB9C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71A6BDAD2CCBFDA9008BB9C2 /* Build configuration list for PBXNativeTarget "CrowTrader Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71A6BDAE2CCBFDA9008BB9C2 /* Debug */,
+				71A6BDAF2CCBFDA9008BB9C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71A6BDB12CCBFDA9008BB9C2 /* Build configuration list for PBXNativeTarget "CrowTrader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71A6BDB22CCBFDA9008BB9C2 /* Debug */,
+				71A6BDB32CCBFDA9008BB9C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71A6BDB42CCBFDA9008BB9C2 /* Build configuration list for PBXNativeTarget "CrowTraderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71A6BDB52CCBFDA9008BB9C2 /* Debug */,
+				71A6BDB62CCBFDA9008BB9C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71A6BDB72CCBFDA9008BB9C2 /* Build configuration list for PBXNativeTarget "CrowTraderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71A6BDB82CCBFDA9008BB9C2 /* Debug */,
+				71A6BDB92CCBFDA9008BB9C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71A6BDBA2CCBFDA9008BB9C2 /* Build configuration list for PBXNativeTarget "CrowTrader Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71A6BDBB2CCBFDA9008BB9C2 /* Debug */,
+				71A6BDBC2CCBFDA9008BB9C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71A6BDBD2CCBFDA9008BB9C2 /* Build configuration list for PBXNativeTarget "CrowTrader Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71A6BDBE2CCBFDA9008BB9C2 /* Debug */,
+				71A6BDBF2CCBFDA9008BB9C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 71A6BD592CCBFDA7008BB9C2 /* Project object */;
+}
