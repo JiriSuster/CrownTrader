@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7127521E2CCC15DB003784DD /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDCE2CCC03B4008BB9C2 /* CoreDataController.swift */; };
+		712752212CCC1601003784DD /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712752202CCC1601003784DD /* DIContainer.swift */; };
+		712752252CCC172F003784DD /* CrowTrader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDCA2CCC038E008BB9C2 /* CrowTrader.xcdatamodeld */; };
 		71A6BD672CCBFDA7008BB9C2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BD662CCBFDA7008BB9C2 /* ContentView.swift */; };
 		71A6BD692CCBFDA8008BB9C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71A6BD682CCBFDA8008BB9C2 /* Assets.xcassets */; };
 		71A6BD6C2CCBFDA8008BB9C2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71A6BD6B2CCBFDA8008BB9C2 /* Preview Assets.xcassets */; };
@@ -86,6 +89,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		712752202CCC1601003784DD /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		71A6BD612CCBFDA7008BB9C2 /* CrowTrader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrowTrader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A6BD662CCBFDA7008BB9C2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		71A6BD682CCBFDA8008BB9C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -164,6 +168,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7127521F2CCC15EB003784DD /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				712752202CCC1601003784DD /* DIContainer.swift */,
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
+		712752222CCC161A003784DD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				71A6BDC52CCBFF43008BB9C2 /* PhoneConnector.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		71A6BD582CCBFDA7008BB9C2 = {
 			isa = PBXGroup;
 			children = (
@@ -234,11 +254,12 @@
 		71A6BD8B2CCBFDA8008BB9C2 /* CrowTrader Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				712752222CCC161A003784DD /* Services */,
+				7127521F2CCC15EB003784DD /* DependencyInjection */,
 				71A6BD8C2CCBFDA8008BB9C2 /* CrowTraderApp.swift */,
 				71A6BD8E2CCBFDA8008BB9C2 /* ContentView.swift */,
 				71A6BD902CCBFDA9008BB9C2 /* Assets.xcassets */,
 				71A6BD922CCBFDA9008BB9C2 /* Preview Content */,
-				71A6BDC52CCBFF43008BB9C2 /* PhoneConnector.swift */,
 			);
 			path = "CrowTrader Watch App";
 			sourceTree = "<group>";
@@ -576,8 +597,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				712752252CCC172F003784DD /* CrowTrader.xcdatamodeld in Sources */,
 				71A6BD8F2CCBFDA8008BB9C2 /* ContentView.swift in Sources */,
 				71A6BD8D2CCBFDA8008BB9C2 /* CrowTraderApp.swift in Sources */,
+				712752212CCC1601003784DD /* DIContainer.swift in Sources */,
+				7127521E2CCC15DB003784DD /* CoreDataController.swift in Sources */,
 				71A6BDC62CCBFF43008BB9C2 /* PhoneConnector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
