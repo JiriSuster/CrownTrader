@@ -22,11 +22,17 @@ extension MainScreenViewModel{
         Task {
             do {
                 let weatherData: StockData = try await apiManager.request(
-                    WeatherDataRouter.dailyMaxTemperature(
-                        long: 10, lat: 10
+                    StockDataRouter.cryptoPrice(
+                        symbol: "BTC-USD"
                     )
                 )
-                self.temperature = weatherData.daily.time[0]
+                let openValues = weatherData.chart.result[0].indicators.quote[0].open
+                let firstFiveValues = openValues.prefix(5)
+                
+                self.temperature = firstFiveValues
+                    .map { String($0 ?? 0) } // prevod na string
+                    .joined(separator: "\n")
+                
                 print(self.temperature)
 
 

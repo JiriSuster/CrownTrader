@@ -7,18 +7,17 @@
 
 import Foundation
 
-enum WeatherDataRouter: Endpoint {
-    case dailyMaxTemperature(long: Double, lat: Double)
+enum StockDataRouter: Endpoint {
+    case cryptoPrice(symbol: String)
 
     var path: String {
-        "/v1/forecast"
+        switch self {
+        case .cryptoPrice(let symbol):
+            return "/v8/finance/chart/\(symbol)" //symbol je soucasti cesty, neni argument...
+        }
     }
 
     var urlParameters: [String : Any] {
-        switch self {
-        case let .dailyMaxTemperature(long, lat):
-            ["longitude": long, "latitude": lat, "daily": "temperature_2m_max"]
-        }
-
+        return [:]
     }
 }

@@ -17,7 +17,7 @@ struct ContentView: View {
             Button("Send"){
                 connector.sendToWatch()
             }
-            Button("Random time from api"){
+            Button("Show last 5 open prices from yahoo API (btc-usd)"){
                 viewModel.fetchWeatherData()
             }
             Text(viewModel.temperature)

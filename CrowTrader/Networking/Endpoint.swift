@@ -19,7 +19,7 @@ protocol Endpoint {
 
 extension Endpoint {
     var host: String {
-        "https://api.open-meteo.com"
+        "https://query2.finance.yahoo.com"
     }
 
     var method: String {
