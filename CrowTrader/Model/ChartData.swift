@@ -7,9 +7,15 @@
 
 import Foundation
 
+struct ChartPoint: Identifiable {
+    let id = UUID()
+    let date: Date
+    let price: Double
+}
+
 // MARK: Chart data models
 struct ChartData: Codable {
-    let chart: Chart
+    let chart: ChartQuote
     
     //computed for easier access
     var timestamp: [Int]? {
@@ -37,7 +43,7 @@ struct ChartData: Codable {
         }
 }
 
-struct Chart: Codable {
+struct ChartQuote: Codable {
     let result: [ChartResult]
 }
 
@@ -59,5 +65,29 @@ struct Quote: Codable {
 
     enum CodingKeys: String, CodingKey {
         case close, high, open, low, volume
+    }
+}
+
+
+extension ChartData {
+    var chartPoints: [ChartPoint] {
+        guard let timestamps = timestamp,
+              let prices = close else { return [] }
+        
+        return zip(timestamps, prices).compactMap { timestamp, price in
+            guard let price = price else { return nil }
+            return ChartPoint(
+                date: Date(timeIntervalSince1970: TimeInterval(timestamp)),
+                price: price
+            )
+        }
+    }
+    
+    var priceRange: (min: Double, max: Double) {
+        let prices = chartPoints.map { $0.price }
+        return (
+            min: prices.min() ?? 0,
+            max: prices.max() ?? 0
+        )
     }
 }

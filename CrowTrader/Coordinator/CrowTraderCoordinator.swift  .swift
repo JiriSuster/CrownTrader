@@ -26,6 +26,10 @@ final class CrowTraderCoordinator{
         coordinator: self
     )
     
+    private lazy var stockPreviewViewModel = StockPreviewViewModel(
+        apiManager: container.apiManager
+    )
+    
     init(navigationController: UINavigationController, container: DIContainer) {
         self.container = container
         self.navigationController = navigationController
@@ -57,7 +61,7 @@ private extension CrowTraderCoordinator {
 private extension CrowTraderCoordinator {
     func makeStockDetailView(stockItem: StockItem) -> UIViewController {
         let view = StockPreview(
-            coordinator: self
+            viewModel: self.stockPreviewViewModel
         )
         return UIHostingController(rootView: view)
     }

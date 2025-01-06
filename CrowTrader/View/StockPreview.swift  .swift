@@ -8,17 +8,39 @@
 import SwiftUI
 
 struct StockPreview: View {
+    @StateObject var viewModel: StockPreviewViewModel
     @State private var price = ""
     enum Event {
             case close
         }
     weak var coordinator: StockPreviewEventHandling?
+    
 
     
     var body: some View {
+        let emptyChartData = ChartData(
+            chart: ChartQuote(
+                result: [
+                    ChartResult(
+                        timestamp: [],
+                        indicators: Indicators(
+                            quote: [
+                                Quote(
+                                    close: [],
+                                    high: [],
+                                    open: [],
+                                    low: [],
+                                    volume: []
+                                )
+                            ]
+                        )
+                    )
+                ]
+            )
+        )
         NavigationView{
             VStack{
-                Rectangle()
+                StockChartView(data: viewModel.chartData ?? emptyChartData)
                     .frame(width: 370,height: 250)
                     .foregroundStyle(.gray)
                     .padding()
@@ -118,10 +140,13 @@ struct StockPreview: View {
                         Text("Watch").foregroundStyle(.green)
                     }
                 }
+            }.onAppear(){
+                viewModel.fetchChart(symbol: "aapl")
             }
     }
 }
-
+/*
 #Preview {
     StockPreview()
 }
+*/

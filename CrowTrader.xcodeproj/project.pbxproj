@@ -60,6 +60,8 @@
 		71F33B4A2D2BE4A800680699 /* NewsDataRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B492D2BE4A800680699 /* NewsDataRouter.swift */; };
 		71F33B4C2D2BE4B500680699 /* MoversDataRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B4B2D2BE4B500680699 /* MoversDataRouter.swift */; };
 		71F33B4E2D2BE7E900680699 /* NewsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B4D2D2BE7E900680699 /* NewsScreenViewModel.swift */; };
+		71F33B502D2C005500680699 /* StockChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B4F2D2C005500680699 /* StockChartView.swift */; };
+		71F33B522D2C07AD00680699 /* StockPreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B512D2C07AD00680699 /* StockPreviewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +174,8 @@
 		71F33B492D2BE4A800680699 /* NewsDataRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataRouter.swift; sourceTree = "<group>"; };
 		71F33B4B2D2BE4B500680699 /* MoversDataRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoversDataRouter.swift; sourceTree = "<group>"; };
 		71F33B4D2D2BE7E900680699 /* NewsScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsScreenViewModel.swift; sourceTree = "<group>"; };
+		71F33B4F2D2C005500680699 /* StockChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockChartView.swift; sourceTree = "<group>"; };
+		71F33B512D2C07AD00680699 /* StockPreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPreviewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +258,7 @@
 			children = (
 				712752302CCC1A64003784DD /* MainScreenViewModel.swift */,
 				71F33B4D2D2BE7E900680699 /* NewsScreenViewModel.swift */,
+				71F33B512D2C07AD00680699 /* StockPreviewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -438,6 +443,7 @@
 				71F33B302D2BDFFA00680699 /* TabController.swift */,
 				71F33B322D2BE01100680699 /* TabControllerEventHandling.swift */,
 				71F33B342D2BE02400680699 /* WatchListView.swift */,
+				71F33B4F2D2C005500680699 /* StockChartView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -685,6 +691,7 @@
 				71A6BDD82CCC09AA008BB9C2 /* AppDelegate.swift in Sources */,
 				71A6BDC42CCBFEB2008BB9C2 /* WatchConnector.swift in Sources */,
 				71F33B292D2BDFAC00680699 /* NewsListViewEventHandling.swift in Sources */,
+				71F33B502D2C005500680699 /* StockChartView.swift in Sources */,
 				71A6BDDA2CCC09B5008BB9C2 /* SceneDelegate.swift in Sources */,
 				71F33B4A2D2BE4A800680699 /* NewsDataRouter.swift in Sources */,
 				71A6BDCF2CCC03B4008BB9C2 /* CoreDataController.swift in Sources */,
@@ -704,6 +711,7 @@
 				71F33B252D2BDF7600680699 /* NewsDetailViewEventHandling.swift in Sources */,
 				71F33B2D2D2BDFD500680699 /* StockPreview.swift  .swift in Sources */,
 				712752282CCC1921003784DD /* APIError.swift in Sources */,
+				71F33B522D2C07AD00680699 /* StockPreviewViewModel.swift in Sources */,
 				71F33B422D2BE35E00680699 /* InfoData.swift in Sources */,
 				71F33B4C2D2BE4B500680699 /* MoversDataRouter.swift in Sources */,
 				71F33B462D2BE40700680699 /* NewsData.swift in Sources */,
