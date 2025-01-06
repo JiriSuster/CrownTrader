@@ -28,13 +28,37 @@ struct MainPageView: View {
             }
             TextField("Message text", text: $connector.messageText)
             DatePicker("Date", selection: $connector.messageDate)
-            Button("Send"){
+            Button("Send to watch"){
                 connector.sendToWatch()
             }
-            Button("Show last 5 open prices from yahoo API (btc-usd) bbb"){
-                viewModel.fetchWeatherData()
+            Button("test search"){
+                viewModel.fetchSearch(symbol: "BTC-USD")
             }
-            Text(viewModel.temperature)
+            Text(viewModel.testSearch)
+            
+            Button("test chart"){
+                viewModel.fetchChart(symbol: "BTC-USD")
+            }
+            Text(viewModel.testChart)
+            
+            Button("test info"){
+                viewModel.fetchInfo(symbol: "BTC-USD")
+            }
+            Text(viewModel.testInfo)
+            
+            Divider()
+            
+            Button("test news"){
+                viewModel.fetchNews()
+            }
+            Text(viewModel.testNews)
+            
+            Divider()
+            
+            Button("test movers"){
+                viewModel.fetchMarketMovers(top: 5)
+            }
+            Text(viewModel.testMovers)
         }
         .padding()
         .ignoresSafeArea()

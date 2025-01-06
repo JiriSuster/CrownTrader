@@ -11,7 +11,11 @@ import SwiftUI
 import CoreData
 
 class MainScreenViewModel: ObservableObject{
-    @Published var temperature: String = "empty"
+    @Published var testSearch: String = "empty"
+    @Published var testChart: String = "empty"
+    @Published var testInfo: String = "empty"
+    @Published var testNews: String = "empty"
+    @Published var testMovers: String = "empty"
     private weak var coordinator: MainViewEventHandling?
     let apiManager: APIManaging
     
@@ -34,34 +38,6 @@ class MainScreenViewModel: ObservableObject{
     
 }
 
-extension MainScreenViewModel{
-    @MainActor
-    func fetchWeatherData() {
-
-        Task {
-            do {
-                let weatherData: StockData = try await apiManager.request(
-                    StockDataRouter.cryptoPrice(
-                        symbol: "BTC-USD"
-                    )
-                )
-                let openValues = weatherData.chart.result[0].indicators.quote[0].open
-                let firstFiveValues = openValues.prefix(5)
-                
-                self.temperature = firstFiveValues
-                    .map { String($0 ?? 0) } // prevod na string
-                    .joined(separator: "\n")
-                
-                print(self.temperature)
-
-
-            } catch {
-                print(error)
-            }
-        }
-    }
-}
-
 
 // MARK: Event
 extension MainScreenViewModel {
@@ -77,4 +53,94 @@ extension MainScreenViewModel {
         case didTapNewsItem(NewsItem)
         case didTapStockPreview(StockItem)
     }
+}
+
+extension MainScreenViewModel{ //YAHOO
+    @MainActor
+    func fetchSearch(symbol: String) {
+
+        Task {
+            do {
+                let searchData: SearchData = try await apiManager.request(
+                    StockDataRouter.search(
+                        symbol: symbol
+                    )
+                )
+                self.testSearch = searchData.quotes[0].symbol //example
+                print(self.testSearch)
+
+
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
+    @MainActor
+        func fetchChart(symbol: String) {
+            Task {
+                do {
+                    let chartData: ChartData = try await apiManager.request(
+                        StockDataRouter.chart(
+                            symbol: symbol
+                        )
+                    )
+                    self.testChart = String(chartData.close?[0] ?? 0.0) //example first close price
+                    print(self.testChart)
+                } catch {
+                    print(error)
+                }
+            }
+        }
+    
+    @MainActor
+        func fetchInfo(symbol: String) {
+            Task {
+                do {
+                    let infoData: InfoData = try await apiManager.request(
+                        StockDataRouter.info(
+                            symbol: symbol
+                        )
+                    )
+                    self.testInfo = infoData.longName ?? "?" //example
+                    print(self.testInfo)
+                } catch {
+                    print(error)
+                }
+            }
+        }
+}
+
+extension MainScreenViewModel{ //NEWS
+    @MainActor
+        func fetchNews() {
+            Task {
+                do {
+                    let newsData: NewsData = try await apiManager.request(
+                        NewsDataRouter.search
+                    )
+                    self.testNews = newsData.Data[0].title //example title of first article
+                    print(self.testNews)
+                } catch {
+                    print(error)
+                }
+            }
+        }
+}
+
+extension MainScreenViewModel{ //MOVERS
+    @MainActor
+    func fetchMarketMovers(top: Int) {
+            Task {
+                do {
+                    let moversData: MoversData = try await apiManager.request(
+                        MoversDataRouter.search(top: top)
+                    )
+                    self.testMovers = String(moversData.gainers[0].percent_change) //example
+                    print(self.testMovers)
+                } catch {
+                    print(error)
+                }
+            }
+        }
 }
