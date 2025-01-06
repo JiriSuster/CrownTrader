@@ -30,16 +30,30 @@
 		71A6BD9E2CCBFDA9008BB9C2 /* CrowTrader_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BD9D2CCBFDA9008BB9C2 /* CrowTrader_Watch_AppTests.swift */; };
 		71A6BDA82CCBFDA9008BB9C2 /* CrowTrader_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDA72CCBFDA9008BB9C2 /* CrowTrader_Watch_AppUITests.swift */; };
 		71A6BDAA2CCBFDA9008BB9C2 /* CrowTrader_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDA92CCBFDA9008BB9C2 /* CrowTrader_Watch_AppUITestsLaunchTests.swift */; };
-		71A6BDC22CCBFE3A008BB9C2 /* CrowTraderCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDC12CCBFE3A008BB9C2 /* CrowTraderCoordinator.swift */; };
 		71A6BDC42CCBFEB2008BB9C2 /* WatchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDC32CCBFEB2008BB9C2 /* WatchConnector.swift */; };
 		71A6BDC62CCBFF43008BB9C2 /* PhoneConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDC52CCBFF43008BB9C2 /* PhoneConnector.swift */; };
 		71A6BDC92CCC02F8008BB9C2 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDC82CCC02F8008BB9C2 /* DIContainer.swift */; };
 		71A6BDCC2CCC038E008BB9C2 /* CrowTrader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDCA2CCC038E008BB9C2 /* CrowTrader.xcdatamodeld */; };
 		71A6BDCF2CCC03B4008BB9C2 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDCE2CCC03B4008BB9C2 /* CoreDataController.swift */; };
 		71A6BDD22CCC04DA008BB9C2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDD12CCC04DA008BB9C2 /* Coordinator.swift */; };
-		71A6BDD42CCC05F0008BB9C2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDD32CCC05F0008BB9C2 /* AppCoordinator.swift */; };
 		71A6BDD82CCC09AA008BB9C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDD72CCC09AA008BB9C2 /* AppDelegate.swift */; };
 		71A6BDDA2CCC09B5008BB9C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDD92CCC09B5008BB9C2 /* SceneDelegate.swift */; };
+		71F33B1F2D2BDF1900680699 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B1E2D2BDF1900680699 /* MainPageView.swift */; };
+		71F33B212D2BDF4400680699 /* MainViewEventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B202D2BDF4400680699 /* MainViewEventHandling.swift */; };
+		71F33B232D2BDF5A00680699 /* NewsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B222D2BDF5A00680699 /* NewsDetailView.swift */; };
+		71F33B252D2BDF7600680699 /* NewsDetailViewEventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B242D2BDF7600680699 /* NewsDetailViewEventHandling.swift */; };
+		71F33B272D2BDF8D00680699 /* NewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B262D2BDF8D00680699 /* NewsListView.swift */; };
+		71F33B292D2BDFAC00680699 /* NewsListViewEventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B282D2BDFAC00680699 /* NewsListViewEventHandling.swift */; };
+		71F33B2B2D2BDFC200680699 /* SnapsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B2A2D2BDFC200680699 /* SnapsListView.swift */; };
+		71F33B2D2D2BDFD500680699 /* StockPreview.swift  .swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B2C2D2BDFD500680699 /* StockPreview.swift  .swift */; };
+		71F33B2F2D2BDFE600680699 /* StockPreviewEventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B2E2D2BDFE600680699 /* StockPreviewEventHandling.swift */; };
+		71F33B312D2BDFFA00680699 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B302D2BDFFA00680699 /* TabController.swift */; };
+		71F33B332D2BE01200680699 /* TabControllerEventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B322D2BE01100680699 /* TabControllerEventHandling.swift */; };
+		71F33B352D2BE02400680699 /* WatchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B342D2BE02400680699 /* WatchListView.swift */; };
+		71F33B372D2BE0A900680699 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B362D2BE0A900680699 /* AppCoordinator.swift */; };
+		71F33B392D2BE0BD00680699 /* CrowTraderCoordinator.swift  .swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B382D2BE0BD00680699 /* CrowTraderCoordinator.swift  .swift */; };
+		71F33B3C2D2BE10000680699 /* DetailMarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B3B2D2BE10000680699 /* DetailMarketView.swift */; };
+		71F33B3E2D2BE11000680699 /* MainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B3D2D2BE11000680699 /* MainListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,17 +135,31 @@
 		71A6BDA32CCBFDA9008BB9C2 /* CrowTrader Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CrowTrader Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A6BDA72CCBFDA9008BB9C2 /* CrowTrader_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowTrader_Watch_AppUITests.swift; sourceTree = "<group>"; };
 		71A6BDA92CCBFDA9008BB9C2 /* CrowTrader_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowTrader_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		71A6BDC12CCBFE3A008BB9C2 /* CrowTraderCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowTraderCoordinator.swift; sourceTree = "<group>"; };
 		71A6BDC32CCBFEB2008BB9C2 /* WatchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnector.swift; sourceTree = "<group>"; };
 		71A6BDC52CCBFF43008BB9C2 /* PhoneConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConnector.swift; sourceTree = "<group>"; };
 		71A6BDC82CCC02F8008BB9C2 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		71A6BDCB2CCC038E008BB9C2 /* CrowTrader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CrowTrader.xcdatamodel; sourceTree = "<group>"; };
 		71A6BDCE2CCC03B4008BB9C2 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		71A6BDD12CCC04DA008BB9C2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		71A6BDD32CCC05F0008BB9C2 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		71A6BDD72CCC09AA008BB9C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71A6BDD92CCC09B5008BB9C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		71A6BDDB2CCC1112008BB9C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		71F33B1E2D2BDF1900680699 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
+		71F33B202D2BDF4400680699 /* MainViewEventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewEventHandling.swift; sourceTree = "<group>"; };
+		71F33B222D2BDF5A00680699 /* NewsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailView.swift; sourceTree = "<group>"; };
+		71F33B242D2BDF7600680699 /* NewsDetailViewEventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewEventHandling.swift; sourceTree = "<group>"; };
+		71F33B262D2BDF8D00680699 /* NewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListView.swift; sourceTree = "<group>"; };
+		71F33B282D2BDFAC00680699 /* NewsListViewEventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewEventHandling.swift; sourceTree = "<group>"; };
+		71F33B2A2D2BDFC200680699 /* SnapsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsListView.swift; sourceTree = "<group>"; };
+		71F33B2C2D2BDFD500680699 /* StockPreview.swift  .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StockPreview.swift  .swift"; sourceTree = "<group>"; };
+		71F33B2E2D2BDFE600680699 /* StockPreviewEventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPreviewEventHandling.swift; sourceTree = "<group>"; };
+		71F33B302D2BDFFA00680699 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
+		71F33B322D2BE01100680699 /* TabControllerEventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabControllerEventHandling.swift; sourceTree = "<group>"; };
+		71F33B342D2BE02400680699 /* WatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListView.swift; sourceTree = "<group>"; };
+		71F33B362D2BE0A900680699 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		71F33B382D2BE0BD00680699 /* CrowTraderCoordinator.swift  .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CrowTraderCoordinator.swift  .swift"; sourceTree = "<group>"; };
+		71F33B3B2D2BE10000680699 /* DetailMarketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMarketView.swift; sourceTree = "<group>"; };
+		71F33B3D2D2BE11000680699 /* MainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +272,7 @@
 		71A6BD632CCBFDA7008BB9C2 /* CrowTrader */ = {
 			isa = PBXGroup;
 			children = (
+				71F33B1D2D2BDED600680699 /* View */,
 				7127522F2CCC1A56003784DD /* ViewModels */,
 				712752262CCC1913003784DD /* Networking */,
 				71A6BDDB2CCC1112008BB9C2 /* Info.plist */,
@@ -287,6 +316,7 @@
 		71A6BD8B2CCBFDA8008BB9C2 /* CrowTrader Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				71F33B3A2D2BE0F000680699 /* View */,
 				712752222CCC161A003784DD /* Services */,
 				7127521F2CCC15EB003784DD /* DependencyInjection */,
 				71A6BD8C2CCBFDA8008BB9C2 /* CrowTraderApp.swift */,
@@ -325,8 +355,8 @@
 		71A6BDC02CCBFE22008BB9C2 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				71A6BDD32CCC05F0008BB9C2 /* AppCoordinator.swift */,
-				71A6BDC12CCBFE3A008BB9C2 /* CrowTraderCoordinator.swift */,
+				71F33B362D2BE0A900680699 /* AppCoordinator.swift */,
+				71F33B382D2BE0BD00680699 /* CrowTraderCoordinator.swift  .swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -373,6 +403,34 @@
 				71A6BDC32CCBFEB2008BB9C2 /* WatchConnector.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		71F33B1D2D2BDED600680699 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				71F33B1E2D2BDF1900680699 /* MainPageView.swift */,
+				71F33B202D2BDF4400680699 /* MainViewEventHandling.swift */,
+				71F33B222D2BDF5A00680699 /* NewsDetailView.swift */,
+				71F33B242D2BDF7600680699 /* NewsDetailViewEventHandling.swift */,
+				71F33B262D2BDF8D00680699 /* NewsListView.swift */,
+				71F33B282D2BDFAC00680699 /* NewsListViewEventHandling.swift */,
+				71F33B2A2D2BDFC200680699 /* SnapsListView.swift */,
+				71F33B2C2D2BDFD500680699 /* StockPreview.swift  .swift */,
+				71F33B2E2D2BDFE600680699 /* StockPreviewEventHandling.swift */,
+				71F33B302D2BDFFA00680699 /* TabController.swift */,
+				71F33B322D2BE01100680699 /* TabControllerEventHandling.swift */,
+				71F33B342D2BE02400680699 /* WatchListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		71F33B3A2D2BE0F000680699 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				71F33B3B2D2BE10000680699 /* DetailMarketView.swift */,
+				71F33B3D2D2BE11000680699 /* MainListView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -598,20 +656,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				71A6BDD22CCC04DA008BB9C2 /* Coordinator.swift in Sources */,
+				71F33B2B2D2BDFC200680699 /* SnapsListView.swift in Sources */,
 				71A6BDCC2CCC038E008BB9C2 /* CrowTrader.xcdatamodeld in Sources */,
 				71A6BD672CCBFDA7008BB9C2 /* ContentView.swift in Sources */,
+				71F33B212D2BDF4400680699 /* MainViewEventHandling.swift in Sources */,
 				7127522C2CCC1951003784DD /* Endpoint.swift in Sources */,
+				71F33B372D2BE0A900680699 /* AppCoordinator.swift in Sources */,
+				71F33B332D2BE01200680699 /* TabControllerEventHandling.swift in Sources */,
 				71A6BDD82CCC09AA008BB9C2 /* AppDelegate.swift in Sources */,
 				71A6BDC42CCBFEB2008BB9C2 /* WatchConnector.swift in Sources */,
+				71F33B292D2BDFAC00680699 /* NewsListViewEventHandling.swift in Sources */,
 				71A6BDDA2CCC09B5008BB9C2 /* SceneDelegate.swift in Sources */,
 				71A6BDCF2CCC03B4008BB9C2 /* CoreDataController.swift in Sources */,
 				712752332CCC1E5C003784DD /* StockData.swift in Sources */,
+				71F33B272D2BDF8D00680699 /* NewsListView.swift in Sources */,
+				71F33B312D2BDFFA00680699 /* TabController.swift in Sources */,
 				71A6BDC92CCC02F8008BB9C2 /* DIContainer.swift in Sources */,
+				71F33B352D2BE02400680699 /* WatchListView.swift in Sources */,
+				71F33B392D2BE0BD00680699 /* CrowTraderCoordinator.swift  .swift in Sources */,
 				7127522A2CCC1938003784DD /* APIManaging.swift in Sources */,
-				71A6BDD42CCC05F0008BB9C2 /* AppCoordinator.swift in Sources */,
+				71F33B1F2D2BDF1900680699 /* MainPageView.swift in Sources */,
+				71F33B2F2D2BDFE600680699 /* StockPreviewEventHandling.swift in Sources */,
 				712752312CCC1A64003784DD /* MainScreenViewModel.swift in Sources */,
 				7127522E2CCC1981003784DD /* StockDataRouter.swift in Sources */,
-				71A6BDC22CCBFE3A008BB9C2 /* CrowTraderCoordinator.swift in Sources */,
+				71F33B232D2BDF5A00680699 /* NewsDetailView.swift in Sources */,
+				71F33B252D2BDF7600680699 /* NewsDetailViewEventHandling.swift in Sources */,
+				71F33B2D2D2BDFD500680699 /* StockPreview.swift  .swift in Sources */,
 				712752282CCC1921003784DD /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -637,6 +707,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71F33B3C2D2BE10000680699 /* DetailMarketView.swift in Sources */,
+				71F33B3E2D2BE11000680699 /* MainListView.swift in Sources */,
 				712752252CCC172F003784DD /* CrowTrader.xcdatamodeld in Sources */,
 				71A6BD8F2CCBFDA8008BB9C2 /* ContentView.swift in Sources */,
 				71A6BD8D2CCBFDA8008BB9C2 /* CrowTraderApp.swift in Sources */,

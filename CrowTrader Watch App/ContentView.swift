@@ -9,18 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var connector = PhoneConnector()
+    
     var body: some View {
-        VStack {
-            TextField("Message text", text: $connector.messageText)
-            DatePicker("Date", selection: $connector.messageDate)
-            Button("Send"){
-                connector.sendToPhone()
-            }
-        }
-        .padding()
-        .ignoresSafeArea()
+//        VStack {
+//            TextField("Message text", text: $connector.messageText)
+//            DatePicker("Date", selection: $connector.messageDate)
+//            Button("Send"){
+//                connector.sendToPhone()
+//            }
+//        }
+//        .padding()
+//        .ignoresSafeArea()
+        
+        MainListView(connector: connector)
     }
-}
-#Preview {
-    ContentView()
 }
