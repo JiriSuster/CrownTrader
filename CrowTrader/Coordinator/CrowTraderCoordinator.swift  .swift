@@ -16,7 +16,12 @@ final class CrowTraderCoordinator{
     var childCoordinators: [Coordinator] = []
     let navigationController: UINavigationController
     
-    private lazy var viewModel = MainScreenViewModel(
+    private lazy var mainScreenViewModel = MainScreenViewModel(
+        apiManager: container.apiManager,
+        coordinator: self
+    )
+    
+    private lazy var newsListScreenViewModel = NewsScreenViewModel(
         apiManager: container.apiManager,
         coordinator: self
     )
@@ -42,7 +47,8 @@ private extension CrowTraderCoordinator {
     func makeTabView() -> UIViewController {
         let view = TabController(
             connector: self.connector,
-            viewModel: self.viewModel
+            viewModel: self.mainScreenViewModel,
+            newsListScreenViewModel: self.newsListScreenViewModel
         )
         return UIHostingController(rootView: view)
     }
@@ -69,7 +75,7 @@ private extension CrowTraderCoordinator {
 private extension CrowTraderCoordinator {
     func makeNewsListView() -> UIViewController {
         let view = NewsListView(
-            mainViewModel: self.viewModel, coordinator: self
+            viewModel: self.newsListScreenViewModel, coordinator: self
         )
         return UIHostingController(rootView: view)
     }
@@ -118,6 +124,16 @@ extension CrowTraderCoordinator: NewsDetailViewEventHandling {
 }
 
 extension CrowTraderCoordinator: NewsListViewEventHandling {
+    func handle(event: NewsScreenViewModel.NewsListScreenEvent) {
+        switch event {
+        case let .detailNews(newsItem):
+            let viewController = makeNewsDetailView(newsItem: newsItem)
+            navigationController.present(viewController, animated: true)
+        case .fetch:
+            newsListScreenViewModel.fetchNews()
+        }
+    }
+    
     func handle(event: NewsListView.Event) {
         switch event {
         case .close:

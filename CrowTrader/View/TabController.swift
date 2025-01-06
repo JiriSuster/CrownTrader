@@ -11,6 +11,7 @@ struct TabController: View {
     @State private var selection = 1
     @StateObject var connector : WatchConnector
     @StateObject var viewModel: MainScreenViewModel
+    @StateObject var newsListScreenViewModel: NewsScreenViewModel
     
     enum Event {
             case close
@@ -32,7 +33,7 @@ struct TabController: View {
                 .tabItem {
                     Label("Snaps", systemImage: "chart.bar")
                 }.tag(3)
-            NewsListView(mainViewModel: viewModel)
+            NewsListView(viewModel: newsListScreenViewModel)
                 .tabItem {
                     Label("News", systemImage: "book")
                 }.tag(4)

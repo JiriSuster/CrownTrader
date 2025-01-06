@@ -59,6 +59,7 @@
 		71F33B482D2BE43C00680699 /* MoversData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B472D2BE43C00680699 /* MoversData.swift */; };
 		71F33B4A2D2BE4A800680699 /* NewsDataRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B492D2BE4A800680699 /* NewsDataRouter.swift */; };
 		71F33B4C2D2BE4B500680699 /* MoversDataRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B4B2D2BE4B500680699 /* MoversDataRouter.swift */; };
+		71F33B4E2D2BE7E900680699 /* NewsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B4D2D2BE7E900680699 /* NewsScreenViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +171,7 @@
 		71F33B472D2BE43C00680699 /* MoversData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoversData.swift; sourceTree = "<group>"; };
 		71F33B492D2BE4A800680699 /* NewsDataRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataRouter.swift; sourceTree = "<group>"; };
 		71F33B4B2D2BE4B500680699 /* MoversDataRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoversDataRouter.swift; sourceTree = "<group>"; };
+		71F33B4D2D2BE7E900680699 /* NewsScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsScreenViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				712752302CCC1A64003784DD /* MainScreenViewModel.swift */,
+				71F33B4D2D2BE7E900680699 /* NewsScreenViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 				71F33B212D2BDF4400680699 /* MainViewEventHandling.swift in Sources */,
 				7127522C2CCC1951003784DD /* Endpoint.swift in Sources */,
 				71F33B372D2BE0A900680699 /* AppCoordinator.swift in Sources */,
+				71F33B4E2D2BE7E900680699 /* NewsScreenViewModel.swift in Sources */,
 				71F33B332D2BE01200680699 /* TabControllerEventHandling.swift in Sources */,
 				71A6BDD82CCC09AA008BB9C2 /* AppDelegate.swift in Sources */,
 				71A6BDC42CCBFEB2008BB9C2 /* WatchConnector.swift in Sources */,
