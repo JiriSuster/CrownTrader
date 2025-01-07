@@ -109,9 +109,6 @@ extension CrowTraderCoordinator: TabControllerEventHandling {
 extension CrowTraderCoordinator: MainViewEventHandling {
     func handle(event: MainScreenViewModel.Event) {
         switch event {
-        case let .detailNews(newsItem):
-            let viewController = makeNewsDetailView(newsItem: newsItem)
-            navigationController.present(viewController, animated: true)
         case let .detailStockPreview(stockItem):
             let viewController = makeStockDetailView(stockItem: stockItem)
             navigationController.present(viewController, animated: true)
