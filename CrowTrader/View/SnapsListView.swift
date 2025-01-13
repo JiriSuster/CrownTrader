@@ -9,10 +9,26 @@ import SwiftUI
 import Charts
 
 struct SnapsListView: View {
+    @ObservedObject var viewModel: SnapsViewModel
     
     var body: some View {
-        Text("snaps")
-    
-    }
+            VStack {
+                if viewModel.stockItems.isEmpty {
+                    Text("No stock items available")
+                        .font(.headline)
+                        .foregroundColor(.gray)
+                } else {
+                    ScrollView {
+                        LazyVStack {
+                            ForEach(viewModel.stockItems) { stockItem in
+                                Text(stockItem.title)
+                                Divider()
+                            }
+                        }
+                    }
+                }
+            }
+            .navigationTitle("Stock Items")
+        }
 }
 

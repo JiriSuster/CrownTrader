@@ -30,6 +30,12 @@ final class CrowTraderCoordinator{
         apiManager: container.apiManager
     )
     
+    private lazy var snapsViewModel = SnapsViewModel(
+        apiManager: container.apiManager,
+        snapsService: container.snapsService,
+        coordinator: self
+    )
+    
     init(navigationController: UINavigationController, container: DIContainer) {
         self.container = container
         self.navigationController = navigationController
@@ -52,7 +58,7 @@ private extension CrowTraderCoordinator {
         let view = TabController(
             connector: self.connector,
             viewModel: self.mainScreenViewModel,
-            newsListScreenViewModel: self.newsListScreenViewModel
+            newsListScreenViewModel: self.newsListScreenViewModel, snapsViewModel: self.snapsViewModel
         )
         return UIHostingController(rootView: view)
     }
@@ -142,3 +148,13 @@ extension CrowTraderCoordinator: NewsListViewEventHandling {
         }
     }
 }
+
+extension CrowTraderCoordinator: SnapsListViewEventHandling {
+    func handle(event: SnapsViewModel.SnapsEvent) {
+        /*switch event{ //TODO: add events
+        case .addSampleData:
+            
+        }*/
+    }
+}
+
