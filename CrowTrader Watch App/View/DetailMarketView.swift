@@ -24,6 +24,27 @@ struct DetailMarketView: View {
         MarketItem(price: "34.06", title: "EUR/USD", grow: 0.9)
     ]
     
+    let emptyChartData = ChartData(
+        chart: ChartQuote(
+            result: [
+                ChartResult(
+                    timestamp: [],
+                    indicators: Indicators(
+                        quote: [
+                            Quote(
+                                close: [1,2,4,3],
+                                high: [1,2,4,3],
+                                open: [1,2,4,3],
+                                low: [1,2,4,3],
+                                volume: [1,2,4,3]
+                            )
+                        ]
+                    ),meta: MetaQuote(symbol: "")
+                )
+            ]
+        )
+    )
+    
     var body: some View {
         TabView(selection: $selectedTitle) {
             
@@ -31,9 +52,8 @@ struct DetailMarketView: View {
                 
                 NavigationView{
                     VStack{
-                        Rectangle()
-                            .fill(Color.gray)
-                            .frame(width: 220, height: 100)
+                        StockChartView(data: emptyChartData)
+                            .frame(width: 220,height: 95)
                         
                         HStack{
                             VStack(alignment: .leading){
@@ -61,8 +81,9 @@ struct DetailMarketView: View {
                         }.padding(.horizontal, 1)
                         Spacer()
                         Text(marketStatusText())
-                            .font(.caption2)
+                            .font(.system(size: 10))
                             .foregroundStyle(.gray)
+                            .padding(.bottom,5)
                         
                 }
             }.padding(.top, 1).padding(.horizontal, 8)

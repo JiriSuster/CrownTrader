@@ -66,6 +66,8 @@
 		71F33B4E2D2BE7E900680699 /* NewsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B4D2D2BE7E900680699 /* NewsScreenViewModel.swift */; };
 		71F33B502D2C005500680699 /* StockChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B4F2D2C005500680699 /* StockChartView.swift */; };
 		71F33B522D2C07AD00680699 /* StockPreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B512D2C07AD00680699 /* StockPreviewViewModel.swift */; };
+		887828E92D3EE85C008A99EB /* StockChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B4F2D2C005500680699 /* StockChartView.swift */; };
+		887828EA2D3EE8FD008A99EB /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B3F2D2BE32700680699 /* ChartData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -756,10 +758,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				71F33B3C2D2BE10000680699 /* DetailMarketView.swift in Sources */,
+				887828E92D3EE85C008A99EB /* StockChartView.swift in Sources */,
 				71F33B3E2D2BE11000680699 /* MainListView.swift in Sources */,
 				712752252CCC172F003784DD /* CrowTrader.xcdatamodeld in Sources */,
 				71A6BD8F2CCBFDA8008BB9C2 /* ContentView.swift in Sources */,
 				71A6BD8D2CCBFDA8008BB9C2 /* CrowTraderApp.swift in Sources */,
+				887828EA2D3EE8FD008A99EB /* ChartData.swift in Sources */,
 				712752212CCC1601003784DD /* DIContainer.swift in Sources */,
 				7127521E2CCC15DB003784DD /* CoreDataController.swift in Sources */,
 				71A6BDC62CCBFF43008BB9C2 /* PhoneConnector.swift in Sources */,
