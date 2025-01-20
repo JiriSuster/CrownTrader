@@ -71,6 +71,6 @@ struct StockChartView: View {
         }
         .chartYScale(domain: priceRange.min...priceRange.max)
         .frame(height: 300)
-        .background(Color.black)
+        .background(Color.gray)
     }
 }

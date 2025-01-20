@@ -32,11 +32,11 @@ struct DetailMarketView: View {
                     indicators: Indicators(
                         quote: [
                             Quote(
-                                close: [1,2,4,3],
-                                high: [1,2,4,3],
-                                open: [1,2,4,3],
-                                low: [1,2,4,3],
-                                volume: [1,2,4,3]
+                                close: [],
+                                high: [],
+                                open: [],
+                                low: [],
+                                volume: []
                             )
                         ]
                     ),meta: MetaQuote(symbol: "")
@@ -52,39 +52,41 @@ struct DetailMarketView: View {
                 
                 NavigationView{
                     VStack{
-                        StockChartView(data: emptyChartData)
-                            .frame(width: 220,height: 95)
-                        
-                        HStack{
-                            VStack(alignment: .leading){
-                                if(item.grow < 0){
-                                    Text("\(item.title)").font(.system(size: 15)).foregroundStyle(.red)
-                                    Text("\(item.price)").font(.subheadline).fontWeight(.semibold)
-                                    Text("\(item.grow)").font(.system(size: 10)).foregroundStyle(.red)
-                                }else{
-                                    Text("\(item.title)").font(.system(size: 15)).foregroundStyle(.green)
-                                    Text("\(item.price)").font(.subheadline).fontWeight(.semibold)
-                                    Text("\(item.grow)").font(.system(size: 10)).foregroundStyle(.green)
-                                }
-                            }
-                            Spacer()
-                            Button(action: {
-                                //TODO
-                                
-                                
-                            }){
-                                Image(systemName: "trash")
-                            }.background(.red)
-                            .frame(width: 40, height: 40)
-                            .clipShape(Circle())
+                        VStack{
+                            StockChartView(data: emptyChartData)
+                                .frame(width: 200,height: 90)
+                                .foregroundStyle(.gray)
+                                .cornerRadius(15)
                             
-                        }.padding(.horizontal, 1)
-                        Spacer()
-                        Text(marketStatusText())
-                            .font(.system(size: 10))
-                            .foregroundStyle(.gray)
-                            .padding(.bottom,5)
-                        
+                            HStack{
+                                VStack(alignment: .leading){
+                                    if(item.grow < 0){
+                                        Text("\(item.title)").font(.system(size: 15)).foregroundStyle(.red)
+                                        Text("\(item.price)").font(.subheadline).fontWeight(.semibold)
+                                        Text("\(item.grow)").font(.system(size: 10)).foregroundStyle(.red)
+                                    }else{
+                                        Text("\(item.title)").font(.system(size: 15)).foregroundStyle(.green)
+                                        Text("\(item.price)").font(.subheadline).fontWeight(.semibold)
+                                        Text("\(item.grow)").font(.system(size: 10)).foregroundStyle(.green)
+                                    }
+                                }
+                                Spacer()
+                                Button(action: {
+                                    //TODO
+                                    
+                                    
+                                }){
+                                    Image(systemName: "trash")
+                                }.background(.red)
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                                
+                            }.padding(.horizontal, 1)
+                            Spacer()
+                            Text(marketStatusText())
+                                .font(.system(size: 10))
+                                .foregroundStyle(.gray)
+                        }
                 }
             }.padding(.top, 1).padding(.horizontal, 8)
                 
