@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct StockPreview: View {
+    @Environment(\.dismiss) private var dismiss
     @StateObject var viewModel: StockPreviewViewModel
     @State private var price = ""
+    
+    @State private var selectedTimeframe: String = "1M"
+    
     enum Event {
             case close
         }
@@ -43,19 +47,45 @@ struct StockPreview: View {
         NavigationView{
             VStack{
                 StockChartView(data: viewModel.chartData ?? emptyChartData)
-                    .frame(width: 370,height: 250)
+                    .frame(width: 370,height: 230)
                     .foregroundStyle(.gray)
-                    .padding()
+                    .cornerRadius(15)
+                    .padding(.top, 25)
+  
+                Section{
+                    HStack {
+                                        let timeframes = ["1W","1M", "3M", "6M", "1Y"]
+                                        ForEach(timeframes, id: \.self) { timeframe in
+                                            Button(action: {
+                                                selectedTimeframe = timeframe
+                                            }) {
+                                                Text(timeframe)
+                                                    .fontWeight(selectedTimeframe == timeframe ? .bold : .regular)
+                                                    .padding()
+                                                    .frame(width: 60, height: 40)
+                                                    .background(
+                                                        selectedTimeframe == timeframe ? Color.green : Color.gray.opacity(0.2)
+                                                    )
+                                                    .foregroundColor(
+                                                        selectedTimeframe == timeframe ? .white : .black
+                                                    )
+                                                    .cornerRadius(10)
+                                            }.padding(.horizontal,4)
+
+                                        }
+                                    }
+                                    .padding(.horizontal, 25)
+                }
                 
                 Section{
                     HStack{
                         Text(viewModel.chartData?.symbol ?? "").font(.title)
                         Spacer()
                         VStack(alignment: .trailing){
-                            Text(String(latestPrice))
+                            Text(String(format: "%.2f", latestPrice))
                             Text("+ 3.2%")
                         }
-                    }.padding().background(.yellow)
+                    }.padding().background(.ultraThickMaterial)
                         .cornerRadius(16)
                 }
                 
@@ -69,35 +99,23 @@ struct StockPreview: View {
                             }
                         }.padding(8)
                         HStack{
-                            Text("Price to book").font(.headline)
-                            Spacer()
-                            VStack(alignment: .trailing){
-                                Text("1.2")
-                            }
-                        }.padding(8)
-                        HStack{
                             Text("average 30d").font(.headline)
                             Spacer()
                             VStack(alignment: .trailing){
-                                Text(String(average.thirty))
+                                Text(String(format: "%.2f", average.thirty))
                             }
                         }.padding(8)
                         HStack{
                             Text("average 60d").font(.headline)
                             Spacer()
                             VStack(alignment: .trailing){
-                                Text(String(average.sixty))
+                                Text(String(format: "%.2f", average.sixty))
                             }
                         }.padding(8)
                         
                     }.padding()
-                        .background(.yellow)
+                        .background(.ultraThickMaterial)
                         .cornerRadius(16)
-                }
-                
-                HStack{
-                    Text("Price").font(.headline)
-                    Spacer()
                 }
                 
                 Section{
@@ -130,23 +148,31 @@ struct StockPreview: View {
                 }
                 
             }.padding()
-        }.navigationTitle("AAPL")
-            .toolbar(){
-                ToolbarItem(placement: .topBarLeading){
-                    Button(action: {}){
-                        Text("Cancel").foregroundStyle(.green)
+                .navigationTitle("AAPL")
+                    .toolbar(){
+                        ToolbarItem(placement: .topBarLeading){
+                            Button(action: {
+                                dismiss()
+                            }){
+                                Text("Cancel").foregroundStyle(.green)
+                            }
+                        }
+                        ToolbarItem(placement: .topBarTrailing){
+                            Button(action: {
+                                //todo add to watchlist
+                                dismiss()
+                                
+                            }){
+                                Text("Watch").foregroundStyle(.green)
+                            }
+                        }
+                    }.onAppear(){
+                        Task{
+                            await viewModel.fetchChart(symbol: "aapl")
+                        }
                     }
-                }
-                ToolbarItem(placement: .topBarTrailing){
-                    Button(action: {}){
-                        Text("Watch").foregroundStyle(.green)
-                    }
-                }
-            }.onAppear(){
-                Task{
-                    await viewModel.fetchChart(symbol: "aapl")
-                }
-            }
+        }
+
     }
 }
 /*
