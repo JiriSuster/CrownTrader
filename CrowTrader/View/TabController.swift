@@ -38,7 +38,7 @@ struct TabController: View {
                 .tabItem {
                     Label("News", systemImage: "book")
                 }.tag(4)
-        }
+        }.tint(.green)
         .toolbar {
             ToolbarItem(placement: .principal) {
                 HStack{
