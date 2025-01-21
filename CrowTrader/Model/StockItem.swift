@@ -14,7 +14,6 @@ struct StockItem: Identifiable {
     var price: Double
     var percentChange: Double?
     var ammount: Double
-
     var color: Color {
         guard let percentChange = percentChange else {
             return Color.black //default

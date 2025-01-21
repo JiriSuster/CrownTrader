@@ -67,7 +67,7 @@ struct StockPreview: View {
                                                         selectedTimeframe == timeframe ? Color.green : Color.gray.opacity(0.2)
                                                     )
                                                     .foregroundColor(
-                                                        selectedTimeframe == timeframe ? .white : .black
+                                                        selectedTimeframe == timeframe ? .white : .green
                                                     )
                                                     .cornerRadius(10)
                                             }.padding(.horizontal,4)
