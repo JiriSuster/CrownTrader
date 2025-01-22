@@ -9,6 +9,7 @@ import SwiftUI
 
 struct StockPreview: View {
     @Environment(\.dismiss) private var dismiss
+    var stock: StockItem
     @StateObject var viewModel: StockPreviewViewModel
     @State private var price = ""
     
@@ -72,8 +73,8 @@ struct StockPreview: View {
                         Text(viewModel.chartData?.symbol ?? "").font(.title)
                         Spacer()
                         VStack(alignment: .trailing){
-                            Text(String(format: "%.2f", latestPrice))
-                            Text("+ 3.2%")
+                            Text(String(format: "%.2f", latestPrice)).font(.title).fontWeight(.bold)
+                            Text("+ 3.2%").foregroundStyle(.red)
                         }
                     }.padding().background(.ultraThickMaterial)
                         .cornerRadius(16)
@@ -111,14 +112,14 @@ struct StockPreview: View {
                 Section{
                     TextField("Enter price", text: $price)
                                 .keyboardType(.decimalPad)
-                                .padding(12) // Add padding inside the TextField
+                                .padding(12)
                                 .background(
                                     RoundedRectangle(cornerRadius: 16)
                                         .fill(Color(.systemGray6))
                                 )
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 16)
-                                        .stroke(Color.green, lineWidth: 2) // Green border
+                                        .stroke(Color.green, lineWidth: 2)
                                 )
                                 .shadow(color: Color.black.opacity(0.1), radius: 4, x: 2, y: 2)
                     
@@ -138,7 +139,7 @@ struct StockPreview: View {
                 }
                 
             }.padding()
-                .navigationTitle("AAPL")
+                .navigationTitle(stock.title)
                     .toolbar(){
                         ToolbarItem(placement: .topBarLeading){
                             Button(action: {
@@ -158,7 +159,7 @@ struct StockPreview: View {
                         }
                     }.onAppear(){
                         Task{
-                            await viewModel.fetchChart(symbol: "aapl")
+                            await viewModel.fetchChart(symbol: stock.title)
                         }
                     }
         }
