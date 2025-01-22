@@ -26,7 +26,7 @@ struct TabController: View {
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }.tag(1)
-            WatchListView()
+            WatchListView(viewModel: viewModel)
                 .tabItem {
                     Label("Watchlist", systemImage: "eye")
                 }.tag(2)

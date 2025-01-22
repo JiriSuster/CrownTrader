@@ -15,7 +15,6 @@ struct MainPageView: View {
     @State private var selectedTimeframe: String = "1M"
     @State private var selectedMarketIndex: Int = 0
     
-    @State var marketLogo = []
     
     @State var marketList = [
         StockItem(title: "S$P500", price: 175.32, percentChange: 2.1, ammount: 17),
