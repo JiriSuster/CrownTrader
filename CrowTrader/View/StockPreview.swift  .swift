@@ -60,17 +60,7 @@ struct StockPreview: View {
                                                 selectedTimeframe = timeframe
                                             }) {
                                                 Text(timeframe)
-                                                    .fontWeight(selectedTimeframe == timeframe ? .bold : .regular)
-                                                    .padding()
-                                                    .frame(width: 60, height: 40)
-                                                    .background(
-                                                        selectedTimeframe == timeframe ? Color.green : Color.gray.opacity(0.2)
-                                                    )
-                                                    .foregroundColor(
-                                                        selectedTimeframe == timeframe ? .white : .green
-                                                    )
-                                                    .cornerRadius(10)
-                                            }.padding(.horizontal,4)
+                                            }.buttonStyle(.timeframe(isSelected: selectedTimeframe == timeframe))
 
                                         }
                                     }
@@ -175,8 +165,4 @@ struct StockPreview: View {
 
     }
 }
-/*
-#Preview {
-    StockPreview()
-}
-*/
+

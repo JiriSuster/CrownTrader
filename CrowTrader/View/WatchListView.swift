@@ -20,44 +20,47 @@ struct WatchListView: View {
     
     var body: some View {
         NavigationView{
-            ScrollView{
-            VStack(spacing: 8) {
+            VStack{
                 TextField("Search...", text: $searchText)
-                                .padding(10)
-                                .background(Color(.systemGray6))
-                                .cornerRadius(8)
+                    .padding(10)
+                    .background(Color(.systemGray6))
+                    .cornerRadius(8)
                 HStack{
                     Text("Watchlist").font(.title)
                     Spacer()
                 }.padding(.top, 20)
-                ForEach(watchList, id: \.title) { watchedStock in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(watchedStock.title)
-                                .font(.headline)
-                            Text(watchedStock.title)
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
+                
+                ScrollView{
+                    VStack(spacing: 8) {
+                        
+                        ForEach(watchList, id: \.title) { watchedStock in
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text(watchedStock.title)
+                                        .font(.headline)
+                                    Text(watchedStock.title)
+                                        .font(.subheadline)
+                                        .foregroundColor(.gray)
+                                }
+                                Spacer()
+                                VStack(alignment: .trailing){
+                                    Text("$\(String(format: "%.2f", watchedStock.price))")
+                                        .font(.headline)
+                                    Text("$\(String(format: "%.2f", watchedStock.percentChange!))")
+                                        .font(.body)
+                                        .foregroundColor(watchedStock.color)
+                                }
+                            }
+                            .padding()
+                            .background(Color(.systemGray6))
+                            .cornerRadius(10)
+                            .onTapGesture {
+                                self.viewModel.send(.didTapStockPreview(watchedStock))
+                            }
                         }
-                        Spacer()
-                        VStack(alignment: .trailing){
-                            Text("$\(String(format: "%.2f", watchedStock.price))")
-                                .font(.headline)
-                            Text("$\(String(format: "%.2f", watchedStock.percentChange!))")
-                                .font(.body)
-                                .foregroundColor(watchedStock.color)
-                        }
-                    }
-                    .padding()
-                    .background(Color(.systemGray6))
-                    .cornerRadius(10)
-                    .onTapGesture {
-                        self.viewModel.send(.didTapStockPreview(watchedStock))
                     }
                 }
             }
-        }
-
         }
     }
 }

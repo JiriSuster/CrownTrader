@@ -30,7 +30,7 @@ struct TabController: View {
                 .tabItem {
                     Label("Watchlist", systemImage: "eye")
                 }.tag(2)
-            SnapsListView(viewModel: snapsViewModel)
+            SnapsListView(mainViewModel: viewModel, viewModel: snapsViewModel)
                 .tabItem {
                     Label("Snaps", systemImage: "chart.bar")
                 }.tag(3)

@@ -9,6 +9,7 @@ import Foundation
 class NewsScreenViewModel: ObservableObject{
     private weak var coordinator: NewsListViewEventHandling?
     @Published var newsItems: [NewsItem] = []
+    @Published var isLoading: Bool = true
     let apiManager: APIManaging
     
     init(apiManager: APIManaging, coordinator: NewsListViewEventHandling? = nil) {
@@ -47,6 +48,7 @@ extension NewsScreenViewModel {
 @MainActor
 extension NewsScreenViewModel{
     func fetchNews() {
+        isLoading = true
         Task {
             do {
                 let newsData: NewsData = try await apiManager.request(
@@ -60,9 +62,11 @@ extension NewsScreenViewModel{
                                     )
                                 }
                 self.newsItems = newsItems
+                isLoading = false
             } catch {
                 print(error)
             }
+        
         }
     }
 }

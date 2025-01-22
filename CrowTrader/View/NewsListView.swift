@@ -69,7 +69,14 @@ struct NewsListView: View {
                 }
             }
         }.onAppear(){
+            viewModel.isLoading = true
             viewModel.send(.refetchNews)
+            viewModel.isLoading = true
         }
+        .overlay {
+            if (viewModel.isLoading) {
+                LoadingView()
+            }}
+        
     }
 }
