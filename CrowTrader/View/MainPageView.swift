@@ -16,13 +16,6 @@ struct MainPageView: View {
     @State private var selectedMarketIndex: Int = 0
     
     
-    @State var marketList = [
-        StockItem(title: "S$P500", price: 175.32, percentChange: 2.1, ammount: 17),
-        StockItem(title: "NASDAQ100", price: 175.32,percentChange: -2.1, ammount: 17),
-        StockItem(title: "DOW30", price: 175.32,percentChange: 2.1, ammount: 17),
-        StockItem(title: "JAPAN 225", price: 175.32,percentChange: -2.1, ammount: 17),
-        StockItem(title: "UK 100 index", price: 175.32,percentChange: 2.1, ammount: 17),
-    ]
     
     let pastelColors: [Color] = [
         Color(red: 0.5, green: 0.6, blue: 0.7),
@@ -32,31 +25,12 @@ struct MainPageView: View {
             Color(red: 0.5, green: 0.7, blue: 0.6)
     ]
     
+
     
-    let emptyChartData = ChartData(
-        chart: ChartQuote(
-            result: [
-                ChartResult(
-                    timestamp: [],
-                    indicators: Indicators(
-                        quote: [
-                            Quote(
-                                close: [],
-                                high: [],
-                                open: [],
-                                low: [],
-                                volume: []
-                            )
-                        ]
-                    ),meta: MetaQuote(symbol: "")
-                )
-            ]
-        )
-    )
-    
-    var stockItem = StockItem(title: "remove this", price: 443, ammount: 10)
 
     var body: some View {
+        @State var marketList = viewModel.marketList
+        @State var emptyChartData = viewModel.chartData
             
         VStack {
             
@@ -64,6 +38,9 @@ struct MainPageView: View {
                             .padding(10)
                             .background(Color(.systemGray6))
                             .cornerRadius(8)
+                            .onSubmit {
+                                viewModel.send(.searchConfirmed(searchText))
+                            }
             
             StockChartView(data: emptyChartData)
                 .frame(width: 370,height: 230)
@@ -101,7 +78,7 @@ struct MainPageView: View {
                         VStack(alignment: .leading) {
                             Text(market.title)
                                 .font(.headline)
-                            Text(market.title)
+                            Text(market.symbol)
                                 .font(.subheadline)
                                 .foregroundColor(.gray)
                         }
@@ -109,7 +86,7 @@ struct MainPageView: View {
                         VStack(alignment: .trailing){
                             Text("$\(String(format: "%.2f", market.price))")
                                 .font(.headline)
-                            Text("$\(String(format: "%.2f", market.percentChange!))")
+                            Text("$\(String(format: "%.2f", market.percentChange ?? 0))")
                                 .font(.body)
                                 .foregroundColor(market.color)
                         }
@@ -119,6 +96,10 @@ struct MainPageView: View {
                     .cornerRadius(10)
                     .onTapGesture {
                         selectedMarketIndex = index
+                        viewModel.send(.didTapStock(marketList[selectedMarketIndex]))
+                    }
+                    .onAppear(){
+                        viewModel.send(.appear)
                     }
                 }
             }

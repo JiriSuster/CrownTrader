@@ -17,7 +17,7 @@ class APIManager: APIManaging {
 
         let request = try endpoint.asURLRequest()
         let (data, response) = try await URLSession.shared.data(for: request)
-        debugPrint("Finished request: \(response)")
+        //debugPrint("Finished request: \(response)")
         return try decode(data: data)
     }
 }

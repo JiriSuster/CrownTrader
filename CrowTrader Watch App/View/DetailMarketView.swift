@@ -39,7 +39,7 @@ struct DetailMarketView: View {
                                 volume: []
                             )
                         ]
-                    ),meta: MetaQuote(symbol: "")
+                    ),meta: MetaQuote(symbol: "",shortName: "")
                 )
             ]
         )

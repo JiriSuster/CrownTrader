@@ -119,6 +119,18 @@ extension CrowTraderCoordinator: MainViewEventHandling {
         case let .detailStockPreview(stockItem):
             let viewController = makeStockDetailView(stockItem: stockItem)
             navigationController.present(viewController, animated: true)
+            
+        case let .fetchChart(symbol):
+            mainScreenViewModel.fetchChart(symbol: symbol)
+        case .fetchMarketList:
+            mainScreenViewModel.fetchMarketList()
+        case .initChart:
+            mainScreenViewModel.fetchChart(symbol: mainScreenViewModel.marketList.first?.symbol ?? "BTC-USD")
+        case let .getStockItemFromSymbol(searchQuery):
+            Task {
+                let stockItem = await mainScreenViewModel.getStockItemFromSymbol(symbol: searchQuery)
+                mainScreenViewModel.send(.didTapStockPreview(stockItem))
+            }
         }
     }}
 

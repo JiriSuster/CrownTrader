@@ -11,11 +11,40 @@ import SwiftUI
 import CoreData
 
 class MainScreenViewModel: ObservableObject{
+    @Published var marketList = [
+        StockItem(symbol: "^GSPC",title: "", price: 0, percentChange: 0, ammount: 0),
+        StockItem(symbol: "^NDX",title: "", price: 0,percentChange: 0, ammount: 0),
+        StockItem(symbol: "^DJI",title: "", price: 0,percentChange: 0, ammount: 0),
+        StockItem(symbol: "^N225",title: "", price: 0,percentChange: 0, ammount: 0),
+        StockItem(symbol: "^FTSE",title: "", price: 0,percentChange: 0, ammount: 0),
+    ]
     @Published var testSearch: String = "empty"
     @Published var testChart: String = "empty"
     @Published var testInfo: String = "empty"
     @Published var testNews: String = "empty"
     @Published var testMovers: String = "empty"
+    
+    @Published var chartData = ChartData(
+        chart: ChartQuote(
+            result: [
+                ChartResult(
+                    timestamp: [],
+                    indicators: Indicators(
+                        quote: [
+                            Quote(
+                                close: [],
+                                high: [],
+                                open: [],
+                                low: [],
+                                volume: []
+                            )
+                        ]
+                    ),meta: MetaQuote(symbol: "",shortName: "")
+                )
+            ]
+        )
+    )
+    
     private weak var coordinator: MainViewEventHandling?
     let apiManager: APIManaging
     
@@ -30,6 +59,15 @@ class MainScreenViewModel: ObservableObject{
         case .didTapStockPreview(let stockItem):
             coordinator?.handle(event: .detailStockPreview(stockItem))
 
+        case .didTapStock(let stock):
+            coordinator?.handle(event: .fetchChart(stock.symbol))
+        case .appear:
+            coordinator?.handle(event: .fetchMarketList)
+            coordinator?.handle(event: .initChart)
+        case .searchConfirmed(let searchQuery):
+            coordinator?.handle(event: .getStockItemFromSymbol(searchQuery))
+        case .searchItemClicked:
+            print("todo")
         }
     }
     
@@ -43,6 +81,10 @@ class MainScreenViewModel: ObservableObject{
 extension MainScreenViewModel {
     enum Event {
         case detailStockPreview(StockItem)
+        case initChart
+        case fetchChart(String)
+        case fetchMarketList
+        case getStockItemFromSymbol(String)
     }
 }
 
@@ -50,10 +92,78 @@ extension MainScreenViewModel {
 extension MainScreenViewModel {
     enum Action {
         case didTapStockPreview(StockItem)
+        case didTapStock(StockItem)
+        case appear
+        case searchConfirmed(String)
+        case searchItemClicked //TODO: implement
     }
 }
 
 extension MainScreenViewModel{ //YAHOO
+    
+    @MainActor
+        func fetchChart(symbol: String) {
+            Task {
+                do {
+                    let chartData: ChartData = try await apiManager.request(
+                        StockDataRouter.chart(
+                            symbol: symbol
+                        )
+                    )
+                    self.chartData = chartData
+                } catch {
+                    print(error)
+                }
+            }
+        }
+    
+    @MainActor
+        func fetchMarketList() {
+            Task {
+                do {
+                    var newMarketList: [StockItem] = []
+                    for stockItem in marketList{
+                        let chartData: ChartData = try await apiManager.request(
+                            StockDataRouter.chart(
+                                symbol: stockItem.symbol
+                            )
+                        )
+                        newMarketList.append(StockItem(symbol: stockItem.symbol, title: chartData.name, price: chartData.latestPrice ?? 0, percentChange: chartData.percentChange24Hours ?? 1,ammount: 0))
+                    }
+                    marketList = newMarketList
+                } catch {
+                    print(error)
+                }
+            }
+        }
+    
+    @MainActor
+    func getStockItemFromSymbol(symbol: String) async -> StockItem {
+        do {
+            let chartData: ChartData = try await apiManager.request(
+                StockDataRouter.chart(
+                    symbol: symbol
+                )
+            )
+            let item = StockItem(symbol: chartData.symbol, title: chartData.name, price: chartData.latestPrice ?? 0, ammount: 0)
+            return item
+        } catch {
+            print(error)
+            return StockItem(symbol: "error", title: "error", price: 0, ammount: 0) //TODO: no item  found
+        }
+    }
+    
+    
+    /*
+     for stockItem in marketList{
+         let searchData: SearchData = try await apiManager.request(
+             StockDataRouter.search(
+                 symbol: stockItem.title
+             )
+         )
+     }
+     */
+    /*
     @MainActor
     func fetchSearch(symbol: String) {
 
@@ -73,23 +183,6 @@ extension MainScreenViewModel{ //YAHOO
             }
         }
     }
-    
-    @MainActor
-        func fetchChart(symbol: String) {
-            Task {
-                do {
-                    let chartData: ChartData = try await apiManager.request(
-                        StockDataRouter.chart(
-                            symbol: symbol
-                        )
-                    )
-                    self.testChart = String(chartData.close?[0] ?? 0.0) //example first close price
-                    print(self.testChart)
-                } catch {
-                    print(error)
-                }
-            }
-        }
     
     @MainActor
         func fetchInfo(symbol: String) {
@@ -140,5 +233,6 @@ extension MainScreenViewModel{ //MOVERS
                     print(error)
                 }
             }
-        }
+        } */
 }
+

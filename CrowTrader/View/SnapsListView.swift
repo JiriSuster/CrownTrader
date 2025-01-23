@@ -98,7 +98,7 @@ struct SnapsListView: View {
                 ScrollView{
                     VStack(spacing: 8) {
                         
-                        ForEach(viewModel.stockItems, id: \.title) { stock in
+                        ForEach(viewModel.stockItems) { stock in
                             HStack {
                                 VStack(alignment: .leading) {
                                     Text(stock.title)

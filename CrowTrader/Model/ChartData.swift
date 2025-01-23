@@ -46,6 +46,7 @@ struct Quote: Codable {
 }
 struct MetaQuote: Codable {
     let symbol: String
+    let shortName: String
 }
 
 
@@ -76,6 +77,10 @@ extension ChartData {
 
 extension ChartData{
     //computed for easier access
+    var name: String {
+        chart.result[0].meta.shortName
+        }
+    
     var symbol: String {
         chart.result[0].meta.symbol
         }
@@ -102,5 +107,38 @@ extension ChartData{
     
     var volume: [Int?]? {
         chart.result[0].indicators.quote[0].volume
+        }
+    var latestPrice: Double? {
+        guard let closePrices = close, !closePrices.isEmpty else { return nil }
+        return closePrices.compactMap { $0 }.last
+    }
+    
+
+    var percentChange24Hours: Double? {
+            guard let timestamps = timestamp, !timestamps.isEmpty,
+                  let closes = close, !closes.isEmpty else {
+                return nil
+            }
+            
+            let twentyFourHoursAgo = Date().addingTimeInterval(-86400).timeIntervalSince1970
+            let fromTimestamp = Int(twentyFourHoursAgo)
+            
+            guard let startIndex = timestamps.firstIndex(where: { $0 >= fromTimestamp }) else {
+                return nil
+            }
+            
+            guard startIndex < closes.count,
+                  let yesterdayClose = closes[startIndex],
+                  let latestPrice = closes.last! else {
+                return nil
+            }
+            
+            guard yesterdayClose != 0 else {
+                return nil // Prevent division by zero
+            }
+            
+            let percentageChange = ((latestPrice - yesterdayClose) / yesterdayClose) * 100
+            let roundedChange = (percentageChange * 100).rounded() / 100 // Rounds to two decimal places
+            return roundedChange
         }
 }

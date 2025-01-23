@@ -10,6 +10,7 @@ import SwiftUI
 
 struct StockItem: Identifiable {
     var id = UUID()
+    var symbol: String
     var title: String
     var price: Double
     var percentChange: Double?

@@ -41,6 +41,7 @@ final class SnapsService: SnapsServicing {
 
             return StockItem(
                 id: $0.id ?? UUID(),
+                symbol: "aaa",
                 title: $0.symbol ?? "Unknown",
                 price: Double($0.value * $0.ammount),
                 percentChange: 0, //TODO: Calculate
@@ -60,8 +61,8 @@ final class SnapsService: SnapsServicing {
     }
     
     func addSampleData() {
-        let stock1 = StockItem(title: "AAPL", price: 15, ammount: 25)
-        let stock2 = StockItem(title: "BTC-USD", price: 2000, ammount: 3)
+        let stock1 = StockItem(symbol: "bbb",title: "AAPL", price: 15, ammount: 25)
+        let stock2 = StockItem(symbol: "ccc",title: "BTC-USD", price: 2000, ammount: 3)
         addNewStockItem(stockItem: stock1)
         addNewStockItem(stockItem: stock2)
     }

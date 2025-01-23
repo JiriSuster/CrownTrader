@@ -40,7 +40,7 @@ struct StockPreview: View {
                                     volume: []
                                 )
                             ]
-                        ),meta: MetaQuote(symbol: "")
+                        ),meta: MetaQuote(symbol: "",shortName: "")
                     )
                 ]
             )
@@ -159,7 +159,7 @@ struct StockPreview: View {
                         }
                     }.onAppear(){
                         Task{
-                            await viewModel.fetchChart(symbol: stock.title)
+                            await viewModel.fetchChart(symbol: stock.symbol)
                         }
                     }
         }
