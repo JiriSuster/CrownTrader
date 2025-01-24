@@ -62,7 +62,12 @@ extension WatchListViewModel{
     }
     
     func isInWatchlist(stock: StockItem) -> Bool{
-        return watchList.contains(where: { $0.symbol == stock.symbol })
+        return watchList.contains(where: { $0.symbol == stock.symbol && $0.is_watchlist == true })
+    }
+    
+    func unwatch(stock: StockItem) {
+        stockService.deleteStockItem(stockItem: stock)
+        initWatchList()
     }
     
     @MainActor

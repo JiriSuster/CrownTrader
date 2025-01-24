@@ -15,6 +15,7 @@ protocol StockItemServicing {
     func fetchStockItems() -> [StockItem]
     func addNewStockItem(stockItem: StockItem)
     func addSampleData()
+    func deleteStockItem(stockItem: StockItem)
 }
 
 final class StockItemService: StockItemServicing {
@@ -70,6 +71,21 @@ final class StockItemService: StockItemServicing {
         let stock2 = StockItem(symbol: "ccc",title: "BTC-USD", price: 2000, ammount: 3)
         addNewStockItem(stockItem: stock1)
         addNewStockItem(stockItem: stock2)
+    }
+    
+    func deleteStockItem(stockItem: StockItem) {
+        let request = NSFetchRequest<StockEntity>(entityName: "StockEntity")
+        request.predicate = NSPredicate(format: "symbol == %@ AND is_watchlist == %@", stockItem.symbol, NSNumber(value: true))
+        
+        do {
+            let results = try moc.fetch(request)
+            for entity in results {
+                moc.delete(entity)
+            }
+            save()
+        } catch {
+            print("Error deleting stock item: \(error)")
+        }
     }
 }
 
