@@ -12,7 +12,7 @@ struct MainPageView: View {
     @StateObject var connector : WatchConnector
     @StateObject var viewModel: MainScreenViewModel
     @State private var searchText = ""
-    @State private var selectedTimeframe: String = "1M"
+    @State private var selectedTimeframe: String = "1d"
     @State private var selectedMarketIndex: Int = 0
     
     
@@ -48,13 +48,14 @@ struct MainPageView: View {
                 .cornerRadius(15)
 
             HStack {
-                                let timeframes = ["1W","1M", "3M", "6M", "1Y"]
+                                let timeframes = ["1d", "3mo", "6mo", "1y"]
                                 ForEach(timeframes, id: \.self) { timeframe in
                                     Button(action: {
                                         selectedTimeframe = timeframe
+                                        viewModel.send(.timeframeSelected(marketList[selectedMarketIndex].symbol, selectedTimeframe))
                                     }) {
                                         Text(timeframe)
-                                    }.buttonStyle(.timeframe(isSelected: selectedTimeframe == timeframe))
+                                    }//.buttonStyle(.timeframe(isSelected: selectedTimeframe == timeframe))
 
                                 }
                             }

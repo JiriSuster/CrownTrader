@@ -8,31 +8,85 @@
 import Foundation
 
 class StockPreviewViewModel: ObservableObject{
-    @Published var chartData: ChartData? = nil
+    @Published var stockItem: StockItem? = StockItem(symbol: "", title: "", price: 1,percentChange: 0, ammount: 1)
+    @Published var chartData = ChartData(
+        chart: ChartQuote(
+            result: [
+                ChartResult(
+                    timestamp: [],
+                    indicators: Indicators(
+                        quote: [
+                            Quote(
+                                close: [],
+                                high: [],
+                                open: [],
+                                low: [],
+                                volume: []
+                            )
+                        ]
+                    ),meta: MetaQuote(symbol: "",shortName: "")
+                )
+            ]
+        )
+    )
     @Published var latestPrice: Double = 0
     @Published var average: (thirty: Double, sixty: Double) = (0,0)
     let apiManager: APIManaging
+    private weak var coordinator: StockPreviewEventHandling?
     
-    init(apiManager: APIManaging) {
+    init(apiManager: APIManaging, coordinator: StockPreviewEventHandling? = nil) {
         self.apiManager = apiManager
+        self.coordinator = coordinator 
+    }
+    
+    func send(_ action: Action) {
+        switch action{
+            
+        case .appear(let symbol):
+            coordinator?.handle(event: .fetchChart(symbol))
+        case .timeframeSelected(let symbol, let timeframe):
+            coordinator?.handle(event: .updateTimeFrame(symbol, timeframe))
+        }
+    }
+    
+    
+}
+
+// MARK: Event
+extension StockPreviewViewModel{
+    enum Event{
+        case updateTimeFrame(String, String)
+        case fetchChart(String)
+        case close
+    }
+}
+
+// MARK: Action
+extension StockPreviewViewModel{
+    enum Action{
+        case appear(String)
+        case timeframeSelected(String, String)
+        
     }
 }
 
 //MARK: API
 @MainActor
 extension StockPreviewViewModel {
-    func fetchChart(symbol: String) async {
-        do {
-            let chartDataResponse: ChartData = try await apiManager.request(
-                StockDataRouter.chart(
-                    symbol: symbol
+    @MainActor
+    func fetchChart(symbol: String, timeframe: String? = "1d") {
+        Task{
+            do {
+                let chartDataResponse: ChartData = try await apiManager.request(
+                    StockDataRouter.chart(
+                        symbol: symbol, timeframe: timeframe
+                    )
                 )
-            )
-            self.chartData = chartDataResponse
-            self.getLatestPrice()
-            self.setAverage()
-        } catch {
-            print(error)
+                self.chartData = chartDataResponse
+                self.setAverage() //TODO: move out
+            } catch {
+                print(error)
+            }
         }
     }
 }
@@ -42,24 +96,11 @@ extension StockPreviewViewModel {
 @MainActor
 extension StockPreviewViewModel{
     func getLatestPrice() {
-            guard let chartData = chartData,
-                  let closePrices = chartData.close else {
-                print("No data available for the given symbol.")
-                return
-            }
-            
-            for index in stride(from: closePrices.count - 1, through: 0, by: -1) {
-                if let close = closePrices[index]{
-                    self.latestPrice = close
-                    return
-                }
-            }
-
-            print("All data points are null for the given symbol.")
+            latestPrice = chartData.latestPrice ?? 0
         }
     
     private func getAverage(days: Int) -> Double {
-            guard let chartData = chartData,
+            guard
                   let closePrices = chartData.close else {
                 print("No data available for the given symbol.")
                 return -1.0

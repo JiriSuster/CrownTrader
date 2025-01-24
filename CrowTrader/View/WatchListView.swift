@@ -11,7 +11,7 @@ struct WatchListView: View {
     @StateObject var viewModel: MainScreenViewModel
     @State private var searchText = ""
     @State var watchList = [
-        StockItem(symbol: "watchlist",title: "AAPL", price: 175.32, percentChange: 2.1, ammount: 17),
+        StockItem(symbol: "AAPL",title: "AAPL", price: 175.32, percentChange: 2.1, ammount: 17),
         StockItem(symbol: "watchlist",title: "NVDA", price: 175.32,percentChange: -2.1, ammount: 17),
         StockItem(symbol: "watchlist",title: "AMZN", price: 175.32,percentChange: 2.1, ammount: 17),
         StockItem(symbol: "watchlist",title: "CO", price: 175.32,percentChange: -2.1, ammount: 17),

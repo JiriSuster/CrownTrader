@@ -27,7 +27,8 @@ final class CrowTraderCoordinator{
     )
     
     private lazy var stockPreviewViewModel = StockPreviewViewModel(
-        apiManager: container.apiManager
+        apiManager: container.apiManager,
+        coordinator: self
     )
     
     private lazy var snapsViewModel = SnapsViewModel(
@@ -65,9 +66,8 @@ private extension CrowTraderCoordinator {
 }
 
 private extension CrowTraderCoordinator {
-    func makeStockDetailView(stockItem: StockItem) -> UIViewController {
+    func makeStockDetailView() -> UIViewController {
         let view = StockPreview(
-            stock: stockItem,
             viewModel: self.stockPreviewViewModel
         )
         return UIHostingController(rootView: view)
@@ -96,10 +96,14 @@ private extension CrowTraderCoordinator {
 
 // MARK: Navigating
 extension CrowTraderCoordinator: StockPreviewEventHandling {
-    func handle(event: StockPreview.Event) {
+    func handle(event: StockPreviewViewModel.Event) {
         switch event {
         case .close:
             navigationController.topViewController?.dismiss(animated: true)
+        case .updateTimeFrame(let symbol, let timeframe):
+                stockPreviewViewModel.fetchChart(symbol: symbol, timeframe: timeframe)
+        case .fetchChart(let symbol):
+                stockPreviewViewModel.fetchChart(symbol: symbol)
         }
     }
 }
@@ -117,7 +121,8 @@ extension CrowTraderCoordinator: MainViewEventHandling {
     func handle(event: MainScreenViewModel.Event) {
         switch event {
         case let .detailStockPreview(stockItem):
-            let viewController = makeStockDetailView(stockItem: stockItem)
+            let viewController = makeStockDetailView()
+            stockPreviewViewModel.stockItem = stockItem
             navigationController.present(viewController, animated: true)
             
         case let .fetchChart(symbol):
@@ -131,6 +136,8 @@ extension CrowTraderCoordinator: MainViewEventHandling {
                 let stockItem = await mainScreenViewModel.getStockItemFromSymbol(symbol: searchQuery)
                 mainScreenViewModel.send(.didTapStockPreview(stockItem))
             }
+        case let .updateTimeFrame(symbol, timeframe):
+            mainScreenViewModel.fetchChart(symbol: symbol, timeframe: timeframe)
         }
     }}
 

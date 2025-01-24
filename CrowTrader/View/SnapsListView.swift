@@ -118,7 +118,7 @@ struct SnapsListView: View {
                                     }
                                     Button(action: {}){
                                         Text("Sell")
-                                    }.buttonStyle(.dismissCrownButtonStyle)
+                                    }//.buttonStyle(.dismissCrownButtonStyle)
                                 }
                                 
                             }

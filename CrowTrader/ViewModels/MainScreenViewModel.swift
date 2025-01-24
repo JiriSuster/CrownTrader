@@ -68,6 +68,8 @@ class MainScreenViewModel: ObservableObject{
             coordinator?.handle(event: .getStockItemFromSymbol(searchQuery))
         case .searchItemClicked:
             print("todo")
+        case .timeframeSelected(let symbol, let timeframe):
+            coordinator?.handle(event: .updateTimeFrame(symbol, timeframe))
         }
     }
     
@@ -85,6 +87,7 @@ extension MainScreenViewModel {
         case fetchChart(String)
         case fetchMarketList
         case getStockItemFromSymbol(String)
+        case updateTimeFrame(String, String)
     }
 }
 
@@ -96,18 +99,19 @@ extension MainScreenViewModel {
         case appear
         case searchConfirmed(String)
         case searchItemClicked //TODO: implement
+        case timeframeSelected(String, String)
     }
 }
 
 extension MainScreenViewModel{ //YAHOO
     
     @MainActor
-        func fetchChart(symbol: String) {
+    func fetchChart(symbol: String, timeframe: String? = "1d") {
             Task {
                 do {
                     let chartData: ChartData = try await apiManager.request(
                         StockDataRouter.chart(
-                            symbol: symbol
+                            symbol: symbol, timeframe: timeframe
                         )
                     )
                     self.chartData = chartData
@@ -125,7 +129,7 @@ extension MainScreenViewModel{ //YAHOO
                     for stockItem in marketList{
                         let chartData: ChartData = try await apiManager.request(
                             StockDataRouter.chart(
-                                symbol: stockItem.symbol
+                                symbol: stockItem.symbol, timeframe: "1d"
                             )
                         )
                         newMarketList.append(StockItem(symbol: stockItem.symbol, title: chartData.name, price: chartData.latestPrice ?? 0, percentChange: chartData.percentChange24Hours ?? 1,ammount: 0))
@@ -142,10 +146,10 @@ extension MainScreenViewModel{ //YAHOO
         do {
             let chartData: ChartData = try await apiManager.request(
                 StockDataRouter.chart(
-                    symbol: symbol
+                    symbol: symbol, timeframe: "1d"
                 )
             )
-            let item = StockItem(symbol: chartData.symbol, title: chartData.name, price: chartData.latestPrice ?? 0, ammount: 0)
+            let item = StockItem(symbol: chartData.symbol, title: chartData.name, price: chartData.latestPrice ?? 0,percentChange: chartData.percentChange24Hours, ammount: 0)
             return item
         } catch {
             print(error)

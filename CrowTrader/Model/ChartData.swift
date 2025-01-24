@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct ChartPoint: Identifiable {
     let id = UUID()
@@ -141,4 +142,10 @@ extension ChartData{
             let roundedChange = (percentageChange * 100).rounded() / 100 // Rounds to two decimal places
             return roundedChange
         }
+    var color: Color {
+        guard let percentChange = self.percentChange24Hours else {
+            return Color.black //default
+        }
+        return percentChange > 0 ? Color.green : Color.red
+    }
 }

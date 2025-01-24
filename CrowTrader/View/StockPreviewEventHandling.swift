@@ -7,5 +7,5 @@
 
 import Foundation
 protocol StockPreviewEventHandling: AnyObject {
-    func handle(event: StockPreview.Event)
+    func handle(event: StockPreviewViewModel.Event)
 }

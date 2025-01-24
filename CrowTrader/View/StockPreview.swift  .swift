@@ -9,45 +9,23 @@ import SwiftUI
 
 struct StockPreview: View {
     @Environment(\.dismiss) private var dismiss
-    var stock: StockItem
     @StateObject var viewModel: StockPreviewViewModel
     @State private var price = ""
     
-    @State private var selectedTimeframe: String = "1M"
+    @State private var selectedTimeframe: String = "1d"
     
-    enum Event {
-            case close
-        }
     weak var coordinator: StockPreviewEventHandling?
     
 
     
     var body: some View {
-        let latestPrice = viewModel.latestPrice
+        let stock = viewModel.stockItem ?? StockItem(symbol: "", title: "", price: 1, ammount: 1)
+        let latestPrice = viewModel.stockItem?.price ?? 0
         let average = viewModel.average
-        let emptyChartData = ChartData(
-            chart: ChartQuote(
-                result: [
-                    ChartResult(
-                        timestamp: [],
-                        indicators: Indicators(
-                            quote: [
-                                Quote(
-                                    close: [],
-                                    high: [],
-                                    open: [],
-                                    low: [],
-                                    volume: []
-                                )
-                            ]
-                        ),meta: MetaQuote(symbol: "",shortName: "")
-                    )
-                ]
-            )
-        )
+
         NavigationView{
             VStack{
-                StockChartView(data: viewModel.chartData ?? emptyChartData)
+                StockChartView(data: viewModel.chartData)
                     .frame(width: 370,height: 230)
                     .foregroundStyle(.gray)
                     .cornerRadius(15)
@@ -55,13 +33,15 @@ struct StockPreview: View {
   
                 Section{
                     HStack {
-                                        let timeframes = ["1W","1M", "3M", "6M", "1Y"]
+                                        let timeframes = ["1d", "3mo", "6mo", "1y"]
                                         ForEach(timeframes, id: \.self) { timeframe in
                                             Button(action: {
                                                 selectedTimeframe = timeframe
+                                                viewModel.send(.timeframeSelected(stock.symbol, selectedTimeframe))
+                                                //viewModel.fetchChart(symbol: stock.symbol, timeframe: selectedTimeframe)
                                             }) {
                                                 Text(timeframe)
-                                            }.buttonStyle(.timeframe(isSelected: selectedTimeframe == timeframe))
+                                            }//.buttonStyle(.timeframe(isSelected: selectedTimeframe == timeframe))
 
                                         }
                                     }
@@ -70,11 +50,11 @@ struct StockPreview: View {
                 
                 Section{
                     HStack{
-                        Text(viewModel.chartData?.symbol ?? "").font(.title)
+                        Text(viewModel.stockItem?.symbol ?? "").font(.title)
                         Spacer()
                         VStack(alignment: .trailing){
                             Text(String(format: "%.2f", latestPrice)).font(.title).fontWeight(.bold)
-                            Text("+ 3.2%").foregroundStyle(.red)
+                            Text(String(viewModel.stockItem?.percentChange ?? 0) + "%").foregroundStyle(viewModel.stockItem?.color ?? Color.white)
                         }
                     }.padding().background(.ultraThickMaterial)
                         .cornerRadius(16)
@@ -158,9 +138,7 @@ struct StockPreview: View {
                             }
                         }
                     }.onAppear(){
-                        Task{
-                            await viewModel.fetchChart(symbol: stock.symbol)
-                        }
+                        viewModel.send(.appear(stock.symbol))
                     }
         }
 
