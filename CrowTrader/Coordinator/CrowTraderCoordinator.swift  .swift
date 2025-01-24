@@ -112,8 +112,16 @@ extension CrowTraderCoordinator: StockPreviewEventHandling {
                 stockPreviewViewModel.fetchChart(symbol: symbol)
         case .addToWatchlist(var stock):
             stock.is_watchlist = true
+            stock.is_snaps = false
             //TODO: navigate to watchlistview
             watchListViewModel.addStockToWatchList(stock: stock)
+            watchListViewModel.fetchWatchList()
+        case .addToSnapslist(var stock):
+            //TODO: navigate to snapslistview
+            stock.is_snaps = true
+            stock.is_watchlist = false
+            snapsViewModel.addStockToSnapsList(stock: stock)
+            snapsViewModel.fetchSnapsList()
         }
     }
 }
@@ -196,10 +204,17 @@ extension CrowTraderCoordinator: NewsListViewEventHandling {
 
 extension CrowTraderCoordinator: SnapsListViewEventHandling {
     func handle(event: SnapsViewModel.SnapsEvent) {
-        /*switch event{ //TODO: add events
-        case .addSampleData:
+        switch event{
             
-        }*/
+        case .detailStockPreview(let stockItem):
+            let viewController = makeStockDetailView()
+            stockPreviewViewModel.stockItem = stockItem
+            navigationController.present(viewController, animated: true)
+        case .initSnapsList:
+            snapsViewModel.initSnapsList()
+        case .fetchSnapsList:
+            snapsViewModel.fetchSnapsList()
+        }
     }
 }
 

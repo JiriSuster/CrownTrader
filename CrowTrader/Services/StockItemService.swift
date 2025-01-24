@@ -16,6 +16,8 @@ protocol StockItemServicing {
     func addNewStockItem(stockItem: StockItem)
     func addSampleData()
     func deleteStockItem(stockItem: StockItem)
+    func fetchSnapsItems() -> [StockItem]
+    func fetchWatchlistItems() -> [StockItem]
 }
 
 final class StockItemService: StockItemServicing {
@@ -47,10 +49,26 @@ final class StockItemService: StockItemServicing {
                 percentChange: 0, //TODO: Calculate
                 ammount: Double($0.ammount),
                 is_watchlist: $0.is_watchlist,
-                is_snaps: $0.is_watchlist,
+                is_snaps: $0.is_snaps,
                 profit: Double($0.value * $0.ammount)
             )
         }
+    }
+    
+    func fetchWatchlistItems() -> [StockItem]{
+        return fetchStockItems().filter { stockItem in
+            stockItem.is_watchlist ?? false
+        }
+    }
+    
+    func fetchSnapsItems() -> [StockItem]{
+        let sitems =  fetchStockItems().filter { stockItem in
+            stockItem.is_snaps ?? false
+        }
+        sitems.forEach { item in
+            debugPrint(item.symbol)
+        }
+        return sitems
     }
     
     func addNewStockItem(stockItem: StockItem) {
@@ -62,7 +80,6 @@ final class StockItemService: StockItemServicing {
         newStock.is_watchlist = stockItem.is_watchlist ?? false
         newStock.is_snaps = stockItem.is_snaps ?? false
         newStock.price = stockItem.price
-        
         save()
     }
     
@@ -74,8 +91,17 @@ final class StockItemService: StockItemServicing {
     }
     
     func deleteStockItem(stockItem: StockItem) {
+        var query: String = ""
+        if(stockItem.is_watchlist ?? false){
+            query = "is_watchlist"
+        }else   if(stockItem.is_snaps ?? false){
+            query = "is_snaps"
+        }else{
+            print("no stockitems to delete")
+            return
+        }
         let request = NSFetchRequest<StockEntity>(entityName: "StockEntity")
-        request.predicate = NSPredicate(format: "symbol == %@ AND is_watchlist == %@", stockItem.symbol, NSNumber(value: true))
+        request.predicate = NSPredicate(format: "symbol == %@ AND \(query) == %@", stockItem.symbol, NSNumber(value: true))
         
         do {
             let results = try moc.fetch(request)
@@ -87,6 +113,20 @@ final class StockItemService: StockItemServicing {
             print("Error deleting stock item: \(error)")
         }
     }
+    
+    func deleteAllStockItems() {
+            let request = NSFetchRequest<StockEntity>(entityName: "StockEntity")
+            
+            do {
+                let results = try moc.fetch(request)
+                for entity in results {
+                    moc.delete(entity)
+                }
+                save()
+            } catch {
+                print("Error deleting all stock items: \(error)")
+            }
+        }
 }
 
 private extension StockItemService {
@@ -94,6 +134,7 @@ private extension StockItemService {
         if moc.hasChanges{
             do {
                 try moc.save()
+                debugPrint("saved to coredata successfuly")
             } catch {
                 print("Cannot save MOC: \(error.localizedDescription)")
             }

@@ -19,6 +19,7 @@ class WatchListViewModel: ObservableObject{
         
         Task{
             self.initWatchList()
+            await self.fetchWatchList()
         }
     }
     
@@ -52,7 +53,7 @@ extension WatchListViewModel{
 extension WatchListViewModel{
     
     func initWatchList(){
-        self.watchList = stockService.fetchStockItems()
+        self.watchList = stockService.fetchWatchlistItems()
     }
     
     func addStockToWatchList(stock: StockItem) {
@@ -81,7 +82,7 @@ extension WatchListViewModel{
                                 symbol: stockItem.symbol, timeframe: "1d"
                             )
                         )
-                        newMarketList.append(StockItem(symbol: stockItem.symbol, title: chartData.name, price: chartData.latestPrice ?? 0, percentChange: chartData.percentChange24Hours ?? 1,ammount: 0))
+                        newMarketList.append(StockItem(symbol: stockItem.symbol, title: chartData.name, price: chartData.latestPrice ?? 0, percentChange: chartData.percentChange24Hours ?? 1,ammount: 0,is_watchlist: true))
                     }
                     watchList = newMarketList
                 } catch {
