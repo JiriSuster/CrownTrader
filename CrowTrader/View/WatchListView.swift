@@ -8,17 +8,11 @@
 import SwiftUI
 
 struct WatchListView: View {
-    @StateObject var viewModel: MainScreenViewModel
+    @StateObject var viewModel: WatchListViewModel
     @State private var searchText = ""
-    @State var watchList = [
-        StockItem(symbol: "AAPL",title: "AAPL", price: 175.32, percentChange: 2.1, ammount: 17),
-        StockItem(symbol: "watchlist",title: "NVDA", price: 175.32,percentChange: -2.1, ammount: 17),
-        StockItem(symbol: "watchlist",title: "AMZN", price: 175.32,percentChange: 2.1, ammount: 17),
-        StockItem(symbol: "watchlist",title: "CO", price: 175.32,percentChange: -2.1, ammount: 17),
-        StockItem(symbol: "watchlist",title: "K", price: 175.32,percentChange: 2.1, ammount: 17),
-    ]
     
     var body: some View {
+        @State var watchList = viewModel.watchList
         NavigationView{
             VStack{
                 TextField("Search...", text: $searchText)
@@ -38,7 +32,7 @@ struct WatchListView: View {
                                 VStack(alignment: .leading) {
                                     Text(watchedStock.title)
                                         .font(.headline)
-                                    Text(watchedStock.title)
+                                    Text(watchedStock.symbol)
                                         .font(.subheadline)
                                         .foregroundColor(.gray)
                                 }
@@ -46,7 +40,7 @@ struct WatchListView: View {
                                 VStack(alignment: .trailing){
                                     Text("$\(String(format: "%.2f", watchedStock.price))")
                                         .font(.headline)
-                                    Text("$\(String(format: "%.2f", watchedStock.percentChange!))")
+                                    Text("$\(String(format: "%.2f", watchedStock.percentChange ?? 0))")
                                         .font(.body)
                                         .foregroundColor(watchedStock.color)
                                 }
@@ -60,6 +54,8 @@ struct WatchListView: View {
                         }
                     }
                 }
+            }.onAppear(){
+                viewModel.send(.appear)
             }
         }
     }

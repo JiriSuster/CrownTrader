@@ -11,11 +11,11 @@ import Foundation
 final class DIContainer {
     let coreDataController: CoreDataController
     let apiManager: APIManaging
-    let snapsService: SnapsService
+    let stockService: StockItemService
 
     init(){
         self.coreDataController = CoreDataController()
         self.apiManager = APIManager()
-        self.snapsService = SnapsService(moc: coreDataController.container.viewContext)
+        self.stockService = StockItemService(moc: coreDataController.container.viewContext)
     }
 }

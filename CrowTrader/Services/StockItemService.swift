@@ -10,14 +10,14 @@ import CoreData
 import Foundation
 import UIKit
 
-protocol SnapsServicing {
+protocol StockItemServicing {
     func fetchStocks() -> [StockEntity]
     func fetchStockItems() -> [StockItem]
     func addNewStockItem(stockItem: StockItem)
     func addSampleData()
 }
 
-final class SnapsService: SnapsServicing {
+final class StockItemService: StockItemServicing {
     private let moc: NSManagedObjectContext
 
     init(moc: NSManagedObjectContext) {
@@ -38,24 +38,29 @@ final class SnapsService: SnapsServicing {
     
     func fetchStockItems() -> [StockItem] {
         fetchStocks().map {
-
             return StockItem(
                 id: $0.id ?? UUID(),
-                symbol: "aaa",
+                symbol: $0.symbol ?? "no symbol",
                 title: $0.symbol ?? "Unknown",
-                price: Double($0.value * $0.ammount),
+                price: $0.price,
                 percentChange: 0, //TODO: Calculate
-                ammount: Double($0.ammount)
+                ammount: Double($0.ammount),
+                is_watchlist: $0.is_watchlist,
+                is_snaps: $0.is_watchlist,
+                profit: Double($0.value * $0.ammount)
             )
         }
     }
     
     func addNewStockItem(stockItem: StockItem) {
         let newStock = StockEntity(context: moc)
-        newStock.id = stockItem.id
+        newStock.id = UUID()
         newStock.ammount = Int16(stockItem.ammount)
         newStock.percent_change = Int16(stockItem.percentChange ?? 0)
-        newStock.symbol = stockItem.title
+        newStock.symbol = stockItem.symbol
+        newStock.is_watchlist = stockItem.is_watchlist ?? false
+        newStock.is_snaps = stockItem.is_snaps ?? false
+        newStock.price = stockItem.price
         
         save()
     }
@@ -68,7 +73,7 @@ final class SnapsService: SnapsServicing {
     }
 }
 
-private extension SnapsService {
+private extension StockItemService {
     func save() {
         if moc.hasChanges{
             do {

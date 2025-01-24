@@ -15,6 +15,8 @@
 		7127522C2CCC1951003784DD /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7127522B2CCC1951003784DD /* Endpoint.swift */; };
 		7127522E2CCC1981003784DD /* StockDataRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7127522D2CCC1981003784DD /* StockDataRouter.swift */; };
 		712752312CCC1A64003784DD /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712752302CCC1A64003784DD /* MainScreenViewModel.swift */; };
+		713ACB792D43CEC30085D8C9 /* WatchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713ACB782D43CEC30085D8C9 /* WatchListViewModel.swift */; };
+		713ACB7B2D43D1910085D8C9 /* WatchListEventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713ACB7A2D43D1910085D8C9 /* WatchListEventHandling.swift */; };
 		71A6BD692CCBFDA8008BB9C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71A6BD682CCBFDA8008BB9C2 /* Assets.xcassets */; };
 		71A6BD6C2CCBFDA8008BB9C2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71A6BD6B2CCBFDA8008BB9C2 /* Preview Assets.xcassets */; };
 		71A6BD762CCBFDA8008BB9C2 /* CrowTraderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BD752CCBFDA8008BB9C2 /* CrowTraderTests.swift */; };
@@ -38,7 +40,7 @@
 		71A6BDDA2CCC09B5008BB9C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDD92CCC09B5008BB9C2 /* SceneDelegate.swift */; };
 		71D6E2432D353C9E0014F18F /* StockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6E2422D353C9E0014F18F /* StockItem.swift */; };
 		71D6E2452D353F160014F18F /* SnapsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6E2442D353F160014F18F /* SnapsViewModel.swift */; };
-		71D6E2472D3542990014F18F /* SnapsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6E2462D3542990014F18F /* SnapsService.swift */; };
+		71D6E2472D3542990014F18F /* StockItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6E2462D3542990014F18F /* StockItemService.swift */; };
 		71D6E24C2D354C180014F18F /* SnapsListViewEventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6E24B2D354C180014F18F /* SnapsListViewEventHandling.swift */; };
 		71DB70282D429C8D00E7B021 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DB70272D429C8D00E7B021 /* LoadingView.swift */; };
 		71F33B1F2D2BDF1900680699 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B1E2D2BDF1900680699 /* MainPageView.swift */; };
@@ -130,6 +132,8 @@
 		7127522B2CCC1951003784DD /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		7127522D2CCC1981003784DD /* StockDataRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDataRouter.swift; sourceTree = "<group>"; };
 		712752302CCC1A64003784DD /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
+		713ACB782D43CEC30085D8C9 /* WatchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViewModel.swift; sourceTree = "<group>"; };
+		713ACB7A2D43D1910085D8C9 /* WatchListEventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListEventHandling.swift; sourceTree = "<group>"; };
 		71A6BD612CCBFDA7008BB9C2 /* CrowTrader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrowTrader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A6BD682CCBFDA8008BB9C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71A6BD6B2CCBFDA8008BB9C2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -159,7 +163,7 @@
 		71A6BDDB2CCC1112008BB9C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		71D6E2422D353C9E0014F18F /* StockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItem.swift; sourceTree = "<group>"; };
 		71D6E2442D353F160014F18F /* SnapsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsViewModel.swift; sourceTree = "<group>"; };
-		71D6E2462D3542990014F18F /* SnapsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsService.swift; sourceTree = "<group>"; };
+		71D6E2462D3542990014F18F /* StockItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItemService.swift; sourceTree = "<group>"; };
 		71D6E24B2D354C180014F18F /* SnapsListViewEventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsListViewEventHandling.swift; sourceTree = "<group>"; };
 		71DB70272D429C8D00E7B021 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		71F33B1E2D2BDF1900680699 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 				71F33B4D2D2BE7E900680699 /* NewsScreenViewModel.swift */,
 				71F33B512D2C07AD00680699 /* StockPreviewViewModel.swift */,
 				71D6E2442D353F160014F18F /* SnapsViewModel.swift */,
+				713ACB782D43CEC30085D8C9 /* WatchListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -438,7 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				71A6BDC32CCBFEB2008BB9C2 /* WatchConnector.swift */,
-				71D6E2462D3542990014F18F /* SnapsService.swift */,
+				71D6E2462D3542990014F18F /* StockItemService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -461,6 +466,7 @@
 				71F33B342D2BE02400680699 /* WatchListView.swift */,
 				71F33B4F2D2C005500680699 /* StockChartView.swift */,
 				71D6E24B2D354C180014F18F /* SnapsListViewEventHandling.swift */,
+				713ACB7A2D43D1910085D8C9 /* WatchListEventHandling.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -702,8 +708,10 @@
 				71A6BDCC2CCC038E008BB9C2 /* CrowTrader.xcdatamodeld in Sources */,
 				71F33B212D2BDF4400680699 /* MainViewEventHandling.swift in Sources */,
 				7127522C2CCC1951003784DD /* Endpoint.swift in Sources */,
+				713ACB792D43CEC30085D8C9 /* WatchListViewModel.swift in Sources */,
 				71F33B372D2BE0A900680699 /* AppCoordinator.swift in Sources */,
 				71F33B4E2D2BE7E900680699 /* NewsScreenViewModel.swift in Sources */,
+				713ACB7B2D43D1910085D8C9 /* WatchListEventHandling.swift in Sources */,
 				71F33B332D2BE01200680699 /* TabControllerEventHandling.swift in Sources */,
 				71A6BDD82CCC09AA008BB9C2 /* AppDelegate.swift in Sources */,
 				71D6E2452D353F160014F18F /* SnapsViewModel.swift in Sources */,
@@ -735,7 +743,7 @@
 				71F33B522D2C07AD00680699 /* StockPreviewViewModel.swift in Sources */,
 				71F33B422D2BE35E00680699 /* InfoData.swift in Sources */,
 				71F33B4C2D2BE4B500680699 /* MoversDataRouter.swift in Sources */,
-				71D6E2472D3542990014F18F /* SnapsService.swift in Sources */,
+				71D6E2472D3542990014F18F /* StockItemService.swift in Sources */,
 				71F33B462D2BE40700680699 /* NewsData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

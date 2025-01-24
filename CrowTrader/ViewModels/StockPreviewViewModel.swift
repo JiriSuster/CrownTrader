@@ -46,6 +46,8 @@ class StockPreviewViewModel: ObservableObject{
             coordinator?.handle(event: .fetchChart(symbol))
         case .timeframeSelected(let symbol, let timeframe):
             coordinator?.handle(event: .updateTimeFrame(symbol, timeframe))
+        case .addToWatchlistClick(let stock):
+            coordinator?.handle(event: .addToWatchlist(stock))
         }
     }
     
@@ -58,6 +60,7 @@ extension StockPreviewViewModel{
         case updateTimeFrame(String, String)
         case fetchChart(String)
         case close
+        case addToWatchlist(StockItem)
     }
 }
 
@@ -65,6 +68,7 @@ extension StockPreviewViewModel{
 extension StockPreviewViewModel{
     enum Action{
         case appear(String)
+        case addToWatchlistClick(StockItem)
         case timeframeSelected(String, String)
         
     }

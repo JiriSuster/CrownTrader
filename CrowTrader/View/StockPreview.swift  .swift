@@ -130,7 +130,7 @@ struct StockPreview: View {
                         }
                         ToolbarItem(placement: .topBarTrailing){
                             Button(action: {
-                                //todo add to watchlist
+                                viewModel.send(.addToWatchlistClick(stock))
                                 dismiss()
                                 
                             }){

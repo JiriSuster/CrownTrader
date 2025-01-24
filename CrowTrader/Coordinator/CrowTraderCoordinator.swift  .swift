@@ -33,7 +33,13 @@ final class CrowTraderCoordinator{
     
     private lazy var snapsViewModel = SnapsViewModel(
         apiManager: container.apiManager,
-        snapsService: container.snapsService,
+        snapsService: container.stockService,
+        coordinator: self
+    )
+    
+    private lazy var watchListViewModel = WatchListViewModel(
+        apiManager: container.apiManager,
+        stockService: container.stockService,
         coordinator: self
     )
     
@@ -59,7 +65,7 @@ private extension CrowTraderCoordinator {
         let view = TabController(
             connector: self.connector,
             viewModel: self.mainScreenViewModel,
-            newsListScreenViewModel: self.newsListScreenViewModel, snapsViewModel: self.snapsViewModel
+            newsListScreenViewModel: self.newsListScreenViewModel, snapsViewModel: self.snapsViewModel, watchListViewModel: self.watchListViewModel
         )
         return UIHostingController(rootView: view)
     }
@@ -104,6 +110,10 @@ extension CrowTraderCoordinator: StockPreviewEventHandling {
                 stockPreviewViewModel.fetchChart(symbol: symbol, timeframe: timeframe)
         case .fetchChart(let symbol):
                 stockPreviewViewModel.fetchChart(symbol: symbol)
+        case .addToWatchlist(var stock):
+            stock.is_watchlist = true
+            //TODO: navigate to watchlistview
+            watchListViewModel.addStockToWatchList(stock: stock)
         }
     }
 }
@@ -113,6 +123,21 @@ extension CrowTraderCoordinator: TabControllerEventHandling {
         switch event {
         case .close:
             navigationController.topViewController?.dismiss(animated: true)
+        }
+    }
+}
+extension CrowTraderCoordinator: WatchListEventHandling {
+    func handle(event: WatchListViewModel.Event) {
+        switch event{
+            
+        case let .detailStockPreview(stockItem):
+            let viewController = makeStockDetailView()
+            stockPreviewViewModel.stockItem = stockItem
+            navigationController.present(viewController, animated: true)
+        case .initWatchlist:
+            watchListViewModel.initWatchList()
+        case .fetchWatchlist:
+            watchListViewModel.fetchMarketList()
         }
     }
 }

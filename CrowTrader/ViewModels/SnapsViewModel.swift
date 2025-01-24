@@ -9,17 +9,17 @@ import Foundation
 
 class SnapsViewModel: ObservableObject{
     private weak var coordinator: SnapsListViewEventHandling?
-    private let snapsService: SnapsServicing
+    private let snapsService: StockItemServicing
     let apiManager: APIManaging
     var stockItems: [StockItem] = [] //TODO: Use state
     
-    init(apiManager: APIManaging, snapsService: SnapsServicing, coordinator: SnapsListViewEventHandling? = nil) {
+    init(apiManager: APIManaging, snapsService: StockItemServicing, coordinator: SnapsListViewEventHandling? = nil) {
         self.coordinator = coordinator
         self.snapsService = snapsService
         self.apiManager = apiManager
         
         Task { @MainActor in
-            self.addSampleData()
+            //self.addSampleData()
             self.getStockItems()
         }
     }

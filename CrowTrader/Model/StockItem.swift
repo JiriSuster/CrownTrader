@@ -15,6 +15,9 @@ struct StockItem: Identifiable {
     var price: Double
     var percentChange: Double?
     var ammount: Double
+    var is_watchlist: Bool?
+    var is_snaps: Bool?
+    var profit: Double?
     var color: Color {
         guard let percentChange = percentChange else {
             return Color.black //default
