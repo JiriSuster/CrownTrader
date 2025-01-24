@@ -137,7 +137,7 @@ extension CrowTraderCoordinator: WatchListEventHandling {
         case .initWatchlist:
             watchListViewModel.initWatchList()
         case .fetchWatchlist:
-            watchListViewModel.fetchMarketList()
+            watchListViewModel.fetchWatchList()
         }
     }
 }

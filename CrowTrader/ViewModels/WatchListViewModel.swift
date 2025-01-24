@@ -17,6 +17,9 @@ class WatchListViewModel: ObservableObject{
         self.stockService = stockService
         self.apiManager = apiManager
         
+        Task{
+            self.initWatchList()
+        }
     }
     
     func send(_ action: Action){
@@ -52,12 +55,18 @@ extension WatchListViewModel{
         self.watchList = stockService.fetchStockItems()
     }
     
-    func addStockToWatchList(stock: StockItem){
-        stockService.addNewStockItem(stockItem: stock) //TODO: don't add duplicates
+    func addStockToWatchList(stock: StockItem) {
+        if !isInWatchlist(stock: stock) {
+            stockService.addNewStockItem(stockItem: stock)
+        }
+    }
+    
+    func isInWatchlist(stock: StockItem) -> Bool{
+        return watchList.contains(where: { $0.symbol == stock.symbol })
     }
     
     @MainActor
-        func fetchMarketList() {
+        func fetchWatchList() {
             Task {
                 do {
                     var newMarketList: [StockItem] = []
