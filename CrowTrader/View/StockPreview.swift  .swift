@@ -104,7 +104,7 @@ struct StockPreview: View {
                                 .shadow(color: Color.black.opacity(0.1), radius: 4, x: 2, y: 2)
                     
                     Button(action: {
-                        viewModel.send(.addToSnapslistClick(stock))
+                        viewModel.send(.addToSnapslistClick(stock,price))
                     }){
                         Text("Buy")
                             .frame(width: 370,height: 50,alignment: .center)

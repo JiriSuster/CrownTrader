@@ -62,13 +62,9 @@ final class StockItemService: StockItemServicing {
     }
     
     func fetchSnapsItems() -> [StockItem]{
-        let sitems =  fetchStockItems().filter { stockItem in
+        return fetchStockItems().filter { stockItem in
             stockItem.is_snaps ?? false
         }
-        sitems.forEach { item in
-            debugPrint(item.symbol)
-        }
-        return sitems
     }
     
     func addNewStockItem(stockItem: StockItem) {

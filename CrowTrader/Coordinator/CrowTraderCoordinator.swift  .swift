@@ -115,13 +115,14 @@ extension CrowTraderCoordinator: StockPreviewEventHandling {
             stock.is_snaps = false
             //TODO: navigate to watchlistview
             watchListViewModel.addStockToWatchList(stock: stock)
-            watchListViewModel.fetchWatchList()
-        case .addToSnapslist(var stock):
+            watchListViewModel.initWatchList()
+        case .addToSnapslist(var stock, let amount):
             //TODO: navigate to snapslistview
             stock.is_snaps = true
             stock.is_watchlist = false
+            stock.ammount = Double(amount) ?? 0
             snapsViewModel.addStockToSnapsList(stock: stock)
-            snapsViewModel.fetchSnapsList()
+            snapsViewModel.initSnapsList()
         }
     }
 }
