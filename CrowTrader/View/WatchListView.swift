@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WatchListView: View {
+    @StateObject var mainViewModel: MainScreenViewModel
     @StateObject var viewModel: WatchListViewModel
     @State private var searchText = ""
     
@@ -16,9 +17,13 @@ struct WatchListView: View {
         NavigationView{
             VStack{
                 TextField("Search...", text: $searchText)
-                    .padding(10)
-                    .background(Color(.systemGray6))
-                    .cornerRadius(8)
+                                .padding(10)
+                                .background(Color(.systemGray6))
+                                .cornerRadius(8)
+                                .onSubmit {
+                                    mainViewModel.send(.searchConfirmed(searchText))
+                                }
+                
                 HStack{
                     Text("Watchlist").font(.title)
                     Spacer()

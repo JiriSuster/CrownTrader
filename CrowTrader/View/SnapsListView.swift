@@ -22,9 +22,12 @@ struct SnapsListView: View {
         NavigationView{
             VStack{
                 TextField("Search...", text: $searchText)
-                    .padding(10)
-                    .background(Color(.systemGray6))
-                    .cornerRadius(8)
+                                .padding(10)
+                                .background(Color(.systemGray6))
+                                .cornerRadius(8)
+                                .onSubmit {
+                                    mainViewModel.send(.searchConfirmed(searchText))
+                                }
                 
                 VStack{
                     HStack{
