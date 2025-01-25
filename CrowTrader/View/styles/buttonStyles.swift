@@ -1,9 +1,3 @@
-//
-//  ButtonStyles.swift
-//  CrowTrader
-//
-//  Created by Adéla Kulíšková on 22.01.2025.
-//
 
 import SwiftUI
 
@@ -29,7 +23,7 @@ struct TimeframeButtonStyle: ButtonStyle {
         configuration.label
             .fontWeight(isSelected ? .bold : .regular)
             .padding()
-            .frame(width: 60, height: 40)
+            .frame(width: 80, height: 40)
             .background(
                 isSelected ? Color.green : Color.gray.opacity(0.2)
             )

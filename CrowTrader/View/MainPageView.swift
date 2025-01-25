@@ -55,7 +55,7 @@ struct MainPageView: View {
                                         viewModel.send(.timeframeSelected(marketList[selectedMarketIndex].symbol, selectedTimeframe))
                                     }) {
                                         Text(timeframe)
-                                    }//.buttonStyle(.timeframe(isSelected: selectedTimeframe == timeframe))
+                                    }.buttonStyle(.timeframe(isSelected: selectedTimeframe == timeframe))
 
                                 }
                             }
