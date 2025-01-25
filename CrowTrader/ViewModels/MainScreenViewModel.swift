@@ -149,6 +149,7 @@ extension MainScreenViewModel{ //YAHOO
                     symbol: symbol, timeframe: "1d"
                 )
             )
+
             let item = StockItem(symbol: chartData.symbol, title: chartData.name, price: chartData.latestPrice ?? 0,percentChange: chartData.percentChange24Hours, ammount: 0)
             return item
         } catch {

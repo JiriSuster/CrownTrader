@@ -12,13 +12,6 @@ struct MarketDetailView: View {
     @Binding var selectedTitle: Title?
     @StateObject var mainViewModel: MainScreenViewModel
     
-    let mockData: [MarketItem] = [
-        MarketItem(price: "125.08", title: "AAPL", grow: -1.2),
-        MarketItem(price: "543.51", title: "BTC", grow: 2.3),
-        MarketItem(price: "34.06", title: "EUR/USD", grow: 0.9)
-    ]
-    
-    
     var body: some View {
         let emptyChartData = mainViewModel.chartData
         
@@ -30,7 +23,7 @@ struct MarketDetailView: View {
                     VStack{
                         VStack{
                             StockChartView(data: emptyChartData)
-                                .frame(width: 200,height: 90)
+                                .frame(width: 180,height: 90)
                                 .foregroundStyle(.gray)
                                 .cornerRadius(15)
                                 .onAppear {
@@ -39,14 +32,12 @@ struct MarketDetailView: View {
                             
                             HStack{
                                 VStack(alignment: .leading){
+                                    Text("\(item.title)").font(.system(size: 15))
+                                    Text(String(format: "%.2f", item.price)).font(.subheadline).fontWeight(.semibold)
                                     if(item.percentChange! < 0){
-                                        Text("\(item.title)").font(.system(size: 15)).foregroundStyle(.red)
-                                        Text(String(format: "%.2f", item.price)).font(.subheadline).fontWeight(.semibold)
-                                        Text("\(item.percentChange)").font(.system(size: 10)).foregroundStyle(.red)
+                                        Text("\(String(format: "%.2f", item.percentChange ?? 0))%").font(.system(size: 10)).foregroundStyle(.red)
                                     }else{
-                                        Text("\(item.title)").font(.system(size: 15)).foregroundStyle(.green)
-                                        Text(String(format: "%.2f", item.price)).font(.subheadline).fontWeight(.semibold)
-                                        Text("\(item.percentChange)").font(.system(size: 10)).foregroundStyle(.green)
+                                        Text("\(String(format: "%.2f", item.percentChange ?? 0))%").font(.system(size: 10)).foregroundStyle(.green)
                                     }
                                 }
                                 Spacer()

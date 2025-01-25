@@ -87,7 +87,7 @@ struct MainPageView: View {
                         VStack(alignment: .trailing){
                             Text("$\(String(format: "%.2f", market.price))")
                                 .font(.headline)
-                            Text("$\(String(format: "%.2f", market.percentChange ?? 0))")
+                            Text("\(String(format: "%.2f", market.percentChange ?? 0))%")
                                 .font(.body)
                                 .foregroundColor(market.color)
                         }
