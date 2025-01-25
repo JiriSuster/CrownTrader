@@ -16,6 +16,7 @@ enum Title: String, CaseIterable {
 struct MainListView: View {
     @StateObject var connector: PhoneConnector
     @State private var selectedTitle: Title? = .markets
+    @StateObject var mainViewModel: MainScreenViewModel
     
     var body: some View {
         
@@ -51,7 +52,12 @@ struct MainListView: View {
                 }
             }
         } detail: {
-            DetailMarketView(connector: connector, selectedTitle: $selectedTitle)
+            if selectedTitle == .markets {
+                MarketDetailView(connector: connector, selectedTitle: $selectedTitle, mainViewModel: mainViewModel)
+            }else{
+                DetailMarketView(connector: connector, selectedTitle: $selectedTitle)
+            }
+            
         }
     }
 }
