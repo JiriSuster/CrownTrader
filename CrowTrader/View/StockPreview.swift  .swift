@@ -41,7 +41,7 @@ struct StockPreview: View {
                                                 //viewModel.fetchChart(symbol: stock.symbol, timeframe: selectedTimeframe)
                                             }) {
                                                 Text(timeframe)
-                                            }//.buttonStyle(.timeframe(isSelected: selectedTimeframe == timeframe))
+                                            }.buttonStyle(.timeframe(isSelected: selectedTimeframe == timeframe))
 
                                         }
                                     }
