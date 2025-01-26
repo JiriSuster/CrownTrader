@@ -83,7 +83,7 @@ extension SnapsViewModel{
                                 symbol: stockItem.symbol, timeframe: "1d"
                             )
                         )
-                        newSnapsList.append(StockItem(symbol: stockItem.symbol, title: chartData.name, price: chartData.latestPrice ?? 0, percentChange: chartData.percentChange24Hours ?? 1,ammount: 0, is_snaps: true))
+                        newSnapsList.append(StockItem(symbol: stockItem.symbol, title: chartData.name, price: chartData.latestPrice ?? 0, percentChange: chartData.percentChange24Hours ?? 1,ammount: stockItem.ammount, is_snaps: true))
                     }
                     snapsList = newSnapsList
                 } catch {

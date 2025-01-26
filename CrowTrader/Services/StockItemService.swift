@@ -25,6 +25,9 @@ final class StockItemService: StockItemServicing {
 
     init(moc: NSManagedObjectContext) {
         self.moc = moc
+        Task{
+            //self.deleteAllStockItems()
+        }
     }
 
     func fetchStocks() -> [StockEntity] {

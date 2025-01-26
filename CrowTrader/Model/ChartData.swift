@@ -116,36 +116,30 @@ extension ChartData{
     
 
     var percentChange24Hours: Double? {
-            guard let timestamps = timestamp, !timestamps.isEmpty,
-                  let closes = close, !closes.isEmpty else {
-                return nil
-            }
-            
-            let twentyFourHoursAgo = Date().addingTimeInterval(-86400).timeIntervalSince1970
-            let fromTimestamp = Int(twentyFourHoursAgo)
-            
-            guard let startIndex = timestamps.firstIndex(where: { $0 >= fromTimestamp }) else {
-                return nil
-            }
-            
-            guard startIndex < closes.count,
-                  let yesterdayClose = closes[startIndex],
-                  let latestPrice = closes.last! else {
-                return nil
-            }
-            
-            guard yesterdayClose != 0 else {
-                return nil // Prevent division by zero
-            }
-            
-            let percentageChange = ((latestPrice - yesterdayClose) / yesterdayClose) * 100
-            let roundedChange = (percentageChange * 100).rounded() / 100 // Rounds to two decimal places
-            return roundedChange
+        guard let timestamps = timestamp, !timestamps.isEmpty,
+              let closes = close, !closes.isEmpty,
+              timestamps.count == closes.count,
+              let latestTimestamp = timestamps.last,
+              let latestClose = closes.last ?? nil else {
+            return nil
         }
-    var color: Color {
-        guard let percentChange = self.percentChange24Hours else {
-            return Color.black //default
+        
+        let latestDate = Date(timeIntervalSince1970: TimeInterval(latestTimestamp))
+        let twentyFourHoursAgo = latestDate.addingTimeInterval(-86400)
+        let fromTimestamp = Int(twentyFourHoursAgo.timeIntervalSince1970)
+        
+        let startIndex = timestamps.firstIndex(where: { $0 >= fromTimestamp }) ?? 0
+        
+        guard startIndex < closes.count,
+              let startClose = closes[startIndex] else {
+            return nil
         }
-        return percentChange > 0 ? Color.green : Color.red
+        
+        guard startClose != 0 else {
+            return nil
+        }
+        
+        let percentageChange = ((latestClose - startClose) / startClose) * 100
+        return (percentageChange * 100).rounded() / 100
     }
 }
