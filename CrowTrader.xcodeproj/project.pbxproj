@@ -17,6 +17,8 @@
 		712752312CCC1A64003784DD /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712752302CCC1A64003784DD /* MainScreenViewModel.swift */; };
 		713ACB792D43CEC30085D8C9 /* WatchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713ACB782D43CEC30085D8C9 /* WatchListViewModel.swift */; };
 		713ACB7B2D43D1910085D8C9 /* WatchListEventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713ACB7A2D43D1910085D8C9 /* WatchListEventHandling.swift */; };
+		716E5BD82D46B9F300206B82 /* BalanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E5BD72D46B9F300206B82 /* BalanceService.swift */; };
+		716E5BDA2D46BAA500206B82 /* BalanceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E5BD92D46BAA500206B82 /* BalanceItem.swift */; };
 		71A6BD692CCBFDA8008BB9C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71A6BD682CCBFDA8008BB9C2 /* Assets.xcassets */; };
 		71A6BD6C2CCBFDA8008BB9C2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71A6BD6B2CCBFDA8008BB9C2 /* Preview Assets.xcassets */; };
 		71A6BD762CCBFDA8008BB9C2 /* CrowTraderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BD752CCBFDA8008BB9C2 /* CrowTraderTests.swift */; };
@@ -143,6 +145,8 @@
 		712752302CCC1A64003784DD /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
 		713ACB782D43CEC30085D8C9 /* WatchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViewModel.swift; sourceTree = "<group>"; };
 		713ACB7A2D43D1910085D8C9 /* WatchListEventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListEventHandling.swift; sourceTree = "<group>"; };
+		716E5BD72D46B9F300206B82 /* BalanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceService.swift; sourceTree = "<group>"; };
+		716E5BD92D46BAA500206B82 /* BalanceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceItem.swift; sourceTree = "<group>"; };
 		71A6BD612CCBFDA7008BB9C2 /* CrowTrader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrowTrader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A6BD682CCBFDA8008BB9C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71A6BD6B2CCBFDA8008BB9C2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -428,6 +432,7 @@
 				71F33B452D2BE40700680699 /* NewsData.swift */,
 				71F33B472D2BE43C00680699 /* MoversData.swift */,
 				71D6E2422D353C9E0014F18F /* StockItem.swift */,
+				716E5BD92D46BAA500206B82 /* BalanceItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -455,6 +460,7 @@
 			children = (
 				71A6BDC32CCBFEB2008BB9C2 /* WatchConnector.swift */,
 				71D6E2462D3542990014F18F /* StockItemService.swift */,
+				716E5BD72D46B9F300206B82 /* BalanceService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -760,6 +766,7 @@
 				7127522E2CCC1981003784DD /* StockDataRouter.swift in Sources */,
 				71F33B232D2BDF5A00680699 /* NewsDetailView.swift in Sources */,
 				71F33B252D2BDF7600680699 /* NewsDetailViewEventHandling.swift in Sources */,
+				716E5BDA2D46BAA500206B82 /* BalanceItem.swift in Sources */,
 				71F33B2D2D2BDFD500680699 /* StockPreview.swift  .swift in Sources */,
 				712752282CCC1921003784DD /* APIError.swift in Sources */,
 				71F33B522D2C07AD00680699 /* StockPreviewViewModel.swift in Sources */,
@@ -767,6 +774,7 @@
 				71F33B4C2D2BE4B500680699 /* MoversDataRouter.swift in Sources */,
 				71D6E2472D3542990014F18F /* StockItemService.swift in Sources */,
 				71F33B462D2BE40700680699 /* NewsData.swift in Sources */,
+				716E5BD82D46B9F300206B82 /* BalanceService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

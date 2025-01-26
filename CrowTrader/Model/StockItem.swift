@@ -15,6 +15,7 @@ struct StockItem: Identifiable {
     var price: Double
     var percentChange: Double?
     var ammount: Double
+    var priceWhenBought: Double?
     var is_watchlist: Bool?
     var is_snaps: Bool?
     var profit: Double?

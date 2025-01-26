@@ -49,8 +49,9 @@ final class StockItemService: StockItemServicing {
                 symbol: $0.symbol ?? "no symbol",
                 title: $0.symbol ?? "Unknown",
                 price: $0.price,
-                percentChange: 0, //TODO: Calculate
+                percentChange: Double($0.percent_change),
                 ammount: Double($0.ammount),
+                priceWhenBought: $0.price_when_bought,
                 is_watchlist: $0.is_watchlist,
                 is_snaps: $0.is_snaps,
                 profit: Double($0.value * $0.ammount)
@@ -74,6 +75,7 @@ final class StockItemService: StockItemServicing {
         let newStock = StockEntity(context: moc)
         newStock.id = UUID()
         newStock.ammount = Int16(stockItem.ammount)
+        newStock.price_when_bought = stockItem.price
         newStock.percent_change = Int16(stockItem.percentChange ?? 0)
         newStock.symbol = stockItem.symbol
         newStock.is_watchlist = stockItem.is_watchlist ?? false

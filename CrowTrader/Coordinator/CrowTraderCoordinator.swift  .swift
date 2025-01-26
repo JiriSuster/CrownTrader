@@ -34,6 +34,7 @@ final class CrowTraderCoordinator{
     private lazy var snapsViewModel = SnapsViewModel(
         apiManager: container.apiManager,
         snapsService: container.stockService,
+        balanceService: container.balanceService,
         coordinator: self
     )
     
@@ -213,6 +214,14 @@ extension CrowTraderCoordinator: SnapsListViewEventHandling {
             snapsViewModel.initSnapsList()
         case .fetchSnapsList:
             snapsViewModel.fetchSnapsList()
+        case .initBalance:
+            snapsViewModel.initBalance()
+        case .addBalance(let balance):
+            snapsViewModel.addBalance(money: balance)
+        case .sellStockItem(let stockItem):
+            snapsViewModel.sellStock(stock: stockItem)
+        case .resetBalance:
+            snapsViewModel.resetBalance()
         }
     }
 }

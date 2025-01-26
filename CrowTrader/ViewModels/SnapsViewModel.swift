@@ -10,16 +10,20 @@ import Foundation
 class SnapsViewModel: ObservableObject{
     private weak var coordinator: SnapsListViewEventHandling?
     private let stockService: StockItemServicing
+    private let balanceService: BalanceServicing
     let apiManager: APIManaging
     @Published var snapsList: [StockItem] = [] //TODO: Use state
+    @Published var balance: BalanceItem = BalanceItem(total: 0, profit: 0, moneyToInvest: 0, allMoneyToInvest: 0)
     
-    init(apiManager: APIManaging, snapsService: StockItemServicing, coordinator: SnapsListViewEventHandling? = nil) {
+    init(apiManager: APIManaging, snapsService: StockItemServicing,balanceService: BalanceServicing, coordinator: SnapsListViewEventHandling? = nil) {
         self.coordinator = coordinator
         self.stockService = snapsService
+        self.balanceService = balanceService
         self.apiManager = apiManager
         
         Task{
             self.initSnapsList()
+            self.initBalance()
             await self.fetchSnapsList()
         }
     }
@@ -29,9 +33,23 @@ class SnapsViewModel: ObservableObject{
             
         case .didTapStockPreview(let stockItem):
             coordinator?.handle(event: .detailStockPreview(stockItem))
+            
         case .appear:
+            coordinator?.handle(event: .initBalance)
             coordinator?.handle(event: .initSnapsList)
             coordinator?.handle(event: .fetchSnapsList)
+            
+        case .didTapAddBalance(let balance):
+            coordinator?.handle(event: .addBalance(balance))
+            coordinator?.handle(event: .initBalance)
+            
+        case .didTapSell(let stockItem):
+            coordinator?.handle(event: .sellStockItem(stockItem))
+            coordinator?.handle(event: .initBalance)
+            coordinator?.handle(event: .fetchSnapsList)
+        case .didTapReset:
+            coordinator?.handle(event: .resetBalance)
+            coordinator?.handle(event: .initBalance)
         }
     }
 
@@ -54,7 +72,11 @@ extension SnapsViewModel {
     enum SnapsEvent {
         case detailStockPreview(StockItem)
         case initSnapsList
+        case initBalance
         case fetchSnapsList
+        case addBalance(Double)
+        case sellStockItem(StockItem)
+        case resetBalance
     }
 }
 
@@ -63,6 +85,9 @@ extension SnapsViewModel {
     enum SnapsAction {
         case didTapStockPreview(StockItem)
         case appear
+        case didTapAddBalance(Double)
+        case didTapSell(StockItem)
+        case didTapReset
     }
 }
 
@@ -101,4 +126,26 @@ extension SnapsViewModel{
         return snapsList.contains(where: { $0.symbol == stock.symbol && $0.is_snaps == true })
     }
     
+}
+
+//MARK: Balance
+extension SnapsViewModel{
+    
+    func addBalance(money: Double){
+        balanceService.addNewBalance(moneyToInvest: money)
+    }
+    
+    func initBalance(){
+        self.balance = balanceService.fetchBalanceItem()
+    }
+    
+    func sellStock(stock: StockItem){
+        let profit = (stock.price - (stock.priceWhenBought ?? 0)) * stock.ammount
+        balanceService.addTotal(profit: profit)
+        stockService.deleteStockItem(stockItem: stock)
+    }
+    
+    func resetBalance(){
+        balanceService.resetBalance()
+    }
 }

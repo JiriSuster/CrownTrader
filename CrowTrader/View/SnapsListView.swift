@@ -12,13 +12,12 @@ struct SnapsListView: View {
     @StateObject var mainViewModel: MainScreenViewModel
     @ObservedObject var viewModel: SnapsViewModel
     @State private var searchText = ""
-    
     @State private var showAlert = false
     @State private var showAddMoneyAlert = false
     @State private var enteredAmount = ""
     
     var body: some View {
-        
+        @State var balance = viewModel.balance
         NavigationView{
             VStack{
                 TextField("Search...", text: $searchText)
@@ -37,15 +36,15 @@ struct SnapsListView: View {
                         }
                         Spacer()
                         VStack(alignment: .trailing){
-                            Text("180$").font(.title)
-                            Text("32.6%").font(.title3).foregroundStyle(.green)
+                            Text(String(balance.total - balance.allMoneyToInvest)).font(.title)
+                            Text(String(balance.profit)).font(.title3).foregroundStyle(.green)
                         }
                     }.padding(8)
                     HStack{
                         Text("Money to invest").font(.title2).foregroundStyle(.gray)
                         Spacer()
                         VStack(alignment: .trailing){
-                            Text("180$").font(.title2).foregroundStyle(.gray)
+                            Text(String(balance.moneyToInvest)).font(.title2).foregroundStyle(.gray)
                         }
                     }.padding(8)
                     
@@ -66,6 +65,7 @@ struct SnapsListView: View {
                             .keyboardType(.decimalPad)
                         Button("Add") {
                             print("Added amount \(enteredAmount)")
+                            viewModel.send(.didTapAddBalance(Double(enteredAmount) ?? 5))
                             enteredAmount = ""
                         }
                         Button("Cancel", role: .cancel) {
@@ -85,6 +85,7 @@ struct SnapsListView: View {
                         isPresented: $showAlert
                     ) {
                         Button("Delete", role: .destructive) {
+                            viewModel.send(.didTapReset)
                             print("Account deleted")
                         }
                         Button("Cancel", role: .cancel) {
@@ -119,7 +120,9 @@ struct SnapsListView: View {
                                             .font(.body)
                                             .foregroundColor(stock.color)
                                     }
-                                    Button(action: {}){
+                                    Button(action: {
+                                        viewModel.send(.didTapSell(stock))
+                                    }){
                                         Text("Sell")
                                     }.buttonStyle(.dismissCrownButtonStyle)
                                 }
