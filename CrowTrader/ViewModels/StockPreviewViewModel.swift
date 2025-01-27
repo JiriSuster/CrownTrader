@@ -30,7 +30,7 @@ class StockPreviewViewModel: ObservableObject{
         )
     )
     @Published var latestPrice: Double = 0
-    @Published var average: (thirty: Double, sixty: Double) = (0,0)
+    @Published var average: (thirty: Double?, sixty: Double?) = (0,0)
     let apiManager: APIManaging
     private weak var coordinator: StockPreviewEventHandling?
     
@@ -107,31 +107,37 @@ extension StockPreviewViewModel {
 @MainActor
 extension StockPreviewViewModel{
     func getLatestPrice() {
-            latestPrice = chartData.latestPrice ?? 0
-        }
+        latestPrice = chartData.latestPrice ?? 0
+    }
     
-    private func getAverage(days: Int) -> Double {
-            guard
-                  let closePrices = chartData.close else {
-                print("No data available for the given symbol.")
-                return -1.0
-            }
-            
-            let validPrices = closePrices.compactMap { $0 } // filter out nil vals
-            let count = validPrices.count
-            
-            guard count >= days else {
-                print("Not enough data points for the given number of days.")
-                return -1.0
-            }
-            
-            let recentPrices = validPrices.suffix(days)
-            
-            let averagePrice = recentPrices.reduce(0, +) / Double(recentPrices.count)
-            return averagePrice
+    private func getAverage(days: Int, chart: ChartData) -> Double? {
+        guard let closePrices = chart.close, !closePrices.isEmpty else {
+            print("No close prices available.")
+            return nil
         }
+        
+        let validPrices = closePrices.compactMap { $0 }
+        guard validPrices.count >= days else {
+            print("Not enough data points.")
+            return nil
+        }
+        
+        let recentPrices = validPrices.suffix(days)
+        return recentPrices.reduce(0, +) / Double(days)
+    }
     
-    func setAverage(){
-        self.average = (getAverage(days: 30), getAverage(days: 60))
+    func setAverage() {
+        Task {
+            do {
+                let chartDataResponse: ChartData = try await apiManager.request(
+                    StockDataRouter.chart(symbol: chartData.symbol, timeframe: "3mo")
+                )
+                let avg30 = getAverage(days: 30, chart: chartDataResponse)
+                let avg60 = getAverage(days: 60, chart: chartDataResponse)
+                self.average = (avg30, avg60)
+            } catch {
+                print("Error fetching chart: \(error)")
+            }
+        }
     }
 }

@@ -15,6 +15,7 @@
 		7127522C2CCC1951003784DD /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7127522B2CCC1951003784DD /* Endpoint.swift */; };
 		7127522E2CCC1981003784DD /* StockDataRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7127522D2CCC1981003784DD /* StockDataRouter.swift */; };
 		712752312CCC1A64003784DD /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712752302CCC1A64003784DD /* MainScreenViewModel.swift */; };
+		7136968A2D47F2D100D24C65 /* SearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F33B432D2BE37400680699 /* SearchData.swift */; };
 		713ACB792D43CEC30085D8C9 /* WatchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713ACB782D43CEC30085D8C9 /* WatchListViewModel.swift */; };
 		713ACB7B2D43D1910085D8C9 /* WatchListEventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713ACB7A2D43D1910085D8C9 /* WatchListEventHandling.swift */; };
 		716E5BD82D46B9F300206B82 /* BalanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E5BD72D46B9F300206B82 /* BalanceService.swift */; };
@@ -813,6 +814,7 @@
 				887828EA2D3EE8FD008A99EB /* ChartData.swift in Sources */,
 				712752212CCC1601003784DD /* DIContainer.swift in Sources */,
 				7127521E2CCC15DB003784DD /* CoreDataController.swift in Sources */,
+				7136968A2D47F2D100D24C65 /* SearchData.swift in Sources */,
 				887828FD2D458D53008A99EB /* MainViewEventHandling.swift in Sources */,
 				887828FF2D458D96008A99EB /* StockItem.swift in Sources */,
 				71A6BDC62CCBFF43008BB9C2 /* PhoneConnector.swift in Sources */,

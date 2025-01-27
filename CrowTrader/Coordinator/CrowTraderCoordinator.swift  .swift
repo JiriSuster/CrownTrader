@@ -180,6 +180,9 @@ extension CrowTraderCoordinator: MainViewEventHandling {
             }
         case let .updateTimeFrame(symbol, timeframe):
             mainScreenViewModel.fetchChart(symbol: symbol, timeframe: timeframe)
+            
+        case let .fetchSearchItems(search):
+            mainScreenViewModel.fetchSearch(symbol: search)
         }
     }}
 

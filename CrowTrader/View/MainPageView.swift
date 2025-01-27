@@ -38,9 +38,25 @@ struct MainPageView: View {
                             .padding(10)
                             .background(Color(.systemGray6))
                             .cornerRadius(8)
+                            .onChange(of: searchText) { oldValue, newValue in
+                                print(newValue)
+                                viewModel.send(.searchTextChanged(newValue))
+                            }
                             .onSubmit {
                                 viewModel.send(.searchConfirmed(searchText))
                             }
+            if(viewModel.search != nil){
+                ForEach(viewModel.search!.quotes, id: \.self.symbol){ quote in
+                    Text("\(quote.shortname)").onTapGesture {
+                        Task{
+                            let stock = await viewModel.getStockItemFromSymbol(symbol: quote.symbol)
+                            viewModel.send(.didTapStockPreview(stock))
+                            searchText = ""
+                            viewModel.send(.searchTextChanged(""))
+                        }
+                    }
+                }
+            }
             
             StockChartView(data: emptyChartData)
                 .frame(width: 370,height: 230)

@@ -18,11 +18,7 @@ class MainScreenViewModel: ObservableObject{
         StockItem(symbol: "^N225",title: "", price: 0,percentChange: 0, ammount: 0),
         StockItem(symbol: "^FTSE",title: "", price: 0,percentChange: 0, ammount: 0),
     ]
-    @Published var testSearch: String = "empty"
-    @Published var testChart: String = "empty"
-    @Published var testInfo: String = "empty"
-    @Published var testNews: String = "empty"
-    @Published var testMovers: String = "empty"
+    @Published var search: SearchData? = nil
     
     @Published var chartData = ChartData(
         chart: ChartQuote(
@@ -70,6 +66,8 @@ class MainScreenViewModel: ObservableObject{
             print("todo")
         case .timeframeSelected(let symbol, let timeframe):
             coordinator?.handle(event: .updateTimeFrame(symbol, timeframe))
+        case .searchTextChanged(let search):
+            coordinator?.handle(event: .fetchSearchItems(search))
         }
     }
     
@@ -88,6 +86,7 @@ extension MainScreenViewModel {
         case fetchMarketList
         case getStockItemFromSymbol(String)
         case updateTimeFrame(String, String)
+        case fetchSearchItems(String)
     }
 }
 
@@ -100,10 +99,30 @@ extension MainScreenViewModel {
         case searchConfirmed(String)
         case searchItemClicked //TODO: implement
         case timeframeSelected(String, String)
+        case searchTextChanged(String)
     }
 }
 
 extension MainScreenViewModel{ //YAHOO
+    
+    @MainActor
+    func fetchSearch(symbol: String) {
+        if(symbol != ""){
+            Task {
+                do {
+                    let searchData: SearchData = try await apiManager.request(
+                        StockDataRouter.search(symbol: symbol))
+                    self.search = searchData
+                } catch {
+                    print(error)
+                }
+            }
+        }
+        else    {
+            search = nil
+        }
+    }
+    
     
     @MainActor
     func fetchChart(symbol: String, timeframe: String? = "1d") {

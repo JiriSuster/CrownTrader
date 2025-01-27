@@ -73,14 +73,14 @@ struct StockPreview: View {
                             Text("average 30d").font(.headline)
                             Spacer()
                             VStack(alignment: .trailing){
-                                Text(String(format: "%.2f", average.thirty))
+                                Text(String(format: "%.2f", average.thirty ?? "unknown"))
                             }
                         }.padding(8)
                         HStack{
                             Text("average 60d").font(.headline)
                             Spacer()
                             VStack(alignment: .trailing){
-                                Text(String(format: "%.2f", average.sixty))
+                                Text(String(format: "%.2f", average.sixty ?? "unknown"))
                             }
                         }.padding(8)
                         
@@ -113,9 +113,6 @@ struct StockPreview: View {
                     .background(.green)
                         .foregroundStyle(.white)
                         .cornerRadius(25)
-                    
-                    
-                    
                 }
                 
             }.padding()
