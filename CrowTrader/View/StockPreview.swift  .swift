@@ -39,7 +39,6 @@ struct StockPreview: View {
                                             Button(action: {
                                                 selectedTimeframe = timeframe
                                                 viewModel.send(.timeframeSelected(stock.symbol, selectedTimeframe))
-                                                //viewModel.fetchChart(symbol: stock.symbol, timeframe: selectedTimeframe)
                                             }) {
                                                 Text(timeframe)
                                             }.buttonStyle(.timeframe(isSelected: selectedTimeframe == timeframe))

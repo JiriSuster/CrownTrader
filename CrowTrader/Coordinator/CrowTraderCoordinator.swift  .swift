@@ -232,6 +232,8 @@ extension CrowTraderCoordinator: SnapsListViewEventHandling {
             snapsViewModel.initSnapsList()
         case .resetBalance:
             snapsViewModel.resetBalance()
+            snapsViewModel.deleteSnaps()
+            snapsViewModel.initSnapsList()
         }
     }
 }

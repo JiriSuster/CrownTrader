@@ -97,6 +97,12 @@ extension SnapsViewModel{
         self.snapsList = stockService.fetchSnapsItems()
     }
     
+    func deleteSnaps(){
+        snapsList.forEach { stock in
+            stockService.deleteStockItem(stockItem: stock)
+        }
+    }
+    
     @MainActor
         func fetchSnapsList() {
             Task {

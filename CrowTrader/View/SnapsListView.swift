@@ -119,7 +119,6 @@ struct SnapsListView: View {
                                         Text("$\(String(format: "%.2f", stock.percentChange!))")
                                             .font(.body)
                                             .foregroundColor(stock.color)
-                                        Text(String(stock.ammount))
                                     }
                                     Button(action: {
                                         viewModel.send(.didTapSell(stock))
