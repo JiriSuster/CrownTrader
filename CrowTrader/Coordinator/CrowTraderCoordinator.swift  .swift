@@ -75,7 +75,8 @@ private extension CrowTraderCoordinator {
 private extension CrowTraderCoordinator {
     func makeStockDetailView() -> UIViewController {
         let view = StockPreview(
-            viewModel: self.stockPreviewViewModel
+            viewModel: self.stockPreviewViewModel,
+            watchlistViewModel: self.watchListViewModel
         )
         return UIHostingController(rootView: view)
     }
@@ -112,9 +113,14 @@ extension CrowTraderCoordinator: StockPreviewEventHandling {
         case .fetchChart(let symbol):
                 stockPreviewViewModel.fetchChart(symbol: symbol)
         case .addToWatchlist(var stock):
-            stock.is_watchlist = true
-            stock.is_snaps = false
-            watchListViewModel.addStockToWatchList(stock: stock)
+            if(watchListViewModel.isInWatchlist(stock: stock)){
+                watchListViewModel.unwatch(stock: stock)
+            }
+            else{
+                stock.is_watchlist = true
+                stock.is_snaps = false
+                watchListViewModel.addStockToWatchList(stock: stock)
+            }
             watchListViewModel.initWatchList()
         case .addToSnapslist(var stock, let amount): //here the amount is actually price I want to buy the stock for
             stock.is_snaps = true

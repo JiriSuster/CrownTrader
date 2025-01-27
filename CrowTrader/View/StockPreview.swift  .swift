@@ -10,6 +10,7 @@ import SwiftUI
 struct StockPreview: View {
     @Environment(\.dismiss) private var dismiss
     @StateObject var viewModel: StockPreviewViewModel
+    @StateObject var watchlistViewModel: WatchListViewModel
     @State private var price = ""
     
     @State private var selectedTimeframe: String = "1d"
@@ -134,7 +135,7 @@ struct StockPreview: View {
                                 dismiss()
                                 
                             }){
-                                Text("Watch").foregroundStyle(.green)
+                                Text(watchlistViewModel.isInWatchlist(stock: stock) ? "Unwatch" : "Watch").foregroundStyle(.green)
                             }
                         }
                     }.onAppear(){
