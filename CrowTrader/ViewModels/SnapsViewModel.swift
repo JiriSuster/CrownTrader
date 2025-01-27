@@ -108,7 +108,7 @@ extension SnapsViewModel{
                                 symbol: stockItem.symbol, timeframe: "1d"
                             )
                         )
-                        newSnapsList.append(StockItem(symbol: stockItem.symbol, title: chartData.name, price: chartData.latestPrice ?? 0, percentChange: chartData.percentChange24Hours ?? 1,ammount: stockItem.ammount, is_snaps: true))
+                        newSnapsList.append(StockItem(symbol: stockItem.symbol, title: chartData.name, price: chartData.latestPrice ?? 0, percentChange: chartData.percentChange24Hours ?? 1,ammount: stockItem.ammount,priceWhenBought: stockItem.priceWhenBought, is_snaps: true))
                     }
                     snapsList = newSnapsList
                 } catch {
@@ -117,8 +117,9 @@ extension SnapsViewModel{
             }
         }
     
-    func addStockToSnapsList(stock: StockItem) {
+    func addStockToSnapsList(stock: StockItem) { //buy
         if !isInSnapslist(stock: stock) {
+            balanceService.buyStock(stock: stock)
             stockService.addNewStockItem(stockItem: stock)
         }
     }
@@ -140,8 +141,7 @@ extension SnapsViewModel{
     }
     
     func sellStock(stock: StockItem){
-        let profit = (stock.price - (stock.priceWhenBought ?? 0)) * stock.ammount
-        balanceService.addTotal(profit: profit)
+        balanceService.sellStock(stock: stock)
         stockService.deleteStockItem(stockItem: stock)
     }
     

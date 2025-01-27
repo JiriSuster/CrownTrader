@@ -24,7 +24,7 @@ class StockPreviewViewModel: ObservableObject{
                                 volume: []
                             )
                         ]
-                    ),meta: MetaQuote(symbol: "",shortName: "")
+                    ),meta: MetaQuote(symbol: "",shortName: "",regularMarketPrice: 0,regularMarketVolume: 0)
                 )
             ]
         )
@@ -44,10 +44,13 @@ class StockPreviewViewModel: ObservableObject{
             
         case .appear(let symbol):
             coordinator?.handle(event: .fetchChart(symbol))
+            
         case .timeframeSelected(let symbol, let timeframe):
             coordinator?.handle(event: .updateTimeFrame(symbol, timeframe))
+            
         case .addToWatchlistClick(let stock):
             coordinator?.handle(event: .addToWatchlist(stock))
+            
         case .addToSnapslistClick(let stock, let amount):
             coordinator?.handle(event: .addToSnapslist(stock,amount))
         }
@@ -131,5 +134,4 @@ extension StockPreviewViewModel{
     func setAverage(){
         self.average = (getAverage(days: 30), getAverage(days: 60))
     }
-    
 }

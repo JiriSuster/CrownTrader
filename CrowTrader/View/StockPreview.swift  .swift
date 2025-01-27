@@ -66,7 +66,7 @@ struct StockPreview: View {
                             Text("Volume").font(.headline)
                             Spacer()
                             VStack(alignment: .trailing){
-                                Text("180$")
+                                Text(String(viewModel.chartData.latestVolume ?? 0))
                             }
                         }.padding(8)
                         HStack{

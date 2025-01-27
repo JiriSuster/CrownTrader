@@ -12,8 +12,9 @@ import UIKit
 protocol BalanceServicing {
     func fetchBalanceItem() -> BalanceItem
     func addNewBalance(moneyToInvest: Double)
-    func addTotal(profit: Double)
     func resetBalance()
+    func buyStock(stock: StockItem)
+    func sellStock(stock: StockItem)
 }
 
 final class BalanceService: BalanceServicing {
@@ -66,10 +67,17 @@ final class BalanceService: BalanceServicing {
         save()
     }
     
-    func addTotal(profit: Double){
+
+    func sellStock(stock: StockItem){
         let balance = fetchBalance()
-        balance.total += profit
-        save()
+        balance.total += (stock.ammount * stock.price) - (stock.ammount * (stock.priceWhenBought ?? 1))
+        balance.profit += balance.total / balance.all_money_to_invest
+    }
+    
+    func buyStock(stock: StockItem){
+        let balace = fetchBalance()
+        balace.money_to_invest -= stock.price * stock.ammount
+        
     }
     
     func resetBalance() {

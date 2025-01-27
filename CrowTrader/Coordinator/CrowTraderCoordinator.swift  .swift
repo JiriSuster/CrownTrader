@@ -116,10 +116,13 @@ extension CrowTraderCoordinator: StockPreviewEventHandling {
             stock.is_snaps = false
             watchListViewModel.addStockToWatchList(stock: stock)
             watchListViewModel.initWatchList()
-        case .addToSnapslist(var stock, let amount):
+        case .addToSnapslist(var stock, let amount): //here the amount is actually price I want to buy the stock for
             stock.is_snaps = true
             stock.is_watchlist = false
-            stock.ammount = Double(amount) ?? 0
+            stock.ammount = (Double(amount) ?? 1) / stock.price
+            stock.priceWhenBought = stock.price
+            debugPrint(stock.ammount)
+            debugPrint(stock.price)
             snapsViewModel.addStockToSnapsList(stock: stock)
             snapsViewModel.initSnapsList()
         }
@@ -220,6 +223,7 @@ extension CrowTraderCoordinator: SnapsListViewEventHandling {
             snapsViewModel.addBalance(money: balance)
         case .sellStockItem(let stockItem):
             snapsViewModel.sellStock(stock: stockItem)
+            snapsViewModel.initSnapsList()
         case .resetBalance:
             snapsViewModel.resetBalance()
         }
