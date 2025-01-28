@@ -65,8 +65,11 @@ struct WatchListView: View {
                         }
                     }
                 }.onAppear(){
+                    searchText = ""
+                    mainViewModel.send(.searchTextChanged(""))
                     viewModel.send(.appear)
                 }
+                
                 
                 VStack{
                     if(mainViewModel.search != nil){
@@ -85,8 +88,16 @@ struct WatchListView: View {
                     .cornerRadius(8)
                     .shadow(radius: 4)
                     .padding(.bottom, 120)
+                    .onTapGesture(perform: {
+                        searchText = ""
+                        mainViewModel.send(.searchTextChanged(""))
+                    })
                 
             }
+            .onTapGesture(perform: {
+                searchText = ""
+                mainViewModel.send(.searchTextChanged(""))
+            })
         }
     }
 }

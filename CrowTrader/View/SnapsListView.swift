@@ -142,8 +142,13 @@ struct SnapsListView: View {
                         }
                     }
                 }.onAppear(){
+                    searchText = ""
+                    mainViewModel.send(.searchTextChanged(""))
                     viewModel.send(.appear)
-                }
+                }.onTapGesture(perform: {
+                    searchText = ""
+                    mainViewModel.send(.searchTextChanged(""))
+                })
                 
                 VStack{
                     if(mainViewModel.search != nil){
@@ -162,6 +167,11 @@ struct SnapsListView: View {
                     .cornerRadius(8)
                     .shadow(radius: 4)
                     .padding(.bottom, 120)
+                    .onTapGesture {
+                        searchText = ""
+                        mainViewModel.send(.searchTextChanged(""))
+                    }
+                    
                 
             }
         }

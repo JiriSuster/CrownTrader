@@ -98,8 +98,11 @@ struct MainPageView: View {
                                 viewModel.send(.didTapStock(marketList[selectedMarketIndex]))
                             }
                             .onAppear(){
+                                searchText = ""
+                                viewModel.send(.searchTextChanged(""))
                                 viewModel.send(.appear)
                             }
+                            
                             
                         }
                     }.padding()
@@ -109,7 +112,10 @@ struct MainPageView: View {
                 
             }
             .padding()
-            //.ignoresSafeArea()
+            .onTapGesture(perform: {
+                searchText = ""
+                viewModel.send(.searchTextChanged(""))
+            })
             
             VStack{
                 if(viewModel.search != nil){
@@ -128,6 +134,10 @@ struct MainPageView: View {
                 .cornerRadius(8)
                 .shadow(radius: 4)
                 .padding(.bottom, 120)
+                .onTapGesture(perform: {
+                    searchText = ""
+                    viewModel.send(.searchTextChanged(""))
+                })
         }
     }
 }
