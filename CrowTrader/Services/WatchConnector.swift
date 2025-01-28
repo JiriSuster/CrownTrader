@@ -19,11 +19,13 @@ class WatchConnector: NSObject, WCSessionDelegate, ObservableObject{
         session.delegate = self
         session.activate()
     }
+
     
-    func sendToWatch(stock: StockItem){
+    func sendToWatch(stock: StockItem, action: String){
         if(session.isReachable){
             
             let data : [String : Any] = [
+                "action": action,
                 "symbol": stock.symbol,
                 "name": stock.title,
                 "price": stock.price,

@@ -105,9 +105,6 @@ struct StockPreview: View {
                     
                     Button(action: {
                         viewModel.send(.addToSnapslistClick(stock,price))
-                        var snapStock = stock
-                        snapStock.is_snaps = true
-                        connector.sendToWatch(stock: snapStock)
                     }){
                         Text("Buy")
                             .frame(width: 370,height: 50,alignment: .center)
@@ -131,9 +128,6 @@ struct StockPreview: View {
                         ToolbarItem(placement: .topBarTrailing){
                             Button(action: {
                                 viewModel.send(.addToWatchlistClick(stock))
-                                var watchStock = stock
-                                watchStock.is_watchlist = true
-                                connector.sendToWatch(stock: watchStock)
                                 dismiss()
                                 
                             }){

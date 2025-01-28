@@ -9,17 +9,22 @@ import Foundation
 class WatchListViewModel: ObservableObject{
     private weak var coordinator: WatchListEventHandling?
     private let stockService: StockItemServicing
+    private let connector: WatchConnector
     let apiManager: APIManaging
     @Published var watchList: [StockItem] = []
     
-    init(apiManager: APIManaging, stockService: StockItemServicing, coordinator: WatchListEventHandling? = nil) {
+    init(apiManager: APIManaging, stockService: StockItemServicing, coordinator: WatchListEventHandling? = nil, connector: WatchConnector) {
         self.coordinator = coordinator
         self.stockService = stockService
         self.apiManager = apiManager
+        self.connector = connector
         
         Task{
             self.initWatchList()
             await self.fetchWatchList()
+            watchList.forEach { stock in
+                connector.sendToWatch(stock: stock, action: "ADD")
+            }
         }
     }
     

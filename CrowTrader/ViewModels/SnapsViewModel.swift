@@ -11,20 +11,25 @@ class SnapsViewModel: ObservableObject{
     private weak var coordinator: SnapsListViewEventHandling?
     private let stockService: StockItemServicing
     private let balanceService: BalanceServicing
+    private let connector: WatchConnector
     let apiManager: APIManaging
     @Published var snapsList: [StockItem] = [] //TODO: Use state
     @Published var balance: BalanceItem = BalanceItem(total: 0, profit: 0, moneyToInvest: 0, allMoneyToInvest: 0)
     
-    init(apiManager: APIManaging, snapsService: StockItemServicing,balanceService: BalanceServicing, coordinator: SnapsListViewEventHandling? = nil) {
+    init(apiManager: APIManaging, snapsService: StockItemServicing,balanceService: BalanceServicing, coordinator: SnapsListViewEventHandling? = nil, connector: WatchConnector) {
         self.coordinator = coordinator
         self.stockService = snapsService
         self.balanceService = balanceService
         self.apiManager = apiManager
+        self.connector = connector
         
         Task{
             self.initSnapsList()
             self.initBalance()
             await self.fetchSnapsList()
+            snapsList.forEach { stock in
+                connector.sendToWatch(stock: stock, action: "ADD")
+            }
         }
     }
     
@@ -99,6 +104,7 @@ extension SnapsViewModel{
     
     func deleteSnaps(){
         snapsList.forEach { stock in
+            connector.sendToWatch(stock: stock, action: "DELETE")
             stockService.deleteStockItem(stockItem: stock)
         }
     }

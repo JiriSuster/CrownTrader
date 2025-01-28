@@ -35,13 +35,15 @@ final class CrowTraderCoordinator{
         apiManager: container.apiManager,
         snapsService: container.stockService,
         balanceService: container.balanceService,
-        coordinator: self
+        coordinator: self,
+        connector: connector
     )
     
     private lazy var watchListViewModel = WatchListViewModel(
         apiManager: container.apiManager,
         stockService: container.stockService,
-        coordinator: self
+        coordinator: self,
+        connector: connector
     )
     
     init(navigationController: UINavigationController, container: DIContainer) {
@@ -116,10 +118,12 @@ extension CrowTraderCoordinator: StockPreviewEventHandling {
         case .addToWatchlist(var stock):
             if(watchListViewModel.isInWatchlist(stock: stock)){
                 watchListViewModel.unwatch(stock: stock)
+                connector.sendToWatch(stock: stock,action: "DELETE") //unwatch
             }
             else{
                 stock.is_watchlist = true
                 stock.is_snaps = false
+                connector.sendToWatch(stock: stock,action: "ADD")
                 watchListViewModel.addStockToWatchList(stock: stock)
             }
             watchListViewModel.initWatchList()
@@ -128,8 +132,7 @@ extension CrowTraderCoordinator: StockPreviewEventHandling {
             stock.is_watchlist = false
             stock.ammount = (Double(amount) ?? 1) / stock.price
             stock.priceWhenBought = stock.price
-            debugPrint(stock.ammount)
-            debugPrint(stock.price)
+            connector.sendToWatch(stock: stock,action: "ADD")
             snapsViewModel.addStockToSnapsList(stock: stock)
             snapsViewModel.initSnapsList()
         }
@@ -232,6 +235,7 @@ extension CrowTraderCoordinator: SnapsListViewEventHandling {
         case .addBalance(let balance):
             snapsViewModel.addBalance(money: balance)
         case .sellStockItem(let stockItem):
+            connector.sendToWatch(stock: stockItem, action: "DELETE")
             snapsViewModel.sellStock(stock: stockItem)
             snapsViewModel.initSnapsList()
         case .resetBalance:
