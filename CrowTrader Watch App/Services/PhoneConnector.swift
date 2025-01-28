@@ -26,7 +26,7 @@ class PhoneConnector: NSObject, WCSessionDelegate, ObservableObject{
             self.snapsList.removeAll { $0.symbol == stock.symbol }
         }
         else if (stock.is_watchlist ?? false){
-            self.snapsList.removeAll { $0.symbol == stock.symbol }
+            self.watchList.removeAll { $0.symbol == stock.symbol }
         }
         if(session.isReachable){
             let data : [String : Any] = [

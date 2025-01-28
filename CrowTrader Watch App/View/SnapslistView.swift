@@ -6,6 +6,7 @@ struct SnapslistView: View {
     @StateObject var connector: PhoneConnector
     @Binding var selectedTitle: Title?
     @StateObject var mainViewModel: MainScreenViewModel
+    @StateObject var watchViewModel: WatchViewModel
     
     var body: some View {
         let emptyChartData = mainViewModel.chartData
@@ -63,6 +64,9 @@ struct SnapslistView: View {
         .navigationTitle(selectedTitle?.rawValue.uppercased() ?? "")
         .onAppear{
             mainViewModel.fetchMarketList()
+            Task{
+                connector.snapsList = await  watchViewModel.fetchList(list: connector.snapsList)
+            }
         }
     }
     

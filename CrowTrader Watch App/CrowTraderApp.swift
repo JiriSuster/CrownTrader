@@ -8,7 +8,7 @@ struct CrowTrader_Watch_AppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(mainViewModel: MainScreenViewModel(apiManager: container.apiManager)
+            ContentView(mainViewModel: MainScreenViewModel(apiManager: container.apiManager), watchViewModel: WatchViewModel(apiManager: container.apiManager)
             )
         }
     }

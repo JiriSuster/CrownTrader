@@ -42,6 +42,7 @@
 		71A6BDD82CCC09AA008BB9C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDD72CCC09AA008BB9C2 /* AppDelegate.swift */; };
 		71A6BDDA2CCC09B5008BB9C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDD92CCC09B5008BB9C2 /* SceneDelegate.swift */; };
 		71C7825F2D493406009862E2 /* SnapslistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C7825E2D493406009862E2 /* SnapslistView.swift */; };
+		71C782622D49576A009862E2 /* WatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C782612D49576A009862E2 /* WatchViewModel.swift */; };
 		71D6E2432D353C9E0014F18F /* StockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6E2422D353C9E0014F18F /* StockItem.swift */; };
 		71D6E2452D353F160014F18F /* SnapsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6E2442D353F160014F18F /* SnapsViewModel.swift */; };
 		71D6E2472D3542990014F18F /* StockItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6E2462D3542990014F18F /* StockItemService.swift */; };
@@ -177,6 +178,7 @@
 		71A6BDD92CCC09B5008BB9C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		71A6BDDB2CCC1112008BB9C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		71C7825E2D493406009862E2 /* SnapslistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapslistView.swift; sourceTree = "<group>"; };
+		71C782612D49576A009862E2 /* WatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewModel.swift; sourceTree = "<group>"; };
 		71D6E2422D353C9E0014F18F /* StockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItem.swift; sourceTree = "<group>"; };
 		71D6E2442D353F160014F18F /* SnapsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsViewModel.swift; sourceTree = "<group>"; };
 		71D6E2462D3542990014F18F /* StockItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItemService.swift; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 		71A6BD8B2CCBFDA8008BB9C2 /* CrowTrader Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				71C782602D495754009862E2 /* ViewModel */,
 				71F33B3A2D2BE0F000680699 /* View */,
 				712752222CCC161A003784DD /* Services */,
 				7127521F2CCC15EB003784DD /* DependencyInjection */,
@@ -466,6 +469,14 @@
 				716E5BD72D46B9F300206B82 /* BalanceService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		71C782602D495754009862E2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				71C782612D49576A009862E2 /* WatchViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		71F33B1D2D2BDED600680699 /* View */ = {
@@ -805,6 +816,7 @@
 			files = (
 				887828FC2D458D40008A99EB /* StockDataRouter.swift in Sources */,
 				887829012D458FD2008A99EB /* MarketDetailView.swift in Sources */,
+				71C782622D49576A009862E2 /* WatchViewModel.swift in Sources */,
 				71F33B3C2D2BE10000680699 /* DetailMarketView.swift in Sources */,
 				887828E92D3EE85C008A99EB /* StockChartView.swift in Sources */,
 				71F33B3E2D2BE11000680699 /* MainListView.swift in Sources */,

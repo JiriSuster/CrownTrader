@@ -12,6 +12,7 @@ struct MainListView: View {
     @StateObject var connector: PhoneConnector
     @State private var selectedTitle: Title? = .markets
     @StateObject var mainViewModel: MainScreenViewModel
+    @StateObject var watchViewModel: WatchViewModel
     
     var body: some View {
         
@@ -52,11 +53,11 @@ struct MainListView: View {
             case .markets:
                 MarketDetailView(connector: connector, selectedTitle: $selectedTitle, mainViewModel: mainViewModel)
             case .watchlist:
-                WatchlistView(connector: connector, selectedTitle: $selectedTitle, mainViewModel: mainViewModel)
+                WatchlistView(connector: connector, selectedTitle: $selectedTitle, mainViewModel: mainViewModel, watchViewModel: watchViewModel)
             case .snaps:
-                SnapslistView(connector: connector, selectedTitle: $selectedTitle, mainViewModel: mainViewModel)
+                SnapslistView(connector: connector, selectedTitle: $selectedTitle, mainViewModel: mainViewModel,watchViewModel: watchViewModel)
             case nil:
-                WatchlistView(connector: connector, selectedTitle: $selectedTitle, mainViewModel: mainViewModel)
+                WatchlistView(connector: connector, selectedTitle: $selectedTitle, mainViewModel: mainViewModel,watchViewModel: watchViewModel)
             }
         }
     }
