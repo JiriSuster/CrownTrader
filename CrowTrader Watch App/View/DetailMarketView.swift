@@ -1,9 +1,4 @@
-//
-//  DetailMarketView.swift
-//  CrowTrader Watch App
-//
-//  Created by Adéla Kulíšková on 02.01.2025.
-//
+
 
 import SwiftUI
 

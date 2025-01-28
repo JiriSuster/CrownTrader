@@ -1,9 +1,4 @@
-//
-//  MainPageView.swift
-//  CrowTrader
-//
-//  Created by Adéla Kulíšková on 29.12.2024.
-//
+
 
 import SwiftUI
 import Charts

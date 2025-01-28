@@ -1,9 +1,4 @@
-//
-//  PhoneConnector.swift
-//  CrowTrader Watch App
-//
-//  Created by Jiří Daniel Šuster on 25.10.2024.
-//
+
 
 import Foundation
 import WatchConnectivity
