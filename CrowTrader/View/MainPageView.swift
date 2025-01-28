@@ -40,6 +40,8 @@ struct MainPageView: View {
                         }
                         .onSubmit {
                             viewModel.send(.searchConfirmed(searchText))
+                            searchText = ""
+                            viewModel.send(.searchTextChanged(""))
                         }
                 }.padding(.horizontal)
                 
