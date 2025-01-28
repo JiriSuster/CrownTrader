@@ -30,7 +30,7 @@ struct SnapsListView: View {
                                 searchText = ""
                                 mainViewModel.send(.searchTextChanged(searchText))
                             }
-                    }.padding(.horizontal)
+                    }
                     
                     
                     VStack{
@@ -101,7 +101,7 @@ struct SnapsListView: View {
                     HStack{
                         Text("Snaps").font(.title)
                         Spacer()
-                    }
+                    }.padding()
                     
                     ScrollView{
                         VStack(spacing: 8) {
