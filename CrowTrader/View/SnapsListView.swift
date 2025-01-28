@@ -107,6 +107,8 @@ struct SnapsListView: View {
                         VStack(spacing: 8) {
                             
                             ForEach(viewModel.snapsList) { stock in
+                                let calc1 = (stock.priceWhenBought ?? 1) * stock.ammount
+                                let calc2 = calc1 + (stock.profit ?? 1)
                                 HStack {
                                     VStack(alignment: .leading) {
                                         Text(stock.title)
@@ -118,11 +120,11 @@ struct SnapsListView: View {
                                     Spacer()
                                     HStack{
                                         VStack(alignment: .trailing){
-                                            Text("$\(String(format: "%.2f", stock.price))")
+                                            Text("$\(String(format: "%.3f", calc2))")
                                                 .font(.headline)
-                                            Text("\(String(format: "%.2f", stock.percentChange!))%")
+                                            Text("\(String(format: "%.3f", (stock.profit ?? 1) * 100))%")
                                                 .font(.body)
-                                                .foregroundColor(stock.color)
+                                                .foregroundColor(stock.colorProfit)
                                         }
                                         Button(action: {
                                             viewModel.send(.didTapSell(stock))

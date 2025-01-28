@@ -25,4 +25,10 @@ struct StockItem: Identifiable {
         }
         return percentChange > 0 ? Color.green : Color.red
     }
+    var colorProfit: Color {
+        guard let profit = profit else {
+            return Color.black //default
+        }
+        return profit >= 0 ? Color.green : Color.red
+    }
 }
