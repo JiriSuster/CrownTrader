@@ -37,7 +37,7 @@ struct TimeframeButtonStyle: ButtonStyle {
 }
 
 struct BottomButtonStyle: ButtonStyle {
-
+    @Environment(\.isEnabled) var isEnabled
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .frame(maxWidth: .infinity)
@@ -46,6 +46,7 @@ struct BottomButtonStyle: ButtonStyle {
             .background(Color.green)
             .clipShape(Capsule())
             .shadow(color: .black.opacity(0.5), radius: 2)
+            .opacity(isEnabled ? 1 : 0.4)
             .opacity(configuration.isPressed ? 0.6 : 1)
     }
 }
@@ -61,8 +62,7 @@ extension ButtonStyle where Self == DismissCrownButtonStyle {
 }
 
 extension ButtonStyle where Self == BottomButtonStyle {
-        static var bottomButtonStyle: BottomButtonStyle { BottomButtonStyle()
-    }
+    static var bottomButtonStyle: BottomButtonStyle { BottomButtonStyle() }
 }
 
 #Preview {
@@ -77,7 +77,7 @@ extension ButtonStyle where Self == BottomButtonStyle {
 
         }
         .buttonStyle(.timeframe(isSelected: true))
-        
+
         
         Button("1M"){
 
@@ -85,9 +85,9 @@ extension ButtonStyle where Self == BottomButtonStyle {
         .buttonStyle(.timeframe(isSelected: false))
         
         Button("Buy"){
-
         }
         .buttonStyle(.bottomButtonStyle)
+        .disabled(true)
 
     }
 }

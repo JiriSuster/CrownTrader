@@ -78,6 +78,7 @@ private extension CrowTraderCoordinator {
 private extension CrowTraderCoordinator {
     func makeStockDetailView() -> UIViewController {
         let view = StockPreview(
+            snapsViewModel: self.snapsViewModel,
             viewModel: self.stockPreviewViewModel,
             watchlistViewModel: self.watchListViewModel,
             connector: self.connector

@@ -4,6 +4,7 @@ import SwiftUI
 
 struct StockPreview: View {
     @Environment(\.dismiss) private var dismiss
+    @StateObject var snapsViewModel: SnapsViewModel
     @StateObject var viewModel: StockPreviewViewModel
     @StateObject var watchlistViewModel: WatchListViewModel
     @State private var price = ""
@@ -12,7 +13,12 @@ struct StockPreview: View {
     
     weak var coordinator: StockPreviewEventHandling?
     
-
+    private var isValidPrice: Bool {
+        if let priceValue = Double(price), priceValue > 0 {
+            return snapsViewModel.balance.moneyToInvest >= priceValue
+        }
+        return false
+    }
     
     var body: some View {
         var stock = viewModel.stockItem ?? StockItem(symbol: "", title: "", price: 1, ammount: 1)
@@ -105,6 +111,7 @@ struct StockPreview: View {
                         Text("Buy")
                     }
                     .buttonStyle(.bottomButtonStyle)
+                    .disabled(!isValidPrice)
                 }
                 
             }.padding()
