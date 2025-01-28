@@ -35,15 +35,15 @@ struct SnapsListView: View {
                         }
                         Spacer()
                         VStack(alignment: .trailing){
-                            Text("\(String(format: "%.5f",balance.total))$").font(.title)
-                            Text(String("\(balance.profit)%")).font(.title3).foregroundStyle(.green)
+                            Text("\(String(format: "%0.2f",balance.total))$").font(.title)
+                            Text("\(String(format: "%0.2f",balance.profit))$").font(.title3).foregroundStyle(.green)
                         }
                     }.padding(8)
                     HStack{
                         Text("Money to invest").font(.title2).foregroundStyle(.gray)
                         Spacer()
                         VStack(alignment: .trailing){
-                            Text("\(String(balance.moneyToInvest))$").font(.title2).foregroundStyle(.gray)
+                            Text("\(String(format: "%0.2f",balance.moneyToInvest))$").font(.title2).foregroundStyle(.gray)
                         }
                     }.padding(8)
                     
