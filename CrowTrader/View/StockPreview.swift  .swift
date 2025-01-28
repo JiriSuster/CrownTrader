@@ -100,14 +100,11 @@ struct StockPreview: View {
                     
                     Button(action: {
                         viewModel.send(.addToSnapslistClick(stock,price))
+                        dismiss()
                     }){
                         Text("Buy")
-                            .frame(width: 370,height: 50,alignment: .center)
-                        
                     }
-                    .background(.green)
-                        .foregroundStyle(.white)
-                        .cornerRadius(25)
+                    .buttonStyle(.bottomButtonStyle)
                 }
                 
             }.padding()
@@ -123,7 +120,6 @@ struct StockPreview: View {
                         ToolbarItem(placement: .topBarTrailing){
                             Button(action: {
                                 viewModel.send(.addToWatchlistClick(stock))
-                                dismiss()
                                 
                             }){
                                 Text(watchlistViewModel.isInWatchlist(stock: stock) ? "Unwatch" : "Watch").foregroundStyle(.green)

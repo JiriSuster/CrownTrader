@@ -36,6 +36,20 @@ struct TimeframeButtonStyle: ButtonStyle {
     }
 }
 
+struct BottomButtonStyle: ButtonStyle {
+
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(maxWidth: .infinity)
+            .foregroundStyle(Color.white)
+            .padding()
+            .background(Color.green)
+            .clipShape(Capsule())
+            .shadow(color: .black.opacity(0.5), radius: 2)
+            .opacity(configuration.isPressed ? 0.6 : 1)
+    }
+}
+
 extension ButtonStyle where Self == TimeframeButtonStyle {
     static func timeframe(isSelected: Bool) -> TimeframeButtonStyle {
         TimeframeButtonStyle(isSelected: isSelected)
@@ -44,6 +58,11 @@ extension ButtonStyle where Self == TimeframeButtonStyle {
 
 extension ButtonStyle where Self == DismissCrownButtonStyle {
     static var dismissCrownButtonStyle: DismissCrownButtonStyle { DismissCrownButtonStyle() }
+}
+
+extension ButtonStyle where Self == BottomButtonStyle {
+        static var bottomButtonStyle: BottomButtonStyle { BottomButtonStyle()
+    }
 }
 
 #Preview {
@@ -64,6 +83,11 @@ extension ButtonStyle where Self == DismissCrownButtonStyle {
 
         }
         .buttonStyle(.timeframe(isSelected: false))
+        
+        Button("Buy"){
+
+        }
+        .buttonStyle(.bottomButtonStyle)
 
     }
 }
