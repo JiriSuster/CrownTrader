@@ -36,7 +36,7 @@ struct SnapsListView: View {
                         Spacer()
                         VStack(alignment: .trailing){
                             Text("\(String(format: "%0.2f",balance.total))$").font(.title)
-                            Text("\(String(format: "%0.2f",balance.profit))$").font(.title3).foregroundStyle(.green)
+                            Text("\(String(format: "%0.2f",balance.profit))%").font(.title3).foregroundStyle(.green)
                         }
                     }.padding(8)
                     HStack{
@@ -115,7 +115,7 @@ struct SnapsListView: View {
                                     VStack(alignment: .trailing){
                                         Text("$\(String(format: "%.2f", stock.price))")
                                             .font(.headline)
-                                        Text("$\(String(format: "%.2f", stock.percentChange!))")
+                                        Text("\(String(format: "%.2f", stock.percentChange!))%")
                                             .font(.body)
                                             .foregroundColor(stock.color)
                                     }
