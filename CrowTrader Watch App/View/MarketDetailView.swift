@@ -13,7 +13,6 @@ struct MarketDetailView: View {
     @StateObject var mainViewModel: MainScreenViewModel
     
     var body: some View {
-        var list: [StockItem]
         let emptyChartData = mainViewModel.chartData
         
         TabView(selection: $selectedTitle) {

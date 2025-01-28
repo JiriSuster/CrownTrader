@@ -26,11 +26,24 @@ class PhoneConnector: NSObject, WCSessionDelegate, ObservableObject{
     
     func session(_ session: WCSession, activationDidCompleteWith activationState:WCSessionActivationState, error: (any Error)?) {}
     
-    func sendToPhone(){
+    func sendToPhone(stock: StockItem){
+        if(stock.is_snaps ?? false){
+            self.snapsList.removeAll { $0.symbol == stock.symbol }
+        }
+        else if (stock.is_watchlist ?? false){
+            self.snapsList.removeAll { $0.symbol == stock.symbol }
+        }
         if(session.isReachable){
             let data : [String : Any] = [
-                "text": messageText,
-                "date": messageDate
+                "amount" : stock.ammount,
+                "price_when_bought" : stock.priceWhenBought ?? stock.price,
+                "symbol": stock.symbol,
+                "name": stock.title,
+                "price": stock.price,
+                "is_watchlist": stock.is_watchlist ?? false,
+                "is_snaps": stock.is_snaps ?? false,
+                "percent_change": stock.percentChange ?? 0
+                
             ]
             session.sendMessage(data, replyHandler: nil)
         }else{
@@ -41,6 +54,8 @@ class PhoneConnector: NSObject, WCSessionDelegate, ObservableObject{
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         print(message)
         DispatchQueue.main.async{
+            let amount = message["amount"] as? Double ?? 0
+            let price_when_bought = message["price_when_bought"] as? Double ?? 0
             let action = message["action"] as? String ?? ""
             let symbol = message["symbol"] as? String ?? ""
             let name = message["name"] as? String ?? ""
@@ -51,10 +66,10 @@ class PhoneConnector: NSObject, WCSessionDelegate, ObservableObject{
             
             if action == "ADD" {
                 if is_watchlist {
-                    self.watchList.append(StockItem(symbol: symbol, title: name, price: price, percentChange: percentChange, ammount: 0))
+                    self.watchList.append(StockItem(symbol: symbol, title: name, price: price, percentChange: percentChange, ammount: amount,priceWhenBought: price_when_bought,is_watchlist: is_watchlist, is_snaps: is_snaps))
                 }
                 if is_snaps {
-                    self.snapsList.append(StockItem(symbol: symbol, title: name, price: price, percentChange: percentChange, ammount: 0))
+                    self.snapsList.append(StockItem(symbol: symbol, title: name, price: price, percentChange: percentChange, ammount: amount,priceWhenBought: price_when_bought,is_watchlist: is_watchlist, is_snaps: is_snaps))
                 }
             } else if action == "DELETE" {
                 if is_watchlist {

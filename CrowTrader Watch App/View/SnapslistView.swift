@@ -42,6 +42,15 @@ struct SnapslistView: View {
                                     }
                                 }
                                 Spacer()
+                                Button(action: {
+                                    connector.sendToPhone(stock: item)
+                                    
+                                    
+                                }){
+                                    Image(systemName: "trash")
+                                }.background(.red)
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
                                 
                             }.padding(.horizontal, 1)
                             Spacer()

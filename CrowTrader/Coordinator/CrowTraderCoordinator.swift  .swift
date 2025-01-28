@@ -49,6 +49,7 @@ final class CrowTraderCoordinator{
     init(navigationController: UINavigationController, container: DIContainer) {
         self.container = container
         self.navigationController = navigationController
+        connector.delegate = self
         
         start()
     }
@@ -246,3 +247,15 @@ extension CrowTraderCoordinator: SnapsListViewEventHandling {
     }
 }
 
+extension CrowTraderCoordinator: WatchConnectorDelegate {
+    func didReceiveDeleteStock(_ stock: StockItem, isWatchlist: Bool) {
+        if isWatchlist {
+            watchListViewModel.unwatch(stock: stock)
+            watchListViewModel.initWatchList()
+        } else {
+            snapsViewModel.sellStock(stock: stock)
+            snapsViewModel.initSnapsList()
+            snapsViewModel.initBalance()
+        }
+    }
+}

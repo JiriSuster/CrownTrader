@@ -9,6 +9,7 @@ import Foundation
 import WatchConnectivity
 
 class WatchConnector: NSObject, WCSessionDelegate, ObservableObject{
+    weak var delegate: WatchConnectorDelegate?
     private var session: WCSession
     @Published var messageText : String = ""
     @Published var messageDate : Date = .now
@@ -25,6 +26,8 @@ class WatchConnector: NSObject, WCSessionDelegate, ObservableObject{
         if(session.isReachable){
             
             let data : [String : Any] = [
+                "amount" : stock.ammount,
+                "price_when_bought" : stock.priceWhenBought ?? stock.price,
                 "action": action,
                 "symbol": stock.symbol,
                 "name": stock.title,
@@ -44,8 +47,28 @@ class WatchConnector: NSObject, WCSessionDelegate, ObservableObject{
         //dosel mi slovnik a ja ho potrebuju rozparsovat
         print(message)
         DispatchQueue.main.async{
-            self.messageText = message["text"] as? String ?? ""
-            self.messageDate = message["date"] as? Date ?? .now
+            let amount = message["amount"] as? Double ?? 0
+            let action = message["action"] as? String ?? ""
+            let price_when_bought = message["price_when_bought"] as? Double ?? 0
+            let symbol = message["symbol"] as? String ?? ""
+            let name = message["name"] as? String ?? ""
+            let price = message["price"] as? Double ?? 0
+            let is_watchlist = message["is_watchlist"] as? Bool ?? false
+            let is_snaps = message["is_snaps"] as? Bool ?? false
+            let percentChange = message["percent_change"] as? Double ?? 0
+            
+            let stock = StockItem(
+                                symbol: symbol,
+                                title: name,
+                                price: price,
+                                percentChange: percentChange,
+                                ammount: amount,
+                                priceWhenBought: price_when_bought,
+                                is_watchlist: is_watchlist,
+                                is_snaps: is_snaps
+            )
+            self.delegate?.didReceiveDeleteStock(stock, isWatchlist: is_watchlist)
+            
         }
     }
     
@@ -55,4 +78,8 @@ class WatchConnector: NSObject, WCSessionDelegate, ObservableObject{
     func sessionDidDeactivate(_ session: WCSession) {}
     
     
+}
+
+protocol WatchConnectorDelegate: AnyObject {
+    func didReceiveDeleteStock(_ stock: StockItem, isWatchlist: Bool)
 }
