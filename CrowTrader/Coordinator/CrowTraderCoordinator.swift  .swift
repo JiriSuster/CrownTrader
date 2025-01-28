@@ -76,7 +76,8 @@ private extension CrowTraderCoordinator {
     func makeStockDetailView() -> UIViewController {
         let view = StockPreview(
             viewModel: self.stockPreviewViewModel,
-            watchlistViewModel: self.watchListViewModel
+            watchlistViewModel: self.watchListViewModel,
+            connector: self.connector
         )
         return UIHostingController(rootView: view)
     }

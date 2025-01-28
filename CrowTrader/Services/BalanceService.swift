@@ -70,8 +70,9 @@ final class BalanceService: BalanceServicing {
 
     func sellStock(stock: StockItem){
         let balance = fetchBalance()
+        balance.profit = balance.all_money_to_invest / balance.money_to_invest
+        balance.money_to_invest += (stock.ammount * stock.price)
         balance.total += (stock.ammount * stock.price) - (stock.ammount * (stock.priceWhenBought ?? 1))
-        balance.profit += balance.total / balance.all_money_to_invest
     }
     
     func buyStock(stock: StockItem){

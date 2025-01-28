@@ -12,7 +12,7 @@ struct StockPreview: View {
     @StateObject var viewModel: StockPreviewViewModel
     @StateObject var watchlistViewModel: WatchListViewModel
     @State private var price = ""
-    
+    @StateObject var connector: WatchConnector
     @State private var selectedTimeframe: String = "1d"
     
     weak var coordinator: StockPreviewEventHandling?
@@ -105,6 +105,9 @@ struct StockPreview: View {
                     
                     Button(action: {
                         viewModel.send(.addToSnapslistClick(stock,price))
+                        var snapStock = stock
+                        snapStock.is_snaps = true
+                        connector.sendToWatch(stock: snapStock)
                     }){
                         Text("Buy")
                             .frame(width: 370,height: 50,alignment: .center)
@@ -128,6 +131,9 @@ struct StockPreview: View {
                         ToolbarItem(placement: .topBarTrailing){
                             Button(action: {
                                 viewModel.send(.addToWatchlistClick(stock))
+                                var watchStock = stock
+                                watchStock.is_watchlist = true
+                                connector.sendToWatch(stock: watchStock)
                                 dismiss()
                                 
                             }){

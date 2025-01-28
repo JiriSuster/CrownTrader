@@ -41,6 +41,7 @@
 		71A6BDD22CCC04DA008BB9C2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDD12CCC04DA008BB9C2 /* Coordinator.swift */; };
 		71A6BDD82CCC09AA008BB9C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDD72CCC09AA008BB9C2 /* AppDelegate.swift */; };
 		71A6BDDA2CCC09B5008BB9C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6BDD92CCC09B5008BB9C2 /* SceneDelegate.swift */; };
+		71C7825F2D493406009862E2 /* SnapslistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C7825E2D493406009862E2 /* SnapslistView.swift */; };
 		71D6E2432D353C9E0014F18F /* StockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6E2422D353C9E0014F18F /* StockItem.swift */; };
 		71D6E2452D353F160014F18F /* SnapsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6E2442D353F160014F18F /* SnapsViewModel.swift */; };
 		71D6E2472D3542990014F18F /* StockItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6E2462D3542990014F18F /* StockItemService.swift */; };
@@ -175,6 +176,7 @@
 		71A6BDD72CCC09AA008BB9C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71A6BDD92CCC09B5008BB9C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		71A6BDDB2CCC1112008BB9C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		71C7825E2D493406009862E2 /* SnapslistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapslistView.swift; sourceTree = "<group>"; };
 		71D6E2422D353C9E0014F18F /* StockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItem.swift; sourceTree = "<group>"; };
 		71D6E2442D353F160014F18F /* SnapsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsViewModel.swift; sourceTree = "<group>"; };
 		71D6E2462D3542990014F18F /* StockItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItemService.swift; sourceTree = "<group>"; };
@@ -496,6 +498,7 @@
 				71F33B3B2D2BE10000680699 /* DetailMarketView.swift */,
 				71F33B3D2D2BE11000680699 /* MainListView.swift */,
 				887829002D458FD2008A99EB /* MarketDetailView.swift */,
+				71C7825E2D493406009862E2 /* SnapslistView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -810,6 +813,7 @@
 				887828F72D458A8D008A99EB /* APIManaging.swift in Sources */,
 				712752252CCC172F003784DD /* CrowTrader.xcdatamodeld in Sources */,
 				71A6BD8F2CCBFDA8008BB9C2 /* ContentView.swift in Sources */,
+				71C7825F2D493406009862E2 /* SnapslistView.swift in Sources */,
 				71A6BD8D2CCBFDA8008BB9C2 /* CrowTraderApp.swift in Sources */,
 				887828EA2D3EE8FD008A99EB /* ChartData.swift in Sources */,
 				712752212CCC1601003784DD /* DIContainer.swift in Sources */,

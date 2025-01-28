@@ -52,12 +52,17 @@ struct MainListView: View {
                 }
             }
         } detail: {
-            if selectedTitle == .markets {
-                MarketDetailView(connector: connector, selectedTitle: $selectedTitle, mainViewModel: mainViewModel)
-            }else{
-                DetailMarketView(connector: connector, selectedTitle: $selectedTitle)
-            }
             
+            switch selectedTitle {
+            case .markets:
+                MarketDetailView(connector: connector, selectedTitle: $selectedTitle, mainViewModel: mainViewModel)
+            case .watchlist:
+                WatchlistView(connector: connector, selectedTitle: $selectedTitle, mainViewModel: mainViewModel)
+            case .snaps:
+                SnapslistView(connector: connector, selectedTitle: $selectedTitle, mainViewModel: mainViewModel)
+            case nil:
+                WatchlistView(connector: connector, selectedTitle: $selectedTitle, mainViewModel: mainViewModel)
+            }
         }
     }
 }

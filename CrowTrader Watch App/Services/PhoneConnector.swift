@@ -13,6 +13,8 @@ class PhoneConnector: NSObject, WCSessionDelegate, ObservableObject{
     
     @Published var messageText : String = ""
     @Published var messageDate : Date = .now
+    @Published var watchList: [StockItem] = []
+    @Published var snapsList: [StockItem] = []
     
     init(session: WCSession = .default) {
         self.session = session
@@ -39,8 +41,19 @@ class PhoneConnector: NSObject, WCSessionDelegate, ObservableObject{
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         print(message)
         DispatchQueue.main.async{
-            self.messageText = message["text"] as? String ?? ""
-            self.messageDate = message["date"] as? Date ?? .now
+            let symbol = message["symbol"] as? String ?? ""
+            let name = message["name"] as? String ?? ""
+            let price = message["price"] as? Double ?? 0
+            let is_watchlist = message["is_watchlist"] as? Bool ?? false
+            let is_snaps = message["is_snaps"] as? Bool ?? false
+            let percentChange = message["percent_change"] as? Double ?? 0
+            if(is_watchlist){
+                self.watchList.append(StockItem(symbol: symbol, title: name, price: price, percentChange: percentChange, ammount: 0))
+            }
+            if(is_snaps){
+                self.snapsList.append(StockItem(symbol: symbol, title: name, price: price, percentChange: percentChange, ammount: 0))
+            }
+            
         }
     }
     

@@ -1,13 +1,13 @@
 //
-//  DetailMarketView.swift
+//  SnapslistView.swift
 //  CrowTrader Watch App
 //
-//  Created by Adéla Kulíšková on 02.01.2025.
+//  Created by Jiří Daniel Šuster on 28.01.2025.
 //
 
 import SwiftUI
 
-struct WatchlistView: View {
+struct SnapslistView: View {
     @StateObject var connector: PhoneConnector
     @Binding var selectedTitle: Title?
     @StateObject var mainViewModel: MainScreenViewModel
@@ -18,7 +18,7 @@ struct WatchlistView: View {
         TabView(selection: $selectedTitle) {
             
             
-            ForEach(connector.watchList) { item in
+            ForEach(connector.snapsList) { item in
                 
                 NavigationView{
                     VStack{

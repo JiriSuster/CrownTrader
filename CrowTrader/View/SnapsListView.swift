@@ -31,8 +31,7 @@ struct SnapsListView: View {
                 VStack{
                     HStack{
                         VStack(alignment: .leading){
-                            Text("Total").font(.title)
-                            Text("Profit").font(.title3)
+                            Text("Profit").font(.title)
                         }
                         Spacer()
                         VStack(alignment: .trailing){
