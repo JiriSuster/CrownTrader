@@ -15,7 +15,7 @@ struct StockPreview: View {
 
     
     var body: some View {
-        let stock = viewModel.stockItem ?? StockItem(symbol: "", title: "", price: 1, ammount: 1)
+        var stock = viewModel.stockItem ?? StockItem(symbol: "", title: "", price: 1, ammount: 1)
         let latestPrice = viewModel.stockItem?.price ?? 0
         let average = viewModel.average
 
@@ -119,6 +119,9 @@ struct StockPreview: View {
                         }
                         ToolbarItem(placement: .topBarTrailing){
                             Button(action: {
+                                if(watchlistViewModel.isInWatchlist(stock: stock)){
+                                    stock.is_watchlist = true
+                                }
                                 viewModel.send(.addToWatchlistClick(stock))
                                 
                             }){
