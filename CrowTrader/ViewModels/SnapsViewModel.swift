@@ -131,10 +131,8 @@ extension SnapsViewModel{
         }
     
     func addStockToSnapsList(stock: StockItem) { //buy
-        if !isInSnapslist(stock: stock) {
             balanceService.buyStock(stock: stock)
             stockService.addNewStockItem(stockItem: stock)
-        }
     }
     func isInSnapslist(stock: StockItem) -> Bool{
         return snapsList.contains(where: { $0.symbol == stock.symbol && $0.is_snaps == true })

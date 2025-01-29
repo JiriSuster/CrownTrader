@@ -93,16 +93,21 @@ final class StockItemService: StockItemServicing {
     
     func deleteStockItem(stockItem: StockItem) {
         var query: String = ""
-        if(stockItem.is_watchlist ?? false){
+        var predicate: NSPredicate
+        
+        if stockItem.is_watchlist ?? false {
             query = "is_watchlist"
-        }else   if(stockItem.is_snaps ?? false){
+            predicate = NSPredicate(format: "symbol == %@ AND \(query) == %@", stockItem.symbol, NSNumber(value: true))
+        } else if stockItem.is_snaps ?? false {
             query = "is_snaps"
-        }else{
-            print("no stockitems to delete")
+            predicate = NSPredicate(format: "symbol == %@ AND \(query) == %@ AND ammount == %@", stockItem.symbol, NSNumber(value: true), NSNumber(value: stockItem.ammount))
+        } else {
+            print("No stock items to delete")
             return
         }
+        
         let request = NSFetchRequest<StockEntity>(entityName: "StockEntity")
-        request.predicate = NSPredicate(format: "symbol == %@ AND \(query) == %@", stockItem.symbol, NSNumber(value: true))
+        request.predicate = predicate
         
         do {
             let results = try moc.fetch(request)
