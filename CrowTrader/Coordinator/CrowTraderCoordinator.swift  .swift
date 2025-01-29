@@ -129,6 +129,7 @@ extension CrowTraderCoordinator: StockPreviewEventHandling {
                 watchListViewModel.addStockToWatchList(stock: stock)
             }
             watchListViewModel.initWatchList()
+            watchListViewModel.fetchWatchList()
         case .addToSnapslist(var stock, let amount): //here the amount is actually price I want to buy the stock for
             stock.is_snaps = true
             stock.is_watchlist = false
@@ -137,6 +138,7 @@ extension CrowTraderCoordinator: StockPreviewEventHandling {
             connector.sendToWatch(stock: stock,action: "ADD")
             snapsViewModel.addStockToSnapsList(stock: stock)
             snapsViewModel.initSnapsList()
+            snapsViewModel.fetchSnapsList()
         }
     }
 }
@@ -253,9 +255,11 @@ extension CrowTraderCoordinator: WatchConnectorDelegate {
         if isWatchlist {
             watchListViewModel.unwatch(stock: stock)
             watchListViewModel.initWatchList()
+            watchListViewModel.fetchWatchList()
         } else {
             snapsViewModel.sellStock(stock: stock)
             snapsViewModel.initSnapsList()
+            snapsViewModel.fetchSnapsList()
             snapsViewModel.initBalance()
         }
     }

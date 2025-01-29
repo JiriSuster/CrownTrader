@@ -50,7 +50,7 @@ struct WatchListView: View {
                                     VStack(alignment: .trailing){
                                         Text("$\(String(format: "%.2f", watchedStock.price))")
                                             .font(.headline)
-                                        Text("$\(String(format: "%.2f", watchedStock.percentChange ?? 0))")
+                                        Text("\(String(format: "%.2f", watchedStock.percentChange ?? 0))%")
                                             .font(.body)
                                             .foregroundColor(watchedStock.color)
                                     }

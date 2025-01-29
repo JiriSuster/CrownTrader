@@ -43,7 +43,7 @@ struct SnapslistView: View {
                                     
                                     
                                 }){
-                                    Image(systemName: "trash")
+                                    Image(systemName: "dollarsign")
                                 }.background(.red)
                                     .frame(width: 40, height: 40)
                                     .clipShape(Circle())
