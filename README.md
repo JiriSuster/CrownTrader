@@ -140,7 +140,7 @@
 
 ## Screenshots
 
-## Phone
+### Phone
 <div style="display: flex; flex-wrap: wrap;">
   <img src="screenshots/phone_1.png" width="20%" style="margin-right: 5%; margin-bottom: 10px;">
   <img src="screenshots/phone_2.png" width="20%" style="margin-right: 5%; margin-bottom: 10px;">
@@ -156,7 +156,7 @@
   <img src="screenshots/phone_12.png" width="20%" style="margin-right: 5%; margin-bottom: 10px;">
 </div>
 
-## Watch
+### Watch
 <p align="left">
   <img src="screenshots/watch_1.png" width="20%">
   <img src="screenshots/watch_3.png" width="20%">
