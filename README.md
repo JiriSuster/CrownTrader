@@ -157,13 +157,15 @@
 </div>
 
 ## Watch
-  <img src="screenshots/watch_1.png" width="20%" style="margin-right: 5%; margin-bottom: 10px;">
-  <img src="screenshots/watch_2.png" width="20%" style="margin-right: 5%; margin-bottom: 10px;">
-  <img src="screenshots/watch_3.png" width="20%" style="margin-right: 5%; margin-bottom: 10px;">
-  <img src="screenshots/watch_4.png" width="20%" style="margin-right: 5%; margin-bottom: 10px;">
+<p align="center">
+  <img src="screenshots/watch_1.png" width="20%">
+  <img src="screenshots/watch_2.png" width="20%">
+  <img src="screenshots/watch_3.png" width="20%">
+  <img src="screenshots/watch_4.png" width="20%">
+</p>
 
 ## Video
-<video src="screenshots/video.mp4" controls>
+[![CrownTrader showcase](https://img.youtube.com/vi/b52ioQzoBHA/0.jpg)](https://www.youtube.com/watch?v=b52ioQzoBHA)
 
 ## License
 
