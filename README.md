@@ -1,17 +1,8 @@
 # Crown Trader
 Final project for course *Application Development for iOS 2*, taught at [PEF MENDELU](https://pef.mendelu.cz/), graded 36/40 points (due to absence of tests)
 
-## Description
-
-**Crown Trader** is an iOS application developed in Swift that allows users to explore, track, and simulate stock trading. The project consists of two synchronized apps:
-
-- **Mobile App:** Offers detailed stock information, trading simulation, news, and personalized watchlists.
-- **Watch App:** Provides a streamlined experience with key stock data and portfolio management directly on your wrist.
-
-
-
 ## Table of Contents
-
+- [Description](#description)
 - [Features](#features)
   - [Mobile App](#mobile-app)
   - [Watch App](#watch-app)
@@ -19,6 +10,17 @@ Final project for course *Application Development for iOS 2*, taught at [PEF MEN
 - [Usage](#usage)
 - [Installation](#installation)
 - [License](#license)
+
+
+
+
+## Description
+
+**Crown Trader** is an iOS application developed in Swift that allows users to explore, track, and simulate stock trading. The project consists of two synchronized apps:
+
+- **Mobile App:** Offers detailed stock information, trading simulation, news, and personalized watchlists.
+- **Watch App:** Provides a streamlined experience with key stock data and portfolio management directly on your wrist.
+
 
 
 
