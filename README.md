@@ -142,26 +142,26 @@
 
 ### Phone
 <div style="display: flex; flex-wrap: wrap;">
-  <img src="screenshots/phone_1.png" width="20%" style="margin-right: 5%; margin-bottom: 10px;">
-  <img src="screenshots/phone_2.png" width="20%" style="margin-right: 5%; margin-bottom: 10px;">
-  <img src="screenshots/phone_3.png" width="20%" style="margin-right: 5%; margin-bottom: 10px;">
-  <img src="screenshots/phone_4.png" width="20%" style="margin-right: 5%; margin-bottom: 10px;">
-  <img src="screenshots/phone_5.png" width="20%" style="margin-right: 5%; margin-bottom: 10px;">
-  <img src="screenshots/phone_6.png" width="20%" style="margin-right: 5%; margin-bottom: 10px;">
-  <img src="screenshots/phone_7.png" width="20%" style="margin-right: 5%; margin-bottom: 10px;">
-  <img src="screenshots/phone_8.png" width="20%" style="margin-right: 5%; margin-bottom: 10px;">
-  <img src="screenshots/phone_9.png" width="20%" style="margin-right: 5%; margin-bottom: 10px;">
-  <img src="screenshots/phone_10.png" width="20%" style="margin-right: 5%; margin-bottom: 10px;">
-  <img src="screenshots/phone_11.png" width="20%" style="margin-right: 5%; margin-bottom: 10px;">
-  <img src="screenshots/phone_12.png" width="20%" style="margin-right: 5%; margin-bottom: 10px;">
+  <img src="screenshots/phone_1.png" width="24%" style=" margin-bottom: 10px;">
+  <img src="screenshots/phone_2.png" width="24%" style=" margin-bottom: 10px;">
+  <img src="screenshots/phone_3.png" width="24%" style=" margin-bottom: 10px;">
+  <img src="screenshots/phone_4.png" width="24%" style=" margin-bottom: 10px;">
+  <img src="screenshots/phone_5.png" width="24%" style=" margin-bottom: 10px;">
+  <img src="screenshots/phone_6.png" width="24%" style=" margin-bottom: 10px;">
+  <img src="screenshots/phone_7.png" width="24%" style=" margin-bottom: 10px;">
+  <img src="screenshots/phone_8.png" width="24%" style="; margin-bottom: 10px;">
+  <img src="screenshots/phone_9.png" width="24%" style=" margin-bottom: 10px;">
+  <img src="screenshots/phone_10.png" width="24%" style=" margin-bottom: 10px;">
+  <img src="screenshots/phone_11.png" width="24%" style=" margin-bottom: 10px;">
+  <img src="screenshots/phone_12.png" width="24%" style=" margin-bottom: 10px;">
 </div>
 
 ### Watch
 <p align="left">
-  <img src="screenshots/watch_1.png" width="20%">
-  <img src="screenshots/watch_3.png" width="20%">
-  <img src="screenshots/watch_2.png" width="20%">
-  <img src="screenshots/watch_4.png" width="20%">
+  <img src="screenshots/watch_1.png" width="24%">
+  <img src="screenshots/watch_3.png" width="24%">
+  <img src="screenshots/watch_2.png" width="24%">
+  <img src="screenshots/watch_4.png" width="24%">
 </p>
 
 ## Video
