@@ -157,10 +157,10 @@
 </div>
 
 ## Watch
-<p align="center">
+<p align="left">
   <img src="screenshots/watch_1.png" width="20%">
-  <img src="screenshots/watch_2.png" width="20%">
   <img src="screenshots/watch_3.png" width="20%">
+  <img src="screenshots/watch_2.png" width="20%">
   <img src="screenshots/watch_4.png" width="20%">
 </p>
 
